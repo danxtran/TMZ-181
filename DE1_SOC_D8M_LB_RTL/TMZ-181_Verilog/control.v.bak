@@ -1,0 +1,22 @@
+module control ( // control module
+  input clk,
+  input rst,
+  input [9:0] SW,
+  input [3:0] KEY,
+  input [12:0] row,
+  input [12:0] col,
+  output [31:0] en, // enable signals
+  output frame_en,
+  
+  //brightness signals
+  output inc, // increase brightness signal
+  output dec, // decrease brightness signal
+  
+);
+/* enable signal bits
+0 - brightness
+
+*/
+
+
+endmodule

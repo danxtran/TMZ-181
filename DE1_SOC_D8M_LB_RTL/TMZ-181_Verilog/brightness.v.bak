@@ -1,0 +1,31 @@
+module brightness (
+  input clk,
+  input en,
+  input frame_en,
+  input rst,
+  input inc,
+  input dec,
+  input [7:0] R,
+  input [7:0] G,
+  input [7:0] B,
+  output [7:0] outR,
+  output [7:0] outG,
+  output [7:0] outB
+);
+
+reg [3:0] level, level_c; // brightness level
+
+always @(*) begin
+
+  if (rst == 1'b1) begin
+    level_c = 4'h8;
+  end
+end
+
+always @(posedge clk) begin
+  if (en == 1'b1 || rst == 1'b1) begin // only update if enabled or rst is asserted
+    
+  end
+end
+
+endmodule
