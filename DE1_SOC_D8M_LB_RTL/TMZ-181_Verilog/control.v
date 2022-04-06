@@ -6,12 +6,15 @@ module control ( // control module
   input [12:0] row,
   input [12:0] col,
   output [31:0] en, // enable signals ******UPDATE BIT SIZE WHEN FINISHED*****
-  output frame_en,
+  output reg frame_en,
   
   //brightness signals
-  output reg inc, // increase brightness signal
-  output reg dec, // decrease brightness signal
+  output reg binc, // increase brightness signal
+  output reg bdec, // decrease brightness signal
   
+  //contrast signals
+  output reg cinc, // increase contrast signal
+  output reg cdec // decrease contrast signal
 );
 /* enable signal bits
 0 - brightness
@@ -36,11 +39,11 @@ always @(*) begin
   end
 
   //brightness logic
-  inc = 1'b0;
-  dec = 1'b0;
+  binc = 1'b0;
+  bdec = 1'b0;
   if (SW[1] == 1'b1) begin
-    inc = incb;
-	 dec = decb;
+    binc = incb;
+	 bdec = decb;
   end
 
 end
