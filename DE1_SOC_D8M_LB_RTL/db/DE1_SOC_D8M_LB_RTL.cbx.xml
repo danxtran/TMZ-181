@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="DE1_SOC_D8M_LB_RTL">
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|int_line:d1|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_iup1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|int_line:d2|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_iup1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|int_line:d3|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_iup1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
