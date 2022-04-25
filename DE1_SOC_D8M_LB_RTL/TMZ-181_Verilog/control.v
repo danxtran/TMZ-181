@@ -5,7 +5,9 @@ module control ( // control module
   input [3:0] KEY,
   input [12:0] row,
   input [12:0] col,
-  output [31:0] en, // enable signals ******UPDATE BIT SIZE WHEN FINISHED*****
+  input [12:0] x_count,
+  input [12:0] y_count,
+  output reg [31:0] en, // enable signals ******UPDATE BIT SIZE WHEN FINISHED*****
   output reg frame_en,
   
   //brightness signals
@@ -18,7 +20,8 @@ module control ( // control module
 );
 /* enable signal bits
 0 - brightness
-
+1 - wr_en buffer
+2 - shift_en shift reg
 */
 
 // master logic vars & modules
@@ -45,6 +48,21 @@ always @(*) begin
     binc = incb;
 	 bdec = decb;
   end
+  
+  // write en buffer
+  if (col < 640) begin
+		en[1] = 1'b1;
+	end
+	else begin
+		en[1] = 1'b0;
+	end
+	// shift en 
+	if (x_count == 781 && y_count < 528) begin
+		en[2] = 1'b1;
+	end
+	else begin
+		en[2] = 1'b0;
+	end
 
 end
 

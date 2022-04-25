@@ -133,17 +133,6 @@ D8M_SET   ccd (
 
 
 
-RGB_Process p1(
-	.raw_VGA_R(raw_VGA_R),
-	.raw_VGA_G(raw_VGA_G),
-	.raw_VGA_B(raw_VGA_B),
-	.row(row),
-   .col(col),
-	.o_VGA_R(VGA_R),
-	.o_VGA_G(VGA_G),
-	.o_VGA_B(VGA_B)
-);
-
 //---  VGA  --  
 assign VGA_CLK = MIPI_PIXEL_CLK_;//GPIO clk
 assign VGA_SYNC_N = 1'b0;
@@ -157,5 +146,30 @@ assign VGA_HS =	(( x_count > 16 )  &&  (x_count <= 97))?0 :1 ;
 assign VGA_VS =	(( y_count > 10)  &&  (y_count <= 12))?0 :1 ; 
 assign col = x_count - 164;
 assign row = y_count - 47;
+
+// OUR CODE
+reg [7:0] VGA_R_OUT, VGA_G_OUT, VGA_B_OUT;
+assign VGA_R = VGA_R_OUT;
+assign VGA_G = VGA_G_OUT;
+assign VGA_B = VGA_B_OUT;
+
+wire [31:0] enable;
+wire [5119:0] raw_r_buf, raw_g_buf, raw_b_buf, shift_r, shift_g, shift_b;
+
+
+control ctrl(.clk(MIPI_PIXEL_CLK_), .en(enable), .row(row), .col(col), .x_count(x_count), .y_count(y_count),.rst());
+buffer buf_r(.clk(MIPI_PIXEL_CLK_), .rst(), .wr_en(enable[1]), .pixel(raw_VGA_R), .col(col) , .pixel_row(raw_r_buf));
+buffer buf_g(.clk(MIPI_PIXEL_CLK_), .rst(), .wr_en(enable[1]), .pixel(raw_VGA_G), .col(col) , .pixel_row(raw_g_buf));
+buffer buf_b(.clk(MIPI_PIXEL_CLK_), .rst(), .wr_en(enable[1]), .pixel(raw_VGA_B), .col(col) , .pixel_row(raw_b_buf));
+shift_reg sr_r(.clk(MIPI_PIXEL_CLK_), .pixel_row(raw_r_buf), .shift_en(enable[2]), .reg_11(shift_r));
+shift_reg sr_g(.clk(MIPI_PIXEL_CLK_), .pixel_row(raw_g_buf), .shift_en(enable[2]), .reg_11(shift_g));
+shift_reg sr_b(.clk(MIPI_PIXEL_CLK_), .pixel_row(raw_b_buf), .shift_en(enable[2]), .reg_11(shift_b));
+
+always @(*)begin
+	VGA_R_OUT = shift_r[8*col +: 8];
+	VGA_G_OUT = shift_g[8*col +: 8];
+	VGA_B_OUT = shift_b[8*col +: 8];
+	
+end
 
 endmodule
