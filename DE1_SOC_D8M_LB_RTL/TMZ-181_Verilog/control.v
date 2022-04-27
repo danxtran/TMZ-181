@@ -34,6 +34,11 @@ wire incb, decb;
 lvl2pulse INCb (clk, KEY[0], incb);
 lvl2pulse DECb (clk, KEY[1], decb);
 
+// ROMs
+rom11x11 rom1(.clk(clk), .rd_en(), .addr(), .data_out());
+rom5x5 rom2(.clk(clk), .rd_en(), .addr(), .data_out());
+
+
 always @(*) begin
   //master logic
   frame_en_c = 1'b0; // frame enable logic - enables once when switching to new frame
