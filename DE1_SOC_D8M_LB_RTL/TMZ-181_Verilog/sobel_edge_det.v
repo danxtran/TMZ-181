@@ -1,5 +1,6 @@
 module sobel_edge_det( p0, p1, p2, p3, p5, p6, p7, p8, out);
 //p0 - p8 :8 pixel sourding by the target pixel in 3*3 mask
+//input need to be graysacled
 input  [7:0] p0,p1,p2,p3,p5,p6,p7,p8;
 output [7:0] out;				
 
