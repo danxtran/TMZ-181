@@ -94,7 +94,7 @@ assign MIPI_CS_n      = 0;
 //assign I2C_RELEASE    = CAMERA_MIPI_RELAESE & MIPI_BRIDGE_RELEASE; 
 assign CAMERA_I2C_SCL = CAMERA_I2C_SCL_MIPI ;   
  
-//------ MIPI BRIDGE  I2C SETTING--------------- 
+//------ MIPI BRIDGE  I2C SETTING--------------- shift_r
 MIPI_BRIDGE_CAMERA_Config    cfin(
    .RESET_N           ( RESET_N  ), 
    .CLK_50            ( CLOCK_50), 
@@ -157,6 +157,7 @@ wire [31:0] enable;
 wire [5119:0] raw_r_buf, raw_g_buf, raw_b_buf, shift_r, shift_g, shift_b;
 
 
+
 control ctrl(.clk(MIPI_PIXEL_CLK_), .en(enable), .row(row), .col(col), .x_count(x_count), .y_count(y_count),.rst());
 buffer buf_r(.clk(MIPI_PIXEL_CLK_), .rst(), .wr_en(enable[1]), .pixel(raw_VGA_R), .col(col) , .pixel_row(raw_r_buf));
 buffer buf_g(.clk(MIPI_PIXEL_CLK_), .rst(), .wr_en(enable[1]), .pixel(raw_VGA_G), .col(col) , .pixel_row(raw_g_buf));
@@ -164,6 +165,8 @@ buffer buf_b(.clk(MIPI_PIXEL_CLK_), .rst(), .wr_en(enable[1]), .pixel(raw_VGA_B)
 shift_reg sr_r(.clk(MIPI_PIXEL_CLK_), .pixel_row(raw_r_buf), .shift_en(enable[2]), .reg_11(shift_r));
 shift_reg sr_g(.clk(MIPI_PIXEL_CLK_), .pixel_row(raw_g_buf), .shift_en(enable[2]), .reg_11(shift_g));
 shift_reg sr_b(.clk(MIPI_PIXEL_CLK_), .pixel_row(raw_b_buf), .shift_en(enable[2]), .reg_11(shift_b));
+
+gauss gau_filter(.clk(MIPI_PIXEL_CLK_), .row_pixel(shift_r), .col(col),.out_pixel());
 
 always @(*)begin
 	VGA_R_OUT = shift_r[8*col +: 8];
