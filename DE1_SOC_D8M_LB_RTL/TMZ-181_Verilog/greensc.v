@@ -8,5 +8,6 @@ module greensc (
   output [7:0] out_b
 );
   
+  wire signed 
   
 endmodule
