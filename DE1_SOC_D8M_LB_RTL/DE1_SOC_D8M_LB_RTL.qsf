@@ -306,6 +306,15 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 
 
 
+set_global_assignment -name SDC_FILE DE1_SOC_D8M_LB_RTL.sdc
+set_global_assignment -name SOURCE_FILE VGA_Param.h
+set_global_assignment -name VERILOG_FILE rom5x5.v
+set_global_assignment -name VERILOG_FILE DE1_SOC_D8M_LB_RTL.v
+set_global_assignment -name VERILOG_FILE "TMZ-181_Verilog/sobel_edge_det.v"
+set_global_assignment -name VERILOG_FILE "TMZ-181_Verilog/shift_reg.v"
+set_global_assignment -name VERILOG_FILE "TMZ-181_Verilog/rom11x11.v"
+set_global_assignment -name VERILOG_FILE "TMZ-181_Verilog/greensc.v"
+set_global_assignment -name VERILOG_FILE "TMZ-181_Verilog/buffer.v"
 set_global_assignment -name VERILOG_FILE V/vga_pll/vga_pll_0002.v
 set_global_assignment -name QIP_FILE V/vga_pll/vga_pll_0002.qip
 set_global_assignment -name VERILOG_FILE V/vga_pll.v

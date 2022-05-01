@@ -1,5 +1,5 @@
 Flow report for DE1_SOC_D8M_LB_RTL
-Wed Apr 06 16:13:09 2022
+Sat Apr 30 22:37:51 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
 
 
@@ -38,24 +38,29 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+-----------------------------+-------------------------------------------------+
-; Flow Status                 ; Successful - Wed Apr 06 16:13:09 2022           ;
-; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Standard Edition ;
-; Revision Name               ; DE1_SOC_D8M_LB_RTL                              ;
-; Top-level Entity Name       ; DE1_SOC_D8M_LB_RTL                              ;
-; Family                      ; Cyclone V                                       ;
-; Device                      ; 5CSEMA5F31C6                                    ;
-; Timing Models               ; Final                                           ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                       ;
-; Total registers             ; N/A until Partition Merge                       ;
-; Total pins                  ; N/A until Partition Merge                       ;
-; Total virtual pins          ; N/A until Partition Merge                       ;
-; Total block memory bits     ; N/A until Partition Merge                       ;
-; Total PLLs                  ; N/A until Partition Merge                       ;
-; Total DLLs                  ; N/A until Partition Merge                       ;
-+-----------------------------+-------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Flow Summary                                                                      ;
++---------------------------------+-------------------------------------------------+
+; Flow Status                     ; Successful - Sat Apr 30 22:36:27 2022           ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Standard Edition ;
+; Revision Name                   ; DE1_SOC_D8M_LB_RTL                              ;
+; Top-level Entity Name           ; DE1_SOC_D8M_LB_RTL                              ;
+; Family                          ; Cyclone V                                       ;
+; Device                          ; 5CSEMA5F31C6                                    ;
+; Timing Models                   ; Final                                           ;
+; Logic utilization (in ALMs)     ; 22,310 / 32,070 ( 70 % )                        ;
+; Total registers                 ; 16162                                           ;
+; Total pins                      ; 76 / 457 ( 17 % )                               ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 290,960 / 4,065,280 ( 7 % )                     ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                                  ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 1 / 6 ( 17 % )                                  ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                   ;
++---------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -63,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/06/2022 16:12:59 ;
+; Start date & time ; 04/30/2022 22:16:10 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE1_SOC_D8M_LB_RTL  ;
 +-------------------+---------------------+
@@ -74,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 2222737845120.164928677901648          ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 2222737845120.165138217019716          ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -86,29 +91,38 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                          ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:11     ; 1.0                     ; 4808 MB             ; 00:00:23                           ;
-; Total                  ; 00:00:11     ; --                      ; --                  ; 00:00:23                           ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:05:48     ; 1.6                     ; 6975 MB             ; 00:05:32                           ;
+; Fitter               ; 00:13:28     ; 1.3                     ; 8362 MB             ; 00:34:23                           ;
+; Assembler            ; 00:00:29     ; 1.0                     ; 5252 MB             ; 00:00:25                           ;
+; Timing Analyzer      ; 00:01:22     ; 3.0                     ; 6132 MB             ; 00:03:52                           ;
+; Total                ; 00:21:07     ; --                      ; --                  ; 00:44:12                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                      ;
-+------------------------+------------------+------------+------------+----------------+
-; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; DESKTOP-JJ6I1L7  ; Windows 10 ; 10.0       ; x86_64         ;
-+------------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; DESKTOP-JJ6I1L7  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-JJ6I1L7  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-JJ6I1L7  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-JJ6I1L7  ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off DE1_SOC_D8M_LB_RTL -c DE1_SOC_D8M_LB_RTL --analysis_and_elaboration
+quartus_map --read_settings_files=on --write_settings_files=off DE1_SOC_D8M_LB_RTL -c DE1_SOC_D8M_LB_RTL
+quartus_fit --read_settings_files=off --write_settings_files=off DE1_SOC_D8M_LB_RTL -c DE1_SOC_D8M_LB_RTL
+quartus_asm --read_settings_files=off --write_settings_files=off DE1_SOC_D8M_LB_RTL -c DE1_SOC_D8M_LB_RTL
+quartus_sta DE1_SOC_D8M_LB_RTL -c DE1_SOC_D8M_LB_RTL
 
 
 
