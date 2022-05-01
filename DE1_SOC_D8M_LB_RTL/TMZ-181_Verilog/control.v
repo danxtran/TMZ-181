@@ -35,10 +35,10 @@ lvl2pulse INCb (clk, KEY[0], incb);
 lvl2pulse DECb (clk, KEY[1], decb);
 
 // ROMs
-rom11x11 rom1(.clk(clk), .rd_en(), .addr(), .data_out());
-rom5x5 rom2(.clk(clk), .rd_en(), .addr(), .data_out());
+// rom11x11 rom1(.clk(clk), .rd_en(), .addr(), .data_out());
+// rom5x5 rom2(.clk(clk), .rd_en(), .addr(), .data_out());
 
-
+reg [12:0] x_boundary;
 always @(*) begin
   //master logic
   frame_en_c = 1'b0; // frame enable logic - enables once when switching to new frame
@@ -55,14 +55,15 @@ always @(*) begin
   end
   
   // write en buffer
-  if (col < 640) begin
+  if (col < 13'd640) begin
 		en[1] = 1'b1;
 	end
 	else begin
 		en[1] = 1'b0;
 	end
 	// shift en 
-	if (x_count == 781 && y_count < 528) begin
+
+	if (x_count == (13'd781 - SW[9:7]) && y_count < 13'd528) begin
 		en[2] = 1'b1;
 	end
 	else begin
