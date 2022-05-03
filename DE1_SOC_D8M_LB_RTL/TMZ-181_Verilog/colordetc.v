@@ -24,7 +24,10 @@ module colordetc (
   assign out_g = out_reg_g;
   assign out_b = out_reg_b;
   
+  grayscale_unclk grey (in_r,in_g,in_b,out_r,out_g,out_b);
+  
   always @(*) begin
+    /*
     if (in_r[7:6] == 2'b00) begin
       shift_r = {in_r[5:0],2'b00};
     end
@@ -43,22 +46,28 @@ module colordetc (
     else begin
       shift_b = 8'b1111_1111;
     end
-     
+     */
     case (ctrl)
       2'b00: begin //highlight r
+        /*
         out_reg_r = ((redness > thresh)) ? (shift_r) : in_r;
         out_reg_g = ((redness > thresh)) ? (shift_g) : in_g;
         out_reg_b = ((redness > thresh)) ? (shift_b) : in_b;
+        */
+        
+        out_reg_r = ((redness > thresh)) ? (gs) : in_r;
+        out_reg_g = ((redness > thresh)) ? (gs) : in_g;
+        out_reg_b = ((redness > thresh)) ? (gs) : in_b;
       end
       2'b01: begin //highlight g
-        out_reg_r = ((greeness > thresh)) ? (shift_r) : in_r;
-        out_reg_g = ((greeness > thresh)) ? (shift_g) : in_g;
-        out_reg_b = ((greeness > thresh)) ? (shift_b) : in_b;
+        out_reg_r = ((greeness > thresh)) ? (gs) : in_r;
+        out_reg_g = ((greeness > thresh)) ? (gs) : in_g;
+        out_reg_b = ((greeness > thresh)) ? (gs) : in_b;
       end
       2'b10: begin //highlight b
-        out_reg_r = ((blueness > thresh)) ? (shift_r) : in_r;
-        out_reg_g = ((blueness > thresh)) ? (shift_g) : in_g;
-        out_reg_b = ((blueness > thresh)) ? (shift_b) : in_b;
+        out_reg_r = ((blueness > thresh)) ? (gs) : in_r;
+        out_reg_g = ((blueness > thresh)) ? (gs) : in_g;
+        out_reg_b = ((blueness > thresh)) ? (gs) : in_b;
       end
     endcase
   end
