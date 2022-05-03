@@ -63,11 +63,17 @@ always @(*) begin
 	end
 	// shift en 
 
-	if (x_count == (13'd781 - SW[9:7]) && y_count < 13'd528) begin
+	if (x_count == (13'd781) && y_count < (13'd528)) begin
 		en[2] = 1'b1;
 	end
 	else begin
 		en[2] = 1'b0;
+	end
+	// gauss en
+	if(SW[2] == 1'b1)begin
+		en[3] = 1'b1;
+	end else begin
+		en[3] = 1'b0;
 	end
 
 end
