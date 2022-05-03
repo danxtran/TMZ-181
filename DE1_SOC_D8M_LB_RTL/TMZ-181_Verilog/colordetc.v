@@ -13,6 +13,7 @@ module colordetc (
   wire signed [24:0] redness;
   wire signed [24:0] bluewness;
   wire signed [24:0] thresh;
+  wire [7:0] gs;
   reg [7:0] out_reg_r, out_reg_g, out_reg_b, shift_r, shift_g, shift_b;
 
   assign redness = in_r*(in_r-in_g)*(in_r-in_b);
@@ -24,7 +25,7 @@ module colordetc (
   assign out_g = out_reg_g;
   assign out_b = out_reg_b;
   
-  grayscale_unclk grey (in_r,in_g,in_b,out_r,out_g,out_b);
+  grayscale_unclk grey (in_r,in_g,in_b,gs,,);
   
   always @(*) begin
     /*
