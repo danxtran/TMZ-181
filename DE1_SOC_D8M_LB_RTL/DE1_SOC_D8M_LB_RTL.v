@@ -148,7 +148,7 @@ assign col = x_count - 164;
 assign row = y_count - 47;
 
 // OUR CODE
-reg [7:0] VGA_R_OUT, VGA_G_OUT, VGA_B_OUT;
+wire [7:0] VGA_R_OUT, VGA_G_OUT, VGA_B_OUT;
 assign VGA_R = VGA_R_OUT;
 assign VGA_G = VGA_G_OUT;
 assign VGA_B = VGA_B_OUT;
@@ -161,30 +161,16 @@ wire [5119:0] shift_g_11, shift_g_10, shift_g_9, shift_g_8, shift_g_7;
 wire [5119:0] shift_b_11, shift_b_10, shift_b_9, shift_b_8, shift_b_7; 
 
 control ctrl(.clk(MIPI_PIXEL_CLK_), .en(enable), .row(row), .col(col), .x_count(x_count), .y_count(y_count),.rst());
-buffer buf_r(.clk(MIPI_PIXEL_CLK_), .rst(), .wr_en(enable[1]), .pixel(raw_VGA_R), .col(col) , .pixel_row(raw_r_buf));
-buffer buf_g(.clk(MIPI_PIXEL_CLK_), .rst(), .wr_en(enable[1]), .pixel(raw_VGA_G), .col(col) , .pixel_row(raw_g_buf));
-buffer buf_b(.clk(MIPI_PIXEL_CLK_), .rst(), .wr_en(enable[1]), .pixel(raw_VGA_B), .col(col) , .pixel_row(raw_b_buf));
-shift_reg sr_r(.clk(MIPI_PIXEL_CLK_), .pixel_row(raw_r_buf), .shift_en(enable[2]),
-	.reg_7(shift_r_7), .reg_8(shift_r_8), .reg_9(shift_r_9), .reg_10(shift_r_10),.reg_11(shift_r_11));
-shift_reg sr_g(.clk(MIPI_PIXEL_CLK_), .pixel_row(raw_g_buf), .shift_en(enable[2]),
-	.reg_7(shift_g_7), .reg_8(shift_g_8), .reg_9(shift_g_9), .reg_10(shift_g_10),.reg_11(shift_g_11));
-shift_reg sr_b(.clk(MIPI_PIXEL_CLK_), .pixel_row(raw_b_buf), .shift_en(enable[2]),
-	.reg_7(shift_b_7), .reg_8(shift_b_8), .reg_9(shift_b_9), .reg_10(shift_b_10),.reg_11(shift_b_11));
 
-gauss gauss_filter_r(.clk(MIPI_PIXEL_CLK_), .row_pixel1(shift_r_7), .row_pixel2(shift_r_8), .row_pixel3(shift_r_9)
-, .row_pixel4(shift_r_10), .row_pixel5(shift_r_11), .col(col),.out_pixel(VGA_R_OUT));
+gauss gauss_filter_r(.clk(MIPI_PIXEL_CLK_), .r(raw_VGA_R), .g(raw_VGA_G), .b(raw_VGA_B), .col(col), .buff_en(enable[1]),
+							.shift_en(enable[2]), .en_gauss5x5(enable[3]),.out_r(VGA_R_OUT), .out_g(VGA_G_OUT), .out_b(VGA_B_OUT));
+assign LEDR[2] = SW[2] ? 1'b1 : 1'b0;
+//gauss gauss_filter_g(.clk(MIPI_PIXEL_CLK_), .row_pixel1(shift_g_7), .row_pixel2(shift_g_8), .row_pixel3(shift_g_9)
+//, .row_pixel4(shift_g_10), .row_pixel5(shift_g_11), .col(col),.out_pixel(VGA_G_OUT));
+//
+//gauss gauss_filter_b(.clk(MIPI_PIXEL_CLK_), .row_pixel1(shift_b_7), .row_pixel2(shift_b_8), .row_pixel3(shift_b_9)
+//, .row_pixel4(shift_b_10), .row_pixel5(shift_b_11), .col(col),.out_pixel(VGA_B_OUT));
 
-gauss gauss_filter_g(.clk(MIPI_PIXEL_CLK_), .row_pixel1(shift_g_7), .row_pixel2(shift_g_8), .row_pixel3(shift_g_9)
-, .row_pixel4(shift_g_10), .row_pixel5(shift_g_11), .col(col),.out_pixel(VGA_G_OUT));
 
-gauss gauss_filter_b(.clk(MIPI_PIXEL_CLK_), .row_pixel1(shift_b_7), .row_pixel2(shift_b_8), .row_pixel3(shift_b_9)
-, .row_pixel4(shift_b_10), .row_pixel5(shift_b_11), .col(col),.out_pixel(VGA_B_OUT));
-
-//always @(*)begin
-//	VGA_R_OUT = shift_r[8*col +: 8];
-//	VGA_G_OUT = shift_g[8*col +: 8];
-//	VGA_B_OUT = shift_b[8*col +: 8];
-//	
-//end
 
 endmodule
