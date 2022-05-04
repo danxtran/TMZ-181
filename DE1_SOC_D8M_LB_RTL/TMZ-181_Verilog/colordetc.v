@@ -12,14 +12,17 @@ module colordetc (
   wire signed [24:0] greeness;
   wire signed [24:0] redness;
   wire signed [24:0] bluewness;
-  wire signed [24:0] thresh;
+  wire signed [24:0] thresh_g,thresh_r,thresh_b;
   wire [7:0] gs;
   reg [7:0] out_reg_r, out_reg_g, out_reg_b, shift_r, shift_g, shift_b;
 
   assign redness = in_r*(in_r-in_g)*(in_r-in_b);
   assign greeness = in_g*(in_g-in_r)*(in_g-in_b);
   assign blueness = in_b*(in_b-in_r)*(in_b-in_g);
-  assign thresh = 25'b0_0000_0001_0100_0011_1101_1010;
+  assign thresh_g = 25'b0_0000_0001_0100_0011_1101_1010;
+  assign thresh_r = 25'b0_0001_1110_0100_0011_1101_1010;
+  //assign thresh_b = 25'b0_0000_0000_00000000_1101_1010;
+  assign thresh_b =0;
  
   assign out_r = out_reg_r;
   assign out_g = out_reg_g;
@@ -56,20 +59,26 @@ module colordetc (
         out_reg_b = ((redness > thresh)) ? (shift_b) : in_b;
         */
         
-        out_reg_r = ((redness > thresh)) ? (gs) : in_r;
-        out_reg_g = ((redness > thresh)) ? (gs) : in_g;
-        out_reg_b = ((redness > thresh)) ? (gs) : in_b;
+        out_reg_r = ((greeness > thresh_g)) ? (in_r) : gs;
+        out_reg_g = ((greeness > thresh_g)) ? (in_g) : gs;
+        out_reg_b = ((greeness > thresh_g)) ? (in_b) : gs;
       end
       2'b01: begin //highlight g
-        out_reg_r = ((greeness > thresh)) ? (gs) : in_r;
-        out_reg_g = ((greeness > thresh)) ? (gs) : in_g;
-        out_reg_b = ((greeness > thresh)) ? (gs) : in_b;
+        
+		  out_reg_r = ((redness > thresh_r)) ? (in_r) : gs;
+        out_reg_g = ((redness > thresh_r)) ? (in_g) : gs;
+        out_reg_b = ((redness > thresh_r)) ? (in_b) : gs;
       end
       2'b10: begin //highlight b
-        out_reg_r = ((blueness > thresh)) ? (gs) : in_r;
-        out_reg_g = ((blueness > thresh)) ? (gs) : in_g;
-        out_reg_b = ((blueness > thresh)) ? (gs) : in_b;
+        out_reg_r = ((blueness > thresh_b)) ? (in_r) : gs;
+        out_reg_g = ((blueness > thresh_b)) ? (in_g) : gs;
+        out_reg_b = ((blueness > thresh_b)) ? (in_b) : gs;
       end
+		default :begin
+			out_reg_r = in_r;
+        out_reg_g = in_g;
+        out_reg_b = in_b;
+		  end
     endcase
   end
   
