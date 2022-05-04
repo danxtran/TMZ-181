@@ -1,3 +1,5 @@
+`timescale 1 ns/10 ps  // time-unit = 1 ns, precision = 10 ps
+
 module grayscale (
   input clk,
   input rst,

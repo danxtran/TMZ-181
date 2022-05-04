@@ -1,3 +1,5 @@
+`timescale 1 ns/10 ps  // time-unit = 1 ns, precision = 10 ps
+
 module colordetc (
   input [3:0] clr_sel,
   input [7:0] in_r,

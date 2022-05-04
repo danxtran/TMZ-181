@@ -1,3 +1,5 @@
+`timescale 1 ns/10 ps  // time-unit = 1 ns, precision = 10 ps
+
 module contrast (
   input clk,
   input enable, // master enable
@@ -25,9 +27,9 @@ contrast_logic cg (G, level, Gp);
 contrast_logic cb (B, level, Bp);
 
 //saturation handling
-saturate r (Rp[7:0], Rs);
-saturate g (Gp[7:0], Gs);
-saturate b (Bp[7:0], Bs);
+saturate r (Rp[9:0], Rs);
+saturate g (Gp[9:0], Gs);
+saturate b (Bp[9:0], Bs);
 
 
 always @(*) begin

@@ -46,6 +46,7 @@ lvl2pulse DECc (clk, KEY[3], decc);
 // ROMs
 // rom11x11 rom1(.clk(clk), .rd_en(), .addr(), .data_out());
 // rom5x5 rom2(.clk(clk), .rd_en(), .addr(), .data_out());
+reg clr1, clr2, clr3, clr4;
 
 reg [12:0] x_boundary;
 always @(*) begin
@@ -103,30 +104,19 @@ always @(*) begin
 //		en_c[3] = 1'b0;
 //	end
 	// color detect on
+	clr1 = 1'b0;
+	clr2 = 1'b0;
+	clr3 = 1'b0;
+	clr4 = 1'b0;
+	
 	if(SW[5] == 1'b1)begin
-		if(KEY[0] == 1'b1)begin
-			clr_sel[3:0] = 4'b0001;
-
-		end 
-		if (KEY[1] == 1'b1) begin
-			clr_sel[3:0] = 4'b0010;
-
-		end 
-		if (KEY[2] == 1'b1) begin
-			clr_sel[3:0] = 4'b0100;
-
-		end 
-		if (KEY[3] == 1'b1) begin
-			clr_sel[3:0] = 4'b1000;
-
-		end else begin
-			clr_sel[3:0] = 4'b0000;
-
-		end
-	end else begin
-		clr_sel[3:0] = 4'b0;
-
+		 clr1 = incb;
+		 clr2 = decb;
+		 clr3 = incc;
+		 clr4 = decc;
 	end
+	
+	clr_sel = {clr4, clr3, clr2, clr1};
 	
 end
 
