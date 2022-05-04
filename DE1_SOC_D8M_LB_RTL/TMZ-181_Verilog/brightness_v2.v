@@ -86,7 +86,7 @@ module brightness (
     wire up,down;
     
     key_up_down kuo (.clk(clk),.key(ctrl[1]),.reset(reset),.pressed(up));
-    key_up_down kdw (.clk(clk),.key(ctrl[1]),.reset(reset),.pressed(down));
+    key_up_down kdw (.clk(clk),.key(ctrl[0]),.reset(reset),.pressed(down));
     
     always @(posedge clk) begin
         count <= #1 count_c;
