@@ -163,7 +163,8 @@ wire [5119:0] shift_b_11, shift_b_10, shift_b_9, shift_b_8, shift_b_7;
 control ctrl(.clk(MIPI_PIXEL_CLK_), .en(enable), .row(row), .col(col), .x_count(x_count), .y_count(y_count),.rst());
 
 gauss gauss_filter_r(.clk(MIPI_PIXEL_CLK_), .r(raw_VGA_R), .g(raw_VGA_G), .b(raw_VGA_B), .col(col), .buff_en(enable[1]),
-							.shift_en(enable[2]), .en_gauss5x5(enable[3]),.out_r(VGA_R_OUT), .out_g(VGA_G_OUT), .out_b(VGA_B_OUT));
+							.shift_en(enable[2]), .en_gauss5x5(enable[3]), .filt_sel(SW[9:8])),
+							,.out_r(VGA_R_OUT), .out_g(VGA_G_OUT), .out_b(VGA_B_OUT));
 assign LEDR[2] = SW[2] ? 1'b1 : 1'b0;
 //gauss gauss_filter_g(.clk(MIPI_PIXEL_CLK_), .row_pixel1(shift_g_7), .row_pixel2(shift_g_8), .row_pixel3(shift_g_9)
 //, .row_pixel4(shift_g_10), .row_pixel5(shift_g_11), .col(col),.out_pixel(VGA_G_OUT));
