@@ -1,3 +1,5 @@
+`timescale 1 ns/10 ps  // time-unit = 1 ns, precision = 10 ps
+
 module brightness (
   input clk,
   input enable, // master enable
@@ -16,9 +18,8 @@ module brightness (
 
 reg [3:0] level, level_c; // brightness level
 reg [12:0] Rp, Gp, Bp; // resulting products
-reg [7:0] Rs, Gs, Bs; // saturated values
+wire [7:0] Rs, Gs, Bs; // saturated values
 reg en, en_c; // enable stuff
-
 
 //saturation handling
 saturate r (Rp[12:3], Rs);
@@ -37,39 +38,43 @@ always @(*) begin
   Rp = R * level;
   Gp = G * level;
   Bp = B * level;
+  level_c = 4'b1000;
   
   if (en == 1'b1) begin // logic if module enabled
     // level handling
-    if (level_c == level) begin
-      if (inc == 1'b1 && level < 4'hF) begin
-	     level_c = level + 1'b1;
-	   end
-	   else if (dec == 1'b1 && level > 4'h0) begin
-	     level_c = level - 1'b1;
-	   end
-    end
-    //output saturated values
-    outR = Rs;
-	 outG = Gs;
-	 outB = Bs;
+		if (inc == 1'b1 && level < 4'hF) begin
+			  level_c = level + 1'b1;
+			end
+		else if (dec == 1'b1 && level > 4'h0) begin
+		  level_c = level - 1'b1;
+		end
+		else begin
+			level_c = level;
+		 end
+
+		 //output saturated values
+		 outR = Rs;
+		 outG = Gs;
+		 outB = Bs;
   end
-  
+  else level_c = level;
   if (rst == 1'b1) begin // reset logic
     level_c = 4'h8;
 	 en_c = 1'b0;
   end
+  
 end
 
 
 always @(posedge clk) begin
-  if (frame_en == 1'b1 || rst == 1'b1) begin // module enable logic
+//  if (frame_en == 1'b1 || rst == 1'b1) begin // module enable logic
     en <= #1 en_c;
-  end
+//  end
 
   if (en == 1'b1 || rst == 1'b1) begin // only update if enabled or rst is asserted
-    if (frame_en == 1'b1 || rst == 1'b1) begin
+//    if (frame_en == 1'b1 || rst == 1'b1) begin
 	   level <= #1 level_c; // update brightness level when new frame arrives
-	 end
+//	 end
   end
 end
 

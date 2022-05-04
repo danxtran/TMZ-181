@@ -15,8 +15,8 @@ module contrast (
 
 
 reg [3:0] level, level_c; // contrast level
-reg [12:0] Rp, Gp, Bp; // resulting products
-reg [7:0] Rs, Gs, Bs; // saturated values
+wire [12:0] Rp, Gp, Bp; // resulting products
+wire [7:0] Rs, Gs, Bs; // saturated values
 reg en, en_c; // enable stuff
 
 // contrast calculations
@@ -25,9 +25,9 @@ contrast_logic cg (G, level, Gp);
 contrast_logic cb (B, level, Bp);
 
 //saturation handling
-saturate r (Rp[12:3], Rs);
-saturate g (Gp[12:3], Gs);
-saturate b (Bp[12:3], Bs);
+saturate r (Rp[7:0], Rs);
+saturate g (Gp[7:0], Gs);
+saturate b (Bp[7:0], Bs);
 
 
 always @(*) begin
@@ -37,38 +37,43 @@ always @(*) begin
   outG = G;
   outB = B;
   
+  level_c = 4'b1000;
+  
   if (en == 1'b1) begin // logic if module enabled
     // level handling
-    if (level_c == level) begin
-      if (inc == 1'b1 && level < 4'hF) begin
-	     level_c = level + 1'b1;
-	   end
-	   else if (dec == 1'b1 && level > 4'h0) begin
-	     level_c = level - 1'b1;
-	   end
-    end
-    //output saturated values
-    outR = Rs;
-	 outG = Gs;
-	 outB = Bs;
+		if (inc == 1'b1 && level < 4'hF) begin
+			  level_c = level + 1'b1;
+			end
+		else if (dec == 1'b1 && level > 4'h0) begin
+		  level_c = level - 1'b1;
+		end
+		else begin
+			level_c = level;
+		 end
+
+		 //output saturated values
+		 outR = Rs;
+		 outG = Gs;
+		 outB = Bs;
   end
-  
+  else level_c = level;
   if (rst == 1'b1) begin // reset logic
     level_c = 4'h8;
 	 en_c = 1'b0;
   end
+  
 end
 
 
 always @(posedge clk) begin
-  if (frame_en == 1'b1 || rst == 1'b1) begin // module enable logic
+//  if (frame_en == 1'b1 || rst == 1'b1) begin // module enable logic
     en <= #1 en_c;
-  end
+//  end
 
   if (en == 1'b1 || rst == 1'b1) begin // only update if enabled or rst is asserted
-    if (frame_en == 1'b1 || rst == 1'b1) begin
+//    if (frame_en == 1'b1 || rst == 1'b1) begin
 	   level <= #1 level_c; // update contrast level when new frame arrives
-	 end
+//	 end
   end
 end
 
@@ -78,7 +83,7 @@ endmodule
 
 module contrast_logic ( // used to calculate values for contrast module
   input [7:0] in,
-  input level,
+  input [3:0] level,
   output reg [12:0] out
 );
 
@@ -91,10 +96,13 @@ always @(*) begin
   out = in; // middle values don't change
   
   if (in > MID) begin // logic for higher values
-    out = MID + (high * level);
+    out = MID + ((high * level)>>3);
   end
-  else if (in > MID) begin // logic for smaller values
-    out = MID + (low * level);
+  else if (in < MID) begin // logic for smaller values
+    out = 13'h0000;
+	 if (((low * level)>>3) <= MID) begin
+	   out = MID - ((low * level)>>3);
+	 end
   end
   
 end

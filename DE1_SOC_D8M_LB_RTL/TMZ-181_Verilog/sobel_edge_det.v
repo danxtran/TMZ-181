@@ -6,7 +6,7 @@ input clk,
 input [12:0] col,
 input buff_en,
 input shift_en,
-output [7:0] out;				
+output [7:0] out			
  );
 wire signed [10:0] gx,gy;    
 reg signed [10:0] abs_gx,abs_gy;	
@@ -55,7 +55,7 @@ always @(*) begin
 end
 
 assign sum = (abs_gx+abs_gy);				// finding the sum
-assign sat_sum = (|sum[10:8])?8'hff : sum[7:0];	// saturation
+assign sat_sum = (sum[10:8])?8'hff : sum[7:0];	// saturation
 
 always @(*) begin
     if (sat_sum <= 8'b0010011) begin

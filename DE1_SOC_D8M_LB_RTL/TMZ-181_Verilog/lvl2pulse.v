@@ -1,3 +1,5 @@
+`timescale 1 ns/10 ps  // time-unit = 1 ns, precision = 10 ps
+
 module lvl2pulse ( // simple level to pulse generator
   input clk,
   input in,
