@@ -12,12 +12,11 @@ output reg [7:0] out_r, out_g, out_b
 
 
 reg [20:0] tmp_1[2:0]; //, tmp_g1, tmp_b1;
-reg [28:0] tmp_2[2:0]; //tmp_g2, tmp_b2 ;
 reg [7:0] buff [639:0] [2:0];
 reg [7:0] shift [10:0] [639:0] [2:0];
-saturate satr(.in(tmp_1[0][19:10]), .out(gauss_r));
-saturate satb(.in(tmp_1[1][19:10]), .out(gauss_g));
-saturate satg(.in(tmp_1[2][19:10]), .out(gauss_b));
+saturate satr(.in(tmp_1[0][17:8]), .out(gauss_r));
+saturate satb(.in(tmp_1[1][17:8]), .out(gauss_g));
+saturate satg(.in(tmp_1[2][17:8]), .out(gauss_b));
 wire [7:0] gauss_r, gauss_g, gauss_b;
 
 integer color, column;
@@ -34,7 +33,7 @@ always @(*) begin
 		out_b = gauss_b;
 	end
 end
-always @(col) begin
+always @(posedge clk) begin
 	for(temp3 = 0; temp3 <= 2; temp3 = temp3 + 1) begin
 		tmp_1[temp3] = 21'b0;
 		for(temp2 = 0; temp2 <= 4; temp2 = temp2 + 1) begin
@@ -155,31 +154,31 @@ always @(posedge clk) begin
 end
 
 	initial begin 
-		mem[0][0] = 8'b00000001;
-		mem[0][1] = 8'b00000100;
-		mem[0][2] = 8'b00000110;
-		mem[0][3] = 8'b00000100;
-		mem[0][4] = 8'b00000001;
-		mem[1][0] = 8'b00000100;
-		mem[1][1] = 8'b00001111;
-		mem[1][2] = 8'b00011000;
-		mem[1][3] = 8'b00001111;
-		mem[1][4] = 8'b00000100;
-		mem[2][0] = 8'b00000110;
-		mem[2][1] = 8'b00011000;
-		mem[2][2] = 8'b00100110;
-		mem[2][3] = 8'b00011000;
-		mem[2][4] = 8'b00000110;
-		mem[3][0] = 8'b00000100;
-		mem[3][1] = 8'b00001111;
-		mem[3][2] = 8'b00011000;
-		mem[3][3] = 8'b00001111;
-		mem[3][4] = 8'b00000100;
-		mem[4][0] = 8'b00000001;
-		mem[4][1] = 8'b00000100;
-		mem[4][2] = 8'b00000110;
-		mem[4][3] = 8'b00000100;
-		mem[4][4] = 8'b00000001;
+		mem[0][0] = 8'b00001001;
+		mem[0][1] = 8'b00001010;
+		mem[0][2] = 8'b00001010;
+		mem[0][3] = 8'b00001010;
+		mem[0][4] = 8'b00001001;
+		mem[1][0] = 8'b00001010;
+		mem[1][1] = 8'b00001011;
+		mem[1][2] = 8'b00001011;
+		mem[1][3] = 8'b00001011;
+		mem[1][4] = 8'b00001010;
+		mem[2][0] = 8'b00001010;
+		mem[2][1] = 8'b00001011;
+		mem[2][2] = 8'b00001011;
+		mem[2][3] = 8'b00001011;
+		mem[2][4] = 8'b00001010;
+		mem[3][0] = 8'b00001010;
+		mem[3][1] = 8'b00001011;
+		mem[3][2] = 8'b00001011;
+		mem[3][3] = 8'b00001011;
+		mem[3][4] = 8'b00001010;
+		mem[4][0] = 8'b00001001;
+		mem[4][1] = 8'b00001010;
+		mem[4][2] = 8'b00001010;
+		mem[4][3] = 8'b00001010;
+		mem[4][4] = 8'b00001001;
 	end
 	
 
