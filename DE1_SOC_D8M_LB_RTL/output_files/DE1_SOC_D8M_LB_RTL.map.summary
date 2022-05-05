@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sat Apr 30 22:22:10 2022
+Analysis & Synthesis Status : Successful - Wed May 04 17:53:30 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Standard Edition
 Revision Name : DE1_SOC_D8M_LB_RTL
 Top-level Entity Name : DE1_SOC_D8M_LB_RTL
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 15973
+Total registers : 605
 Total pins : 76
 Total virtual pins : 0
-Total block memory bits : 291,840
+Total block memory bits : 138,240
 Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

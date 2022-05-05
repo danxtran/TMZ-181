@@ -4,18 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "VGA_CLK",
-					"strict" : false
-				},
-				{
-					"name" : "CAMERA_PWDN_n",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_RESET_n",
-					"strict" : false
-				},
-				{
 					"name" : "VGA_BLANK_N",
 					"strict" : false
 				},
@@ -49,6 +37,10 @@
 				},
 				{
 					"name" : "VGA_B[7]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_CLK",
 					"strict" : false
 				},
 				{
@@ -124,11 +116,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_I2C_SCL",
+					"name" : "CAMERA_PWDN_n",
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_I2C_SDA",
+					"name" : "MIPI_RESET_n",
 					"strict" : false
 				},
 				{
@@ -140,6 +132,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "MIPI_I2C_SCL",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_I2C_SDA",
+					"strict" : false
+				},
+				{
 					"name" : "MIPI_PIXEL_CLK",
 					"strict" : false
 				},
@@ -148,15 +148,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
-					"strict" : false
-				},
-				{
 					"name" : "MIPI_PIXEL_HS",
 					"strict" : false
 				},
 				{
 					"name" : "MIPI_PIXEL_VS",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
