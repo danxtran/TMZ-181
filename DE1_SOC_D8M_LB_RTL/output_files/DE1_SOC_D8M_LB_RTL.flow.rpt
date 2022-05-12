@@ -1,5 +1,5 @@
 Flow report for DE1_SOC_D8M_LB_RTL
-Wed May 04 17:54:59 2022
+Wed May 11 18:31:41 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Wed May 04 17:54:44 2022           ;
+; Flow Status                     ; Successful - Wed May 11 18:31:30 2022           ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Standard Edition ;
 ; Revision Name                   ; DE1_SOC_D8M_LB_RTL                              ;
 ; Top-level Entity Name           ; DE1_SOC_D8M_LB_RTL                              ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CSEMA5F31C6                                    ;
 ; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 965 / 32,070 ( 3 % )                            ;
-; Total registers                 ; 652                                             ;
+; Logic utilization (in ALMs)     ; 1,086 / 32,070 ( 3 % )                          ;
+; Total registers                 ; 676                                             ;
 ; Total pins                      ; 76 / 457 ( 17 % )                               ;
 ; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 138,240 / 4,065,280 ( 3 % )                     ;
+; Total block memory bits         ; 291,840 / 4,065,280 ( 7 % )                     ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                                  ;
 ; Total HSSI RX PCSs              ; 0                                               ;
 ; Total HSSI PMA RX Deserializers ; 0                                               ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/04/2022 17:53:04 ;
+; Start date & time ; 05/11/2022 18:29:54 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE1_SOC_D8M_LB_RTL  ;
 +-------------------+---------------------+
@@ -82,7 +82,7 @@ https://fpgasoftware.intel.com/eula.
 ; ALLOW_ANY_RAM_SIZE_FOR_RECOGNITION                 ; On                                     ; Off           ; --          ; --         ;
 ; ALLOW_ANY_ROM_SIZE_FOR_RECOGNITION                 ; On                                     ; Off           ; --          ; --         ;
 ; ALLOW_ANY_SHIFT_REGISTER_SIZE_FOR_RECOGNITION      ; On                                     ; Off           ; --          ; --         ;
-; COMPILER_SIGNATURE_ID                              ; 2222737845120.165171198419720          ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                              ; 2222737845120.165231899418692          ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP                             ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP                             ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                                    ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -102,11 +102,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:27     ; 1.0                     ; 4887 MB             ; 00:00:39                           ;
-; Fitter               ; 00:01:02     ; 1.1                     ; 6803 MB             ; 00:02:21                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 4865 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:14     ; 1.6                     ; 5232 MB             ; 00:00:13                           ;
-; Total                ; 00:01:51     ; --                      ; --                  ; 00:03:20                           ;
+; Analysis & Synthesis ; 00:00:26     ; 1.0                     ; 4903 MB             ; 00:00:39                           ;
+; Fitter               ; 00:00:58     ; 1.1                     ; 6817 MB             ; 00:02:12                           ;
+; Assembler            ; 00:00:08     ; 1.0                     ; 4886 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:10     ; 1.7                     ; 5240 MB             ; 00:00:15                           ;
+; Total                ; 00:01:42     ; --                      ; --                  ; 00:03:13                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
