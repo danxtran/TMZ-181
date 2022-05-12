@@ -3,8 +3,10 @@ module rowRam(
 	input wr_en,
 	input [9:0] addr,
 	input [9:0] rd_adr,
+	input [9:0] rd_adr2,
 	input [23:0] data_in,
-	output reg [23:0] data_out
+	output reg [23:0] data_out,
+	output reg [23:0] data_out2
 );
 	reg [23:0] mem [639:0];
 //	assign data_out = mem[addr];
