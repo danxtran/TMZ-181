@@ -1,0 +1,15 @@
+module shift_adr (
+	input [9:0] ref,
+	input [9:0] max,
+	output [9:0] adr0,
+	output [9:0] adr1,
+	output [9:0] adr2,
+	output [9:0] adr3,
+	output [9:0] adr4,
+	output [9:0] adr5,
+	output [9:0] adr6,
+	output [9:0] adr7,
+	output [9:0] adr8,
+	output [9:0] adr9,
+	output [9:0] adr10
+);

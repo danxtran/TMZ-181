@@ -160,7 +160,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_PIXEL_D[6]",
+					"name" : "SW[9]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[8]",
 					"strict" : false
 				},
 				{
@@ -172,7 +176,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_PIXEL_D[8]",
+					"name" : "MIPI_PIXEL_D[6]",
 					"strict" : false
 				},
 				{

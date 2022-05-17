@@ -1,3 +1,5 @@
+`timescale 1 ns/10 ps  // time-unit = 1 ns, precision = 10 ps
+
 (* multstyle = "logic" *)
 module gauss(
 input clk,
@@ -5,7 +7,7 @@ input [7:0] r, b , g,
 input [12:0] col,
 input [12:0] x_count,
 input en,
-input filt_sel,
+input [1:0] filt_sel,
 output [7:0] out_r, out_g, out_b
 
 );
@@ -49,13 +51,13 @@ reg [7:0]  coeff_r0c0, coeff_r0c1, coeff_r0c2, coeff_r0c3, coeff_r0c4, coeff_r0c
 				coeff_r10c0, coeff_r10c1, coeff_r10c2, coeff_r10c3, coeff_r10c4, coeff_r10c5, coeff_r10c6, coeff_r10c7, coeff_r10c8, coeff_r10c9, coeff_r10c10;
 	
 
-
-saturate satr(.in(sumR[13:4]), .out(out_r));
-saturate satb(.in(sumG[13:4]), .out(out_g));
-saturate satg(.in(sumB[13:4]), .out(out_b));
-
-
 reg [23:0] sumR, sumG, sumB;
+
+saturate satr(.in(sumR[17:8]), .out(out_r));
+saturate satb(.in(sumG[17:8]), .out(out_g));
+saturate satg(.in(sumB[17:8]), .out(out_b));
+
+
 
 
 wire [23:0] row0_out, row1_out, row2_out, row3_out, row4_out, row5_out, row6_out, row7_out, row8_out, row9_out, row10_out;
@@ -105,7 +107,7 @@ shift_reg c10 (.pixel(shift_reg_in10), .clk(clk), .shift_en(shift_en),.reg_0(r10
 always @(posedge clk) begin
 
 //------------------------- RED ----------------------
-sumR = r0c0[23:16] * coeff_r0c0 +r0c1[23:16] * coeff_r0c1 +r0c2[23:16] * coeff_r0c2 +r0c3[23:16] * coeff_r0c3 +r0c4[23:16] * coeff_r0c4 +r0c5[23:16] * coeff_r0c5 +r0c6[23:16] * coeff_r0c6 +r0c7[23:16] * coeff_r0c7 +r0c8[23:16] * coeff_r0c8 +r0c9[23:16] * coeff_r0c9 +r0c10[23:16] * coeff_r0c10 +
+sumR = 24'h000000 + r0c0[23:16] * coeff_r0c0 +r0c1[23:16] * coeff_r0c1 +r0c2[23:16] * coeff_r0c2 +r0c3[23:16] * coeff_r0c3 +r0c4[23:16] * coeff_r0c4 +r0c5[23:16] * coeff_r0c5 +r0c6[23:16] * coeff_r0c6 +r0c7[23:16] * coeff_r0c7 +r0c8[23:16] * coeff_r0c8 +r0c9[23:16] * coeff_r0c9 +r0c10[23:16] * coeff_r0c10 +
 r1c0[23:16] * coeff_r1c0 +r1c1[23:16] * coeff_r1c1 +r1c2[23:16] * coeff_r1c2 +r1c3[23:16] * coeff_r1c3 +r1c4[23:16] * coeff_r1c4 +r1c5[23:16] * coeff_r1c5 +r1c6[23:16] * coeff_r1c6 +r1c7[23:16] * coeff_r1c7 +r1c8[23:16] * coeff_r1c8 +r1c9[23:16] * coeff_r1c9 +r1c10[23:16] * coeff_r1c10 +
 r2c0[23:16] * coeff_r2c0 +r2c1[23:16] * coeff_r2c1 +r2c2[23:16] * coeff_r2c2 +r2c3[23:16] * coeff_r2c3 +r2c4[23:16] * coeff_r2c4 +r2c5[23:16] * coeff_r2c5 +r2c6[23:16] * coeff_r2c6 +r2c7[23:16] * coeff_r2c7 +r2c8[23:16] * coeff_r2c8 +r2c9[23:16] * coeff_r2c9 +r2c10[23:16] * coeff_r2c10 +
 r3c0[23:16] * coeff_r3c0 +r3c1[23:16] * coeff_r3c1 +r3c2[23:16] * coeff_r3c2 +r3c3[23:16] * coeff_r3c3 +r3c4[23:16] * coeff_r3c4 +r3c5[23:16] * coeff_r3c5 +r3c6[23:16] * coeff_r3c6 +r3c7[23:16] * coeff_r3c7 +r3c8[23:16] * coeff_r3c8 +r3c9[23:16] * coeff_r3c9 +r3c10[23:16] * coeff_r3c10 +
@@ -118,7 +120,7 @@ r9c0[23:16] * coeff_r9c0 +r9c1[23:16] * coeff_r9c1 +r9c2[23:16] * coeff_r9c2 +r9
 r10c0[23:16] * coeff_r10c0 +r10c1[23:16] * coeff_r10c1 +r10c2[23:16] * coeff_r10c2 +r10c3[23:16] * coeff_r10c3 +r10c4[23:16] * coeff_r10c4 +r10c5[23:16] * coeff_r10c5 +r10c6[23:16] * coeff_r10c6 +r10c7[23:16] * coeff_r10c7 +r10c8[23:16] * coeff_r10c8 +r10c9[23:16] * coeff_r10c9 +r10c10[23:16] * coeff_r10c10;
 
 //------------------------- GREEN ----------------------
-sumG = r0c0[15:8] * coeff_r0c0 + r0c1[15:8] * coeff_r0c1 + r0c2[15:8] * coeff_r0c2 + r0c3[15:8] * coeff_r0c3 + r0c4[15:8] * coeff_r0c4 + r0c5[15:8] * coeff_r0c5 + r0c6[15:8] * coeff_r0c6 + r0c7[15:8] * coeff_r0c7 + r0c8[15:8] * coeff_r0c8 + r0c9[15:8] * coeff_r0c9 + r0c10[15:8] * coeff_r0c10 + 
+sumG = 24'h000000 + r0c0[15:8] * coeff_r0c0 + r0c1[15:8] * coeff_r0c1 + r0c2[15:8] * coeff_r0c2 + r0c3[15:8] * coeff_r0c3 + r0c4[15:8] * coeff_r0c4 + r0c5[15:8] * coeff_r0c5 + r0c6[15:8] * coeff_r0c6 + r0c7[15:8] * coeff_r0c7 + r0c8[15:8] * coeff_r0c8 + r0c9[15:8] * coeff_r0c9 + r0c10[15:8] * coeff_r0c10 + 
 r1c0[15:8] * coeff_r1c0 + r1c1[15:8] * coeff_r1c1 + r1c2[15:8] * coeff_r1c2 + r1c3[15:8] * coeff_r1c3 + r1c4[15:8] * coeff_r1c4 + r1c5[15:8] * coeff_r1c5 + r1c6[15:8] * coeff_r1c6 + r1c7[15:8] * coeff_r1c7 + r1c8[15:8] * coeff_r1c8 + r1c9[15:8] * coeff_r1c9 + r1c10[15:8] * coeff_r1c10 + 
 r2c0[15:8] * coeff_r2c0 + r2c1[15:8] * coeff_r2c1 + r2c2[15:8] * coeff_r2c2 + r2c3[15:8] * coeff_r2c3 + r2c4[15:8] * coeff_r2c4 + r2c5[15:8] * coeff_r2c5 + r2c6[15:8] * coeff_r2c6 + r2c7[15:8] * coeff_r2c7 + r2c8[15:8] * coeff_r2c8 + r2c9[15:8] * coeff_r2c9 + r2c10[15:8] * coeff_r2c10 + 
 r3c0[15:8] * coeff_r3c0 + r3c1[15:8] * coeff_r3c1 + r3c2[15:8] * coeff_r3c2 + r3c3[15:8] * coeff_r3c3 + r3c4[15:8] * coeff_r3c4 + r3c5[15:8] * coeff_r3c5 + r3c6[15:8] * coeff_r3c6 + r3c7[15:8] * coeff_r3c7 + r3c8[15:8] * coeff_r3c8 + r3c9[15:8] * coeff_r3c9 + r3c10[15:8] * coeff_r3c10 + 
@@ -131,7 +133,7 @@ r9c0[15:8] * coeff_r9c0 + r9c1[15:8] * coeff_r9c1 + r9c2[15:8] * coeff_r9c2 + r9
 r10c0[15:8] * coeff_r10c0 + r10c1[15:8] * coeff_r10c1 + r10c2[15:8] * coeff_r10c2 + r10c3[15:8] * coeff_r10c3 + r10c4[15:8] * coeff_r10c4 + r10c5[15:8] * coeff_r10c5 + r10c6[15:8] * coeff_r10c6 + r10c7[15:8] * coeff_r10c7 + r10c8[15:8] * coeff_r10c8 + r10c9[15:8] * coeff_r10c9 + r10c10[15:8] * coeff_r10c10; 
 
 //------------------------ BLUE ------------------------
-sumB = r0c0[7:0] * coeff_r0c0 + r0c1[7:0] * coeff_r0c1 + r0c2[7:0] * coeff_r0c2 + r0c3[7:0] * coeff_r0c3 + r0c4[7:0] * coeff_r0c4 + r0c5[7:0] * coeff_r0c5 + r0c6[7:0] * coeff_r0c6 + r0c7[7:0] * coeff_r0c7 + r0c8[7:0] * coeff_r0c8 + r0c9[7:0] * coeff_r0c9 + r0c10[7:0] * coeff_r0c10 + 
+sumB = 24'h000000 + r0c0[7:0] * coeff_r0c0 + r0c1[7:0] * coeff_r0c1 + r0c2[7:0] * coeff_r0c2 + r0c3[7:0] * coeff_r0c3 + r0c4[7:0] * coeff_r0c4 + r0c5[7:0] * coeff_r0c5 + r0c6[7:0] * coeff_r0c6 + r0c7[7:0] * coeff_r0c7 + r0c8[7:0] * coeff_r0c8 + r0c9[7:0] * coeff_r0c9 + r0c10[7:0] * coeff_r0c10 + 
 r1c0[7:0] * coeff_r1c0 + r1c1[7:0] * coeff_r1c1 + r1c2[7:0] * coeff_r1c2 + r1c3[7:0] * coeff_r1c3 + r1c4[7:0] * coeff_r1c4 + r1c5[7:0] * coeff_r1c5 + r1c6[7:0] * coeff_r1c6 + r1c7[7:0] * coeff_r1c7 + r1c8[7:0] * coeff_r1c8 + r1c9[7:0] * coeff_r1c9 + r1c10[7:0] * coeff_r1c10 + 
 r2c0[7:0] * coeff_r2c0 + r2c1[7:0] * coeff_r2c1 + r2c2[7:0] * coeff_r2c2 + r2c3[7:0] * coeff_r2c3 + r2c4[7:0] * coeff_r2c4 + r2c5[7:0] * coeff_r2c5 + r2c6[7:0] * coeff_r2c6 + r2c7[7:0] * coeff_r2c7 + r2c8[7:0] * coeff_r2c8 + r2c9[7:0] * coeff_r2c9 + r2c10[7:0] * coeff_r2c10 + 
 r3c0[7:0] * coeff_r3c0 + r3c1[7:0] * coeff_r3c1 + r3c2[7:0] * coeff_r3c2 + r3c3[7:0] * coeff_r3c3 + r3c4[7:0] * coeff_r3c4 + r3c5[7:0] * coeff_r3c5 + r3c6[7:0] * coeff_r3c6 + r3c7[7:0] * coeff_r3c7 + r3c8[7:0] * coeff_r3c8 + r3c9[7:0] * coeff_r3c9 + r3c10[7:0] * coeff_r3c10 + 
@@ -146,6 +148,49 @@ r10c0[7:0] * coeff_r10c0 + r10c1[7:0] * coeff_r10c1 + r10c2[7:0] * coeff_r10c2 +
 end
 
 always @(*) begin
+case(filt_sel)
+2'b00: begin // default
+coeff_r0c0 = 8'h00;coeff_r0c1 = 8'h00;coeff_r0c2 = 8'h00;coeff_r0c3 = 8'h00;coeff_r0c4 = 8'h00;coeff_r0c5 = 8'h00;coeff_r0c6 = 8'h00;coeff_r0c7 = 8'h00;coeff_r0c8 = 8'h00;coeff_r0c9 = 8'h00;coeff_r0c10 = 8'h00;
+coeff_r1c0 = 8'h00;coeff_r1c1 = 8'h00;coeff_r1c2 = 8'h00;coeff_r1c3 = 8'h00;coeff_r1c4 = 8'h00;coeff_r1c5 = 8'h00;coeff_r1c6 = 8'h00;coeff_r1c7 = 8'h00;coeff_r1c8 = 8'h00;coeff_r1c9 = 8'h00;coeff_r1c10 = 8'h00;
+coeff_r2c0 = 8'h00;coeff_r2c1 = 8'h00;coeff_r2c2 = 8'h00;coeff_r2c3 = 8'h00;coeff_r2c4 = 8'h00;coeff_r2c5 = 8'h00;coeff_r2c6 = 8'h00;coeff_r2c7 = 8'h00;coeff_r2c8 = 8'h00;coeff_r2c9 = 8'h00;coeff_r2c10 = 8'h00;
+coeff_r3c0 = 8'h00;coeff_r3c1 = 8'h00;coeff_r3c2 = 8'h00;coeff_r3c3 = 8'h00;coeff_r3c4 = 8'h00;coeff_r3c5 = 8'h00;coeff_r3c6 = 8'h00;coeff_r3c7 = 8'h00;coeff_r3c8 = 8'h00;coeff_r3c9 = 8'h00;coeff_r3c10 = 8'h00;
+coeff_r4c0 = 8'h00;coeff_r4c1 = 8'h00;coeff_r4c2 = 8'h00;coeff_r4c3 = 8'h00;coeff_r4c4 = 8'h00;coeff_r4c5 = 8'h00;coeff_r4c6 = 8'h00;coeff_r4c7 = 8'h00;coeff_r4c8 = 8'h00;coeff_r4c9 = 8'h00;coeff_r4c10 = 8'h00;
+coeff_r5c0 = 8'h00;coeff_r5c1 = 8'h00;coeff_r5c2 = 8'h00;coeff_r5c3 = 8'h00;coeff_r5c4 = 8'h00;coeff_r5c5 = 8'hFF;coeff_r5c6 = 8'h00;coeff_r5c7 = 8'h00;coeff_r5c8 = 8'h00;coeff_r5c9 = 8'h00;coeff_r5c10 = 8'h00;
+coeff_r6c0 = 8'h00;coeff_r6c1 = 8'h00;coeff_r6c2 = 8'h00;coeff_r6c3 = 8'h00;coeff_r6c4 = 8'h00;coeff_r6c5 = 8'h00;coeff_r6c6 = 8'h00;coeff_r6c7 = 8'h00;coeff_r6c8 = 8'h00;coeff_r6c9 = 8'h00;coeff_r6c10 = 8'h00;
+coeff_r7c0 = 8'h00;coeff_r7c1 = 8'h00;coeff_r7c2 = 8'h00;coeff_r7c3 = 8'h00;coeff_r7c4 = 8'h00;coeff_r7c5 = 8'h00;coeff_r7c6 = 8'h00;coeff_r7c7 = 8'h00;coeff_r7c8 = 8'h00;coeff_r7c9 = 8'h00;coeff_r7c10 = 8'h00;
+coeff_r8c0 = 8'h00;coeff_r8c1 = 8'h00;coeff_r8c2 = 8'h00;coeff_r8c3 = 8'h00;coeff_r8c4 = 8'h00;coeff_r8c5 = 8'h00;coeff_r8c6 = 8'h00;coeff_r8c7 = 8'h00;coeff_r8c8 = 8'h00;coeff_r8c9 = 8'h00;coeff_r8c10 = 8'h00;
+coeff_r9c0 = 8'h00;coeff_r9c1 = 8'h00;coeff_r9c2 = 8'h00;coeff_r9c3 = 8'h00;coeff_r9c4 = 8'h00;coeff_r9c5 = 8'h00;coeff_r9c6 = 8'h00;coeff_r9c7 = 8'h00;coeff_r9c8 = 8'h00;coeff_r9c9 = 8'h00;coeff_r9c10 = 8'h00;
+coeff_r10c0 = 8'h00;coeff_r10c1 = 8'h00;coeff_r10c2 = 8'h00;coeff_r10c3 = 8'h00;coeff_r10c4 = 8'h00;coeff_r10c5 = 8'h00;coeff_r10c6 = 8'h00;coeff_r10c7 = 8'h00;coeff_r10c8 = 8'h00;coeff_r10c9 = 8'h00;coeff_r10c10 = 8'h00;
+end
+2'b01: begin // 5x5
+coeff_r0c0 = 8'h00;coeff_r0c1 = 8'h00;coeff_r0c2 = 8'h00;coeff_r0c3 = 8'h00;coeff_r0c4 = 8'h00;coeff_r0c5 = 8'h00;coeff_r0c6 = 8'h00;coeff_r0c7 = 8'h00;coeff_r0c8 = 8'h00;coeff_r0c9 = 8'h00;coeff_r0c10 = 8'h00;
+coeff_r1c0 = 8'h00;coeff_r1c1 = 8'h00;coeff_r1c2 = 8'h00;coeff_r1c3 = 8'h00;coeff_r1c4 = 8'h00;coeff_r1c5 = 8'h00;coeff_r1c6 = 8'h00;coeff_r1c7 = 8'h00;coeff_r1c8 = 8'h00;coeff_r1c9 = 8'h00;coeff_r1c10 = 8'h00;
+coeff_r2c0 = 8'h00;coeff_r2c1 = 8'h00;coeff_r2c2 = 8'h00;coeff_r2c3 = 8'h00;coeff_r2c4 = 8'h00;coeff_r2c5 = 8'h00;coeff_r2c6 = 8'h00;coeff_r2c7 = 8'h00;coeff_r2c8 = 8'h00;coeff_r2c9 = 8'h00;coeff_r2c10 = 8'h00;
+coeff_r3c0 = 8'h00;coeff_r3c1 = 8'h00;coeff_r3c2 = 8'h00;coeff_r3c3 = 8'b00001001;coeff_r3c4 = 8'b00001010;coeff_r3c5 = 8'b00001010;coeff_r3c6 = 8'b00001010;coeff_r3c7 = 8'b00001001;coeff_r3c8 = 8'h00;coeff_r3c9 = 8'h00;coeff_r3c10 = 8'h00;
+coeff_r4c0 = 8'h00;coeff_r4c1 = 8'h00;coeff_r4c2 = 8'h00;coeff_r4c3 = 8'b00001010;coeff_r4c4 = 8'b00001011;coeff_r4c5 = 8'b00001011;coeff_r4c6 = 8'b00001011;coeff_r4c7 = 8'b00001010;coeff_r4c8 = 8'h00;coeff_r4c9 = 8'h00;coeff_r4c10 = 8'h00;
+coeff_r5c0 = 8'h00;coeff_r5c1 = 8'h00;coeff_r5c2 = 8'h00;coeff_r5c3 = 8'b00001010;coeff_r5c4 = 8'b00001011;coeff_r5c5 = 8'b00001011;coeff_r5c6 = 8'b00001011;coeff_r5c7 = 8'b00001010;coeff_r5c8 = 8'h00;coeff_r5c9 = 8'h00;coeff_r5c10 = 8'h00;
+coeff_r6c0 = 8'h00;coeff_r6c1 = 8'h00;coeff_r6c2 = 8'h00;coeff_r6c3 = 8'b00001010;coeff_r6c4 = 8'b00001011;coeff_r6c5 = 8'b00001011;coeff_r6c6 = 8'b00001001;coeff_r6c7 = 8'b00001010;coeff_r6c8 = 8'h00;coeff_r6c9 = 8'h00;coeff_r6c10 = 8'h00;
+coeff_r7c0 = 8'h00;coeff_r7c1 = 8'h00;coeff_r7c2 = 8'h00;coeff_r7c3 = 8'b00001001;coeff_r7c4 = 8'b00001010;coeff_r7c5 = 8'b00001010;coeff_r7c6 = 8'b00001010;coeff_r7c7 = 8'b00001011;coeff_r7c8 = 8'h00;coeff_r7c9 = 8'h00;coeff_r7c10 = 8'h00;
+coeff_r8c0 = 8'h00;coeff_r8c1 = 8'h00;coeff_r8c2 = 8'h00;coeff_r8c3 = 8'h00;coeff_r8c4 = 8'h00;coeff_r8c5 = 8'h00;coeff_r8c6 = 8'h00;coeff_r8c7 = 8'h00;coeff_r8c8 = 8'h00;coeff_r8c9 = 8'h00;coeff_r8c10 = 8'h00;
+coeff_r9c0 = 8'h00;coeff_r9c1 = 8'h00;coeff_r9c2 = 8'h00;coeff_r9c3 = 8'h00;coeff_r9c4 = 8'h00;coeff_r9c5 = 8'h00;coeff_r9c6 = 8'h00;coeff_r9c7 = 8'h00;coeff_r9c8 = 8'h00;coeff_r9c9 = 8'h00;coeff_r9c10 = 8'h00;
+coeff_r10c0 = 8'h00;coeff_r10c1 = 8'h00;coeff_r10c2 = 8'h00;coeff_r10c3 = 8'h00;coeff_r10c4 = 8'h00;coeff_r10c5 = 8'h00;coeff_r10c6 = 8'h00;coeff_r10c7 = 8'h00;coeff_r10c8 = 8'h00;coeff_r10c9 = 8'h00;coeff_r10c10 = 8'h00;
+end
+2'b10: begin // 7x7
+coeff_r0c0 = 8'h00;coeff_r0c1 = 8'h00;coeff_r0c2 = 8'h00;coeff_r0c3 = 8'h00;coeff_r0c4 = 8'h00;coeff_r0c5 = 8'h00;coeff_r0c6 = 8'h00;coeff_r0c7 = 8'h00;coeff_r0c8 = 8'h00;coeff_r0c9 = 8'h00;coeff_r0c10 = 8'h00;
+coeff_r1c0 = 8'h00;coeff_r1c1 = 8'h00;coeff_r1c2 = 8'h00;coeff_r1c3 = 8'h00;coeff_r1c4 = 8'h00;coeff_r1c5 = 8'h00;coeff_r1c6 = 8'h00;coeff_r1c7 = 8'h00;coeff_r1c8 = 8'h00;coeff_r1c9 = 8'h00;coeff_r1c10 = 8'h00;
+coeff_r2c0 = 8'h00;coeff_r2c1 = 8'h00;coeff_r2c2 = 8'b00000011;coeff_r2c3 = 8'b00000100;coeff_r2c4 = 8'b00000101;coeff_r2c5 =  8'b00000101;coeff_r2c6 = 8'b00000101;coeff_r2c7 = 8'b00000100;coeff_r2c8 = 8'b00000011;coeff_r2c9 = 8'h00;coeff_r2c10 = 8'h00;
+coeff_r3c0 = 8'h00;coeff_r3c1 = 8'h00;coeff_r3c2 = 8'b00000100;coeff_r3c3 = 8'b00000101;coeff_r3c4 = 8'b00000110;coeff_r3c5 = 8'b00000110;coeff_r3c6 = 8'b00000110;coeff_r3c7 = 8'b00000101;coeff_r3c8 = 8'b00000100;coeff_r3c9 = 8'h00;coeff_r3c10 = 8'h00;
+coeff_r4c0 = 8'h00;coeff_r4c1 = 8'h00;coeff_r4c2 = 8'b00000101;coeff_r4c3 = 8'b00000110;coeff_r4c4 = 8'b00000111;coeff_r4c5 = 8'b00000111;coeff_r4c6 = 8'b00000111;coeff_r4c7 = 8'b00000110;coeff_r4c8 = 8'b00000101;coeff_r4c9 = 8'h00;coeff_r4c10 = 8'h00;
+coeff_r5c0 = 8'h00;coeff_r5c1 = 8'h00;coeff_r5c2 = 8'b00000101;coeff_r5c3 = 8'b00000110; coeff_r5c4 = 8'b00000111;coeff_r5c5 = 8'b00001000;coeff_r5c6 = 8'b00000111;coeff_r5c7 = 8'b00000110;coeff_r5c8 = 8'b00000101;coeff_r5c9 = 8'h00;coeff_r5c10 = 8'h00;
+coeff_r6c0 = 8'h00;coeff_r6c1 = 8'h00;coeff_r6c2 = 8'b00000101;coeff_r6c3 = 8'b00000110;coeff_r6c4 = 8'b00000111;coeff_r6c5 = 8'b00000111;coeff_r6c6 = 8'b00000111;coeff_r6c7 = 8'b00000110;coeff_r6c8 = 8'b00000101;coeff_r6c9 = 8'h00;coeff_r6c10 = 8'h00;
+coeff_r7c0 = 8'h00;coeff_r7c1 = 8'h00;coeff_r7c2 = 8'b00000100;coeff_r7c3 = 8'b00000101;coeff_r7c4 = 8'b00000110;coeff_r7c5 = 8'b00000110;coeff_r7c6 = 8'b00000110;coeff_r7c7 = 8'b00000101;coeff_r7c8 = 8'b00000100;coeff_r7c9 = 8'h00;coeff_r7c10 = 8'h00;
+coeff_r8c0 = 8'h00;coeff_r8c1 = 8'h00;coeff_r8c2 = 8'b00000011;coeff_r8c3 = 8'b00000100;coeff_r8c4 = 8'b00000101;coeff_r8c5 = 8'b00000101;coeff_r8c6 = 8'b00000101;coeff_r8c7 = 8'b00000100;coeff_r8c8 = 8'b00000011;coeff_r8c9 = 8'h00;coeff_r8c10 = 8'h00;
+coeff_r9c0 = 8'h00;coeff_r9c1 = 8'h00;coeff_r9c2 = 8'h00;coeff_r9c3 = 8'h00;coeff_r9c4 = 8'h00;coeff_r9c5 = 8'h00;coeff_r9c6 = 8'h00;coeff_r9c7 = 8'h00;coeff_r9c8 = 8'h00;coeff_r9c9 = 8'h00;coeff_r9c10 = 8'h00;
+coeff_r10c0 = 8'h00;coeff_r10c1 = 8'h00;coeff_r10c2 = 8'h00;coeff_r10c3 = 8'h00;coeff_r10c4 = 8'h00;coeff_r10c5 = 8'h00;coeff_r10c6 = 8'h00;coeff_r10c7 = 8'h00;coeff_r10c8 = 8'h00;coeff_r10c9 = 8'h00;coeff_r10c10 = 8'h00;
+end
+
+2'b11: begin //11x11
+
 coeff_r0c0 = mem[0][0];
 coeff_r0c1 = mem[0][1];
 coeff_r0c2 = mem[0][2];
@@ -267,6 +312,8 @@ coeff_r10c7 = mem[10][7];
 coeff_r10c8 = mem[10][8];
 coeff_r10c9 = mem[10][9];
 coeff_r10c10 = mem[10][10];
+end
+endcase
 end
 
 initial begin
@@ -394,141 +441,3 @@ initial begin
 end
 
 endmodule
-
-
-
-
-
-module row_shift_en_gen (
-	input [12:0] col,
-	input [12:0] x_count,
-	output reg en0,
-	output reg en1,
-	output reg en2,
-	output reg en3,
-	output reg en4,
-	output reg en5,
-	output reg en6,
-	output reg en7,
-	output reg en8,
-	output reg en9,
-	output reg en10
-);
-
-always @(*) begin
-	en0 = 1'b0;
-	en1 = 1'b0;
-	en2 = 1'b0;
-	en3 = 1'b0;
-	en4 = 1'b0;
-	en5 = 1'b0;
-	en6 = 1'b0;
-	en7 = 1'b0;
-	en8 = 1'b0;
-	en9 = 1'b0;
-	en10 = 1'b0;
-
-	/* C code for if needs range change
-	for (int i = 0; i <= 10; i++)
-    printf("\tif (col < 13'd0%i || x_count > 13'd0%i) begin\n\t\ten%i = 1'b1;\n\tend\n", 640-i, 799-i, i);
-	 */	
-	
-	if (col < 13'd0640 || x_count > 13'd0164) begin
-		en0 = 1'b1;
-	end
-	if (col < 13'd0639 || x_count > 13'd0163) begin
-		en1 = 1'b1;
-	end
-	if (col < 13'd0638 || x_count > 13'd0162) begin
-		en2 = 1'b1;
-	end
-	if (col < 13'd0637 || x_count > 13'd0161) begin
-		en3 = 1'b1;
-	end
-	if (col < 13'd0636 || x_count > 13'd0160) begin
-		en4 = 1'b1;
-	end
-	if (col < 13'd0635 || x_count > 13'd0159) begin
-		en5 = 1'b1;
-	end
-	if (col < 13'd0634 || x_count > 13'd0158) begin
-		en6 = 1'b1;
-	end
-	if (col < 13'd0633 || x_count > 13'd0157) begin
-		en7 = 1'b1;
-	end
-	if (col < 13'd0632 || x_count > 13'd0156) begin
-		en8 = 1'b1;
-	end
-	if (col < 13'd0631 || x_count > 13'd0155) begin
-		en9 = 1'b1;
-	end
-	if (col < 13'd0630 || x_count > 13'd0154) begin
-		en10 = 1'b1;
-	end
-
-	
-end
-
-endmodule 
-
-
-module shift_adr (
-	input [9:0] ref,
-	input [9:0] max,
-	output [9:0] adr0,
-	output [9:0] adr1,
-	output [9:0] adr2,
-	output [9:0] adr3,
-	output [9:0] adr4,
-	output [9:0] adr5,
-	output [9:0] adr6,
-	output [9:0] adr7,
-	output [9:0] adr8,
-	output [9:0] adr9,
-	output [9:0] adr10
-);
-
-wire [9:0] adr1_c, adr2_c, adr3_c, adr4_c, adr5_c, adr6_c, adr7_c, adr8_c, adr9_c, adr10_c; 
-
-assign adr0 = ref;
-assign adr1 = adr1_c;
-assign adr2 = adr2_c;
-assign adr3 = adr3_c;
-assign adr4 = adr4_c;
-assign adr5 = adr5_c;
-assign adr6 = adr6_c;
-assign adr7 = adr7_c;
-assign adr8 = adr8_c;
-assign adr9 = adr9_c;
-assign adr10 = adr10_c;
-
-sat_adr as1 (ref + 10'd1, max, adr1_c);
-sat_adr as2 (ref + 10'd2, max, adr2_c);
-sat_adr as3 (ref + 10'd3, max, adr3_c);
-sat_adr as4 (ref + 10'd4, max, adr4_c);
-sat_adr as5 (ref + 10'd5, max, adr5_c);
-sat_adr as6 (ref + 10'd6, max, adr6_c);
-sat_adr as7 (ref + 10'd7, max, adr7_c);
-sat_adr as8 (ref + 10'd8, max, adr8_c);
-sat_adr as9 (ref + 10'd9, max, adr9_c);
-sat_adr as10 (ref + 10'd10, max, adr10_c);
-
-endmodule
-
-module sat_adr (
-	input [9:0] in,
-	input [9:0] max,
-	output reg [9:0] out
-);
-
-always @(*) begin
-	out = in;
-	if (in > max) begin
-		out = 10'h000;
-	end
-end
-
-endmodule
-
-
