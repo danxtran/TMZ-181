@@ -3,12 +3,12 @@
 (* multstyle = "logic" *)
 module gauss(
   input clk,
+  input rst,
   input [7:0] r, b , g,
   input [12:0] col,
   input [12:0] x_count,
-  input en,
-  input [1:0] filt_sel,
-  output [7:0] out_r, out_g, out_b,
+  input [3:0] filt_sel,
+  output [7:0] outR, outG, outB,
   input [23:0] pass_in,
   output [23:0] pass_thru
 );
@@ -16,6 +16,7 @@ module gauss(
 gauss_pass_thru pass0 (clk, col, x_count, pass_in, pass_thru);
 
 reg [7:0] mem [10:0][10:0];
+reg [1:0] ctrl_c, ctrl;
 
 wire [23:0] pixel_in = {r, g, b};
 
@@ -56,11 +57,9 @@ reg [7:0]  coeff_r0c0, coeff_r0c1, coeff_r0c2, coeff_r0c3, coeff_r0c4, coeff_r0c
 
 reg [23:0] sumR, sumG, sumB;
 
-saturate satr(.in(sumR[17:8]), .out(out_r));
-saturate satb(.in(sumG[17:8]), .out(out_g));
-saturate satg(.in(sumB[17:8]), .out(out_b));
-
-
+saturate satr(.in(sumR[17:8]), .out(outR));
+saturate satb(.in(sumG[17:8]), .out(outG));
+saturate satg(.in(sumB[17:8]), .out(outB));
 
 
 wire [23:0] row0_out, row1_out, row2_out, row3_out, row4_out, row5_out, row6_out, row7_out, row8_out, row9_out, row10_out;
@@ -105,7 +104,31 @@ shift_reg c9 (.pixel(shift_reg_in9), .clk(clk), .shift_en(shift_en),.reg_0(r9c0)
 shift_reg c10 (.pixel(shift_reg_in10), .clk(clk), .shift_en(shift_en),.reg_0(r10c0), .reg_1(r10c1), .reg_2(r10c2), .reg_3(r10c3), .reg_4(r10c4),
 					.reg_5(r10c5), .reg_6(r10c6), .reg_7(r10c7), .reg_8(r10c8), .reg_9(r10c9), .reg_10(r10c10));
 
+always @(posedge clk) begin
+	ctrl <= #1 ctrl_c;
+end
 
+always @(*) begin
+
+	if (filt_sel[3] == 1'b1) begin //5x5
+		ctrl_c = 2'b01;
+	end
+	else if (filt_sel[2] == 1'b1) begin // 7x7
+		ctrl_c = 2'b00;
+	end
+	else if (filt_sel[1] == 1'b1) begin //11x11
+		ctrl_c = 2'b10;
+	end
+	else if (filt_sel[0] == 1'b1) begin // Normal
+		ctrl_c = 2'b11;
+	end
+	else begin
+		ctrl_c = ctrl;
+	end
+	if (rst == 1'b1) begin 
+		ctrl_c = 2'b11;
+	end
+end
 
 always @(posedge clk) begin
 

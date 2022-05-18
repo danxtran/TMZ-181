@@ -1,16 +1,15 @@
 `timescale 1 ns/10 ps  // time-unit = 1 ns, precision = 10 ps
 
 module colordetc (
-  input [3:0] clr_sel,
-  input [7:0] in_r,
-  input [7:0] in_g,
-  input [7:0] in_b,
-  input rst,
   input clk,
-  output [7:0] out_r,
-  output [7:0] out_g,
-  output [7:0] out_b,
-  output [1:0] ctrl_out,
+  input rst,
+  input [7:0] r,
+  input [7:0] g,
+  input [7:0] b,
+  input [3:0] clr_sel,
+  output [7:0] outR,
+  output [7:0] outG,
+  output [7:0] outB,
   input [23:0] pass_in,
   output [23:0] pass_thru
 );
@@ -25,18 +24,17 @@ assign pass_thru = pass_in;
   reg [7:0] out_reg_r, out_reg_g, out_reg_b, shift_r, shift_g, shift_b;
 	reg [1:0] ctrl_c, ctrl;
 	
-  assign redness = in_r*(in_r-in_g)*(in_r-in_b);
-  assign greeness = in_g*(in_g-in_r)*(in_g-in_b);
-  assign blueness = in_b*(in_b-in_r)*(in_b-in_g);
+  assign redness = r*(r-g)*(r-b);
+  assign greeness = g*(g-r)*(g-b);
+  assign blueness = b*(b-r)*(b-g);
   assign thresh_g = 25'b0_0000_0001_0100_0011_1101_1010;
   assign thresh_r = 25'b0_0001_1110_0100_0011_1101_1010;
   assign thresh_b =0;
  
-  assign out_r = out_reg_r;
-  assign out_g = out_reg_g;
-  assign out_b = out_reg_b;
-  assign ctrl_out = ctrl;
-  grayscale_unclk grey (in_r,in_g,in_b,gs,,);
+  assign outR = out_reg_r;
+  assign outG = out_reg_g;
+  assign outB = out_reg_b;
+  grayscale_unclk grey (r,g,b,gs,,);
   always @(*) begin
 			 // level handling
 	if (clr_sel[3] == 1'b1) begin
@@ -60,15 +58,15 @@ assign pass_thru = pass_in;
 		  
 	end
   always @(*) begin
-		out_reg_r = in_r;
-	  out_reg_g = in_g;
-	  out_reg_b = in_b;
+		out_reg_r = r;
+	  out_reg_g = g;
+	  out_reg_b = b;
     case (ctrl)
       2'b00: begin //highlight g
 			if(greeness > thresh_g) begin
-				out_reg_r = in_r;
-				out_reg_g = in_g;
-				out_reg_b = in_b;
+				out_reg_r = r;
+				out_reg_g = g;
+				out_reg_b = b;
 
 			end else begin
 				out_reg_r = gs;
@@ -78,9 +76,9 @@ assign pass_thru = pass_in;
       end
       2'b01: begin //highlight r
 			if(redness > thresh_r) begin
-				out_reg_r = in_r;
-				out_reg_g = in_g;
-				out_reg_b = in_b;
+				out_reg_r = r;
+				out_reg_g = g;
+				out_reg_b = b;
 
 			end else begin
 				out_reg_r = gs;
@@ -90,9 +88,9 @@ assign pass_thru = pass_in;
       end
       2'b10: begin //highlight b
 			if(blueness > thresh_b) begin
-				out_reg_r = in_r;
-				out_reg_g = in_g;
-				out_reg_b = in_b;
+				out_reg_r = r;
+				out_reg_g = g;
+				out_reg_b = b;
 
 			end else begin
 				out_reg_r = gs;
@@ -101,9 +99,9 @@ assign pass_thru = pass_in;
 			end
       end
 		default :begin
-			out_reg_r = in_r;
-        out_reg_g = in_g;
-        out_reg_b = in_b;
+			out_reg_r = r;
+        out_reg_g = g;
+        out_reg_b = b;
 		  end
     endcase
   end

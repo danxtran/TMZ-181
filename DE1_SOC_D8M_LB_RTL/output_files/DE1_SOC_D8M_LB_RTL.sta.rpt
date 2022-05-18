@@ -1,5 +1,5 @@
 Timing Analyzer report for DE1_SOC_D8M_LB_RTL
-Tue May 17 02:06:52 2022
+Wed May 18 01:11:27 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
 
 
@@ -103,14 +103,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 2.14        ;
+; Average used               ; 1.76        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  38.2%      ;
-;     Processor 3            ;  37.8%      ;
-;     Processor 4            ;  37.7%      ;
+;     Processor 2            ;  25.4%      ;
+;     Processor 3            ;  25.2%      ;
+;     Processor 4            ;  25.1%      ;
 +----------------------------+-------------+
 
 
@@ -119,7 +119,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------+--------------------------+
 ; SDC File Path          ; Status ; Read at                  ;
 +------------------------+--------+--------------------------+
-; DE1_SOC_D8M_LB_RTL.sdc ; OK     ; Tue May 17 02:06:29 2022 ;
+; DE1_SOC_D8M_LB_RTL.sdc ; OK     ; Wed May 18 01:11:19 2022 ;
 +------------------------+--------+--------------------------+
 
 
@@ -141,8 +141,8 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+----------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name     ; Note ;
 +------------+-----------------+----------------+------+
-; 75.35 MHz  ; 75.35 MHz       ; MIPI_PIXEL_CLK ;      ;
-; 158.13 MHz ; 158.13 MHz      ; CLOCK_50       ;      ;
+; 98.18 MHz  ; 98.18 MHz       ; MIPI_PIXEL_CLK ;      ;
+; 171.47 MHz ; 171.47 MHz      ; CLOCK_50       ;      ;
 +------------+-----------------+----------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -158,8 +158,8 @@ HTML report is unavailable in plain text report export.
 +----------------+--------+---------------+
 ; Clock          ; Slack  ; End Point TNS ;
 +----------------+--------+---------------+
-; MIPI_PIXEL_CLK ; 12.289 ; 0.000         ;
-; CLOCK_50       ; 13.676 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 11.385 ; 0.000         ;
+; CLOCK_50       ; 14.168 ; 0.000         ;
 +----------------+--------+---------------+
 
 
@@ -168,8 +168,8 @@ HTML report is unavailable in plain text report export.
 +----------------+-------+---------------+
 ; Clock          ; Slack ; End Point TNS ;
 +----------------+-------+---------------+
-; MIPI_PIXEL_CLK ; 0.231 ; 0.000         ;
-; CLOCK_50       ; 0.384 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 0.334 ; 0.000         ;
+; CLOCK_50       ; 0.386 ; 0.000         ;
 +----------------+-------+---------------+
 
 
@@ -178,7 +178,7 @@ HTML report is unavailable in plain text report export.
 +----------------+--------+---------------+
 ; Clock          ; Slack  ; End Point TNS ;
 +----------------+--------+---------------+
-; MIPI_PIXEL_CLK ; 12.045 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 12.935 ; 0.000         ;
 +----------------+--------+---------------+
 
 
@@ -187,7 +187,7 @@ HTML report is unavailable in plain text report export.
 +----------------+-------+---------------+
 ; Clock          ; Slack ; End Point TNS ;
 +----------------+-------+---------------+
-; MIPI_PIXEL_CLK ; 0.847 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 0.928 ; 0.000         ;
 +----------------+-------+---------------+
 
 
@@ -197,8 +197,8 @@ HTML report is unavailable in plain text report export.
 ; Clock                                                                  ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------------+--------+---------------+
 ; ref|pll_test_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] ; 1.666  ; 0.000         ;
-; CLOCK_50                                                               ; 8.826  ; 0.000         ;
-; MIPI_PIXEL_CLK                                                         ; 18.634 ; 0.000         ;
+; CLOCK_50                                                               ; 8.886  ; 0.000         ;
+; MIPI_PIXEL_CLK                                                         ; 18.694 ; 0.000         ;
 +------------------------------------------------------------------------+--------+---------------+
 
 
@@ -213,8 +213,8 @@ No synchronizer chains to report.
 +------------+-----------------+----------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name     ; Note ;
 +------------+-----------------+----------------+------+
-; 74.17 MHz  ; 74.17 MHz       ; MIPI_PIXEL_CLK ;      ;
-; 158.23 MHz ; 158.23 MHz      ; CLOCK_50       ;      ;
+; 99.75 MHz  ; 99.75 MHz       ; MIPI_PIXEL_CLK ;      ;
+; 170.04 MHz ; 170.04 MHz      ; CLOCK_50       ;      ;
 +------------+-----------------+----------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -224,8 +224,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------+--------+---------------+
 ; Clock          ; Slack  ; End Point TNS ;
 +----------------+--------+---------------+
-; MIPI_PIXEL_CLK ; 12.507 ; 0.000         ;
-; CLOCK_50       ; 13.680 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 11.670 ; 0.000         ;
+; CLOCK_50       ; 14.119 ; 0.000         ;
 +----------------+--------+---------------+
 
 
@@ -234,8 +234,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------+-------+---------------+
 ; Clock          ; Slack ; End Point TNS ;
 +----------------+-------+---------------+
-; MIPI_PIXEL_CLK ; 0.117 ; 0.000         ;
-; CLOCK_50       ; 0.380 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 0.239 ; 0.000         ;
+; CLOCK_50       ; 0.384 ; 0.000         ;
 +----------------+-------+---------------+
 
 
@@ -244,7 +244,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------+--------+---------------+
 ; Clock          ; Slack  ; End Point TNS ;
 +----------------+--------+---------------+
-; MIPI_PIXEL_CLK ; 12.309 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 13.210 ; 0.000         ;
 +----------------+--------+---------------+
 
 
@@ -253,7 +253,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------+-------+---------------+
 ; Clock          ; Slack ; End Point TNS ;
 +----------------+-------+---------------+
-; MIPI_PIXEL_CLK ; 0.733 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 0.780 ; 0.000         ;
 +----------------+-------+---------------+
 
 
@@ -263,8 +263,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Clock                                                                  ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------------+--------+---------------+
 ; ref|pll_test_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] ; 1.666  ; 0.000         ;
-; CLOCK_50                                                               ; 8.767  ; 0.000         ;
-; MIPI_PIXEL_CLK                                                         ; 18.608 ; 0.000         ;
+; CLOCK_50                                                               ; 8.831  ; 0.000         ;
+; MIPI_PIXEL_CLK                                                         ; 18.658 ; 0.000         ;
 +------------------------------------------------------------------------+--------+---------------+
 
 
@@ -279,8 +279,8 @@ No synchronizer chains to report.
 +----------------+--------+---------------+
 ; Clock          ; Slack  ; End Point TNS ;
 +----------------+--------+---------------+
-; MIPI_PIXEL_CLK ; 14.316 ; 0.000         ;
-; CLOCK_50       ; 15.821 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 13.936 ; 0.000         ;
+; CLOCK_50       ; 16.128 ; 0.000         ;
 +----------------+--------+---------------+
 
 
@@ -289,8 +289,8 @@ No synchronizer chains to report.
 +----------------+-------+---------------+
 ; Clock          ; Slack ; End Point TNS ;
 +----------------+-------+---------------+
-; MIPI_PIXEL_CLK ; 0.149 ; 0.000         ;
-; CLOCK_50       ; 0.203 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 0.193 ; 0.000         ;
+; CLOCK_50       ; 0.207 ; 0.000         ;
 +----------------+-------+---------------+
 
 
@@ -299,7 +299,7 @@ No synchronizer chains to report.
 +----------------+--------+---------------+
 ; Clock          ; Slack  ; End Point TNS ;
 +----------------+--------+---------------+
-; MIPI_PIXEL_CLK ; 14.061 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 14.798 ; 0.000         ;
 +----------------+--------+---------------+
 
 
@@ -308,7 +308,7 @@ No synchronizer chains to report.
 +----------------+-------+---------------+
 ; Clock          ; Slack ; End Point TNS ;
 +----------------+-------+---------------+
-; MIPI_PIXEL_CLK ; 0.900 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 0.951 ; 0.000         ;
 +----------------+-------+---------------+
 
 
@@ -318,8 +318,8 @@ No synchronizer chains to report.
 ; Clock                                                                  ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------------+--------+---------------+
 ; ref|pll_test_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] ; 1.666  ; 0.000         ;
-; CLOCK_50                                                               ; 8.696  ; 0.000         ;
-; MIPI_PIXEL_CLK                                                         ; 18.196 ; 0.000         ;
+; CLOCK_50                                                               ; 8.753  ; 0.000         ;
+; MIPI_PIXEL_CLK                                                         ; 18.245 ; 0.000         ;
 +------------------------------------------------------------------------+--------+---------------+
 
 
@@ -334,8 +334,8 @@ No synchronizer chains to report.
 +----------------+--------+---------------+
 ; Clock          ; Slack  ; End Point TNS ;
 +----------------+--------+---------------+
-; MIPI_PIXEL_CLK ; 15.069 ; 0.000         ;
-; CLOCK_50       ; 16.157 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 14.724 ; 0.000         ;
+; CLOCK_50       ; 16.422 ; 0.000         ;
 +----------------+--------+---------------+
 
 
@@ -344,8 +344,8 @@ No synchronizer chains to report.
 +----------------+-------+---------------+
 ; Clock          ; Slack ; End Point TNS ;
 +----------------+-------+---------------+
-; MIPI_PIXEL_CLK ; 0.078 ; 0.000         ;
-; CLOCK_50       ; 0.192 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 0.135 ; 0.000         ;
+; CLOCK_50       ; 0.193 ; 0.000         ;
 +----------------+-------+---------------+
 
 
@@ -354,7 +354,7 @@ No synchronizer chains to report.
 +----------------+--------+---------------+
 ; Clock          ; Slack  ; End Point TNS ;
 +----------------+--------+---------------+
-; MIPI_PIXEL_CLK ; 14.878 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 15.497 ; 0.000         ;
 +----------------+--------+---------------+
 
 
@@ -363,7 +363,7 @@ No synchronizer chains to report.
 +----------------+-------+---------------+
 ; Clock          ; Slack ; End Point TNS ;
 +----------------+-------+---------------+
-; MIPI_PIXEL_CLK ; 0.584 ; 0.000         ;
+; MIPI_PIXEL_CLK ; 0.618 ; 0.000         ;
 +----------------+-------+---------------+
 
 
@@ -373,8 +373,8 @@ No synchronizer chains to report.
 ; Clock                                                                  ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------------+--------+---------------+
 ; ref|pll_test_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] ; 1.666  ; 0.000         ;
-; CLOCK_50                                                               ; 8.653  ; 0.000         ;
-; MIPI_PIXEL_CLK                                                         ; 18.157 ; 0.000         ;
+; CLOCK_50                                                               ; 8.701  ; 0.000         ;
+; MIPI_PIXEL_CLK                                                         ; 18.190 ; 0.000         ;
 +------------------------------------------------------------------------+--------+---------------+
 
 
@@ -389,9 +389,9 @@ No synchronizer chains to report.
 +-------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
 ; Clock                                                                   ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +-------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack                                                        ; 12.289 ; 0.078 ; 12.045   ; 0.584   ; 1.666               ;
-;  CLOCK_50                                                               ; 13.676 ; 0.192 ; N/A      ; N/A     ; 8.653               ;
-;  MIPI_PIXEL_CLK                                                         ; 12.289 ; 0.078 ; 12.045   ; 0.584   ; 18.157              ;
+; Worst-case Slack                                                        ; 11.385 ; 0.135 ; 12.935   ; 0.618   ; 1.666               ;
+;  CLOCK_50                                                               ; 14.119 ; 0.193 ; N/A      ; N/A     ; 8.701               ;
+;  MIPI_PIXEL_CLK                                                         ; 11.385 ; 0.135 ; 12.935   ; 0.618   ; 18.190              ;
 ;  ref|pll_test_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] ; N/A    ; N/A   ; N/A      ; N/A     ; 1.666               ;
 ; Design-wide TNS                                                         ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  CLOCK_50                                                               ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
@@ -473,6 +473,7 @@ No synchronizer chains to report.
 ; SW[6]           ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[7]           ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[8]           ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[9]           ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; CAMERA_I2C_SCL  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; CAMERA_I2C_SDA  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; MIPI_I2C_SCL    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
@@ -482,15 +483,14 @@ No synchronizer chains to report.
 ; MIPI_PIXEL_HS   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; MIPI_PIXEL_VS   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; CLOCK_50        ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[9]           ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; MIPI_PIXEL_D[8] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; MIPI_PIXEL_D[7] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; MIPI_PIXEL_D[9] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; MIPI_PIXEL_D[6] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; MIPI_PIXEL_D[5] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; MIPI_PIXEL_D[4] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; MIPI_PIXEL_D[3] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; MIPI_PIXEL_D[2] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; MIPI_PIXEL_D[3] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; MIPI_PIXEL_D[4] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; MIPI_PIXEL_D[5] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; MIPI_PIXEL_D[6] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; MIPI_PIXEL_D[7] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; MIPI_PIXEL_D[8] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; MIPI_PIXEL_D[9] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; MIPI_PIXEL_D[1] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; MIPI_PIXEL_D[0] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 +-----------------+--------------+-----------------+-----------------+
@@ -725,9 +725,9 @@ No synchronizer chains to report.
 +--------------------+----------------+----------+----------+----------+----------+
 ; From Clock         ; To Clock       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +--------------------+----------------+----------+----------+----------+----------+
-; CLOCK_50           ; CLOCK_50       ; 3602     ; 0        ; 0        ; 0        ;
+; CLOCK_50           ; CLOCK_50       ; 3532     ; 0        ; 0        ; 0        ;
 ; CLOCK_50           ; MIPI_PIXEL_CLK ; 104      ; 0        ; 0        ; 0        ;
-; MIPI_PIXEL_CLK     ; MIPI_PIXEL_CLK ; 54091889 ; 0        ; 0        ; 0        ;
+; MIPI_PIXEL_CLK     ; MIPI_PIXEL_CLK ; 73339    ; 0        ; 0        ; 0        ;
 ; MIPI_PIXEL_CLK_ext ; MIPI_PIXEL_CLK ; 480      ; 0        ; 0        ; 0        ;
 +--------------------+----------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -738,9 +738,9 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +--------------------+----------------+----------+----------+----------+----------+
 ; From Clock         ; To Clock       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +--------------------+----------------+----------+----------+----------+----------+
-; CLOCK_50           ; CLOCK_50       ; 3602     ; 0        ; 0        ; 0        ;
+; CLOCK_50           ; CLOCK_50       ; 3532     ; 0        ; 0        ; 0        ;
 ; CLOCK_50           ; MIPI_PIXEL_CLK ; 104      ; 0        ; 0        ; 0        ;
-; MIPI_PIXEL_CLK     ; MIPI_PIXEL_CLK ; 54091889 ; 0        ; 0        ; 0        ;
+; MIPI_PIXEL_CLK     ; MIPI_PIXEL_CLK ; 73339    ; 0        ; 0        ; 0        ;
 ; MIPI_PIXEL_CLK_ext ; MIPI_PIXEL_CLK ; 480      ; 0        ; 0        ; 0        ;
 +--------------------+----------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -788,7 +788,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Input Ports       ; 3     ; 3    ;
 ; Unconstrained Input Port Paths  ; 8     ; 8    ;
 ; Unconstrained Output Ports      ; 34    ; 34   ;
-; Unconstrained Output Port Paths ; 2378  ; 2378 ;
+; Unconstrained Output Port Paths ; 98    ; 98   ;
 +---------------------------------+-------+------+
 
 
@@ -921,7 +921,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
-    Info: Processing started: Tue May 17 02:06:23 2022
+    Info: Processing started: Wed May 18 01:11:16 2022
 Info: Command: quartus_sta DE1_SOC_D8M_LB_RTL -c DE1_SOC_D8M_LB_RTL
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1015,7 +1015,7 @@ Warning (332174): Ignored filter at DE1_SOC_D8M_LB_RTL.sdc(109): HEX* could not 
 Warning (332060): Node: RESET_DELAY:u2|oREADY was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Latch D8M_SET:ccd|D8M_WRITE_COUNTER:u3|Pre_FVAL~1 is being clocked by RESET_DELAY:u2|oREADY
 Warning (332060): Node: MIPI_PIXEL_HS was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|WR[0] is being clocked by MIPI_PIXEL_HS
+    Info (13166): Register D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|WR[1] is being clocked by MIPI_PIXEL_HS
 Warning (332060): Node: MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CLOCKMEM:c1|CK_1HZ was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|ST[3] is being clocked by MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CLOCKMEM:c1|CK_1HZ
 Warning (332060): Node: MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|CLOCKMEM:c1|CK_1HZ was determined to be a clock but was found without an associated clock assignment.
@@ -1027,37 +1027,37 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
-Info (332146): Worst-case setup slack is 12.289
+Info (332146): Worst-case setup slack is 11.385
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    12.289               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    13.676               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.231
+    Info (332119):    11.385               0.000 MIPI_PIXEL_CLK 
+    Info (332119):    14.168               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.334
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.231               0.000 MIPI_PIXEL_CLK 
-    Info (332119):     0.384               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 12.045
+    Info (332119):     0.334               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     0.386               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 12.935
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    12.045               0.000 MIPI_PIXEL_CLK 
-Info (332146): Worst-case removal slack is 0.847
+    Info (332119):    12.935               0.000 MIPI_PIXEL_CLK 
+Info (332146): Worst-case removal slack is 0.928
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.847               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     0.928               0.000 MIPI_PIXEL_CLK 
 Info (332146): Worst-case minimum pulse width slack is 1.666
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.666               0.000 ref|pll_test_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.826               0.000 CLOCK_50 
-    Info (332119):    18.634               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     8.886               0.000 CLOCK_50 
+    Info (332119):    18.694               0.000 MIPI_PIXEL_CLK 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Warning (332060): Node: RESET_DELAY:u2|oREADY was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Latch D8M_SET:ccd|D8M_WRITE_COUNTER:u3|Pre_FVAL~1 is being clocked by RESET_DELAY:u2|oREADY
 Warning (332060): Node: MIPI_PIXEL_HS was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|WR[0] is being clocked by MIPI_PIXEL_HS
+    Info (13166): Register D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|WR[1] is being clocked by MIPI_PIXEL_HS
 Warning (332060): Node: MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CLOCKMEM:c1|CK_1HZ was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|ST[3] is being clocked by MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CLOCKMEM:c1|CK_1HZ
 Warning (332060): Node: MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|CLOCKMEM:c1|CK_1HZ was determined to be a clock but was found without an associated clock assignment.
@@ -1067,37 +1067,37 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
     Info (332098): Cell: ref|pll_test_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
     Info (332098): Cell: ref|pll_test_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info (332146): Worst-case setup slack is 12.507
+Info (332146): Worst-case setup slack is 11.670
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    12.507               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    13.680               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.117
+    Info (332119):    11.670               0.000 MIPI_PIXEL_CLK 
+    Info (332119):    14.119               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.239
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.117               0.000 MIPI_PIXEL_CLK 
-    Info (332119):     0.380               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 12.309
+    Info (332119):     0.239               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     0.384               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 13.210
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    12.309               0.000 MIPI_PIXEL_CLK 
-Info (332146): Worst-case removal slack is 0.733
+    Info (332119):    13.210               0.000 MIPI_PIXEL_CLK 
+Info (332146): Worst-case removal slack is 0.780
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.733               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     0.780               0.000 MIPI_PIXEL_CLK 
 Info (332146): Worst-case minimum pulse width slack is 1.666
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.666               0.000 ref|pll_test_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.767               0.000 CLOCK_50 
-    Info (332119):    18.608               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     8.831               0.000 CLOCK_50 
+    Info (332119):    18.658               0.000 MIPI_PIXEL_CLK 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Warning (332060): Node: RESET_DELAY:u2|oREADY was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Latch D8M_SET:ccd|D8M_WRITE_COUNTER:u3|Pre_FVAL~1 is being clocked by RESET_DELAY:u2|oREADY
 Warning (332060): Node: MIPI_PIXEL_HS was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|WR[0] is being clocked by MIPI_PIXEL_HS
+    Info (13166): Register D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|WR[1] is being clocked by MIPI_PIXEL_HS
 Warning (332060): Node: MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CLOCKMEM:c1|CK_1HZ was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|ST[3] is being clocked by MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CLOCKMEM:c1|CK_1HZ
 Warning (332060): Node: MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|CLOCKMEM:c1|CK_1HZ was determined to be a clock but was found without an associated clock assignment.
@@ -1107,35 +1107,35 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
     Info (332098): Cell: ref|pll_test_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
     Info (332098): Cell: ref|pll_test_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info (332146): Worst-case setup slack is 14.316
+Info (332146): Worst-case setup slack is 13.936
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    14.316               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    15.821               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.149
+    Info (332119):    13.936               0.000 MIPI_PIXEL_CLK 
+    Info (332119):    16.128               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.193
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.149               0.000 MIPI_PIXEL_CLK 
-    Info (332119):     0.203               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 14.061
+    Info (332119):     0.193               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     0.207               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 14.798
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    14.061               0.000 MIPI_PIXEL_CLK 
-Info (332146): Worst-case removal slack is 0.900
+    Info (332119):    14.798               0.000 MIPI_PIXEL_CLK 
+Info (332146): Worst-case removal slack is 0.951
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.900               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     0.951               0.000 MIPI_PIXEL_CLK 
 Info (332146): Worst-case minimum pulse width slack is 1.666
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.666               0.000 ref|pll_test_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.696               0.000 CLOCK_50 
-    Info (332119):    18.196               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     8.753               0.000 CLOCK_50 
+    Info (332119):    18.245               0.000 MIPI_PIXEL_CLK 
 Info: Analyzing Fast 1100mV 0C Model
 Warning (332060): Node: RESET_DELAY:u2|oREADY was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Latch D8M_SET:ccd|D8M_WRITE_COUNTER:u3|Pre_FVAL~1 is being clocked by RESET_DELAY:u2|oREADY
 Warning (332060): Node: MIPI_PIXEL_HS was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|WR[0] is being clocked by MIPI_PIXEL_HS
+    Info (13166): Register D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|WR[1] is being clocked by MIPI_PIXEL_HS
 Warning (332060): Node: MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CLOCKMEM:c1|CK_1HZ was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|ST[3] is being clocked by MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CLOCKMEM:c1|CK_1HZ
 Warning (332060): Node: MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|CLOCKMEM:c1|CK_1HZ was determined to be a clock but was found without an associated clock assignment.
@@ -1145,36 +1145,36 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
     Info (332098): Cell: ref|pll_test_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
     Info (332098): Cell: ref|pll_test_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info (332146): Worst-case setup slack is 15.069
+Info (332146): Worst-case setup slack is 14.724
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    15.069               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    16.157               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.078
+    Info (332119):    14.724               0.000 MIPI_PIXEL_CLK 
+    Info (332119):    16.422               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.135
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.078               0.000 MIPI_PIXEL_CLK 
-    Info (332119):     0.192               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 14.878
+    Info (332119):     0.135               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     0.193               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 15.497
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    14.878               0.000 MIPI_PIXEL_CLK 
-Info (332146): Worst-case removal slack is 0.584
+    Info (332119):    15.497               0.000 MIPI_PIXEL_CLK 
+Info (332146): Worst-case removal slack is 0.618
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.584               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     0.618               0.000 MIPI_PIXEL_CLK 
 Info (332146): Worst-case minimum pulse width slack is 1.666
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.666               0.000 ref|pll_test_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.653               0.000 CLOCK_50 
-    Info (332119):    18.157               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     8.701               0.000 CLOCK_50 
+    Info (332119):    18.190               0.000 MIPI_PIXEL_CLK 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 74 warnings
-    Info: Peak virtual memory: 5279 megabytes
-    Info: Processing ended: Tue May 17 02:06:52 2022
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:54
+    Info: Peak virtual memory: 5242 megabytes
+    Info: Processing ended: Wed May 18 01:11:27 2022
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:16
 
 

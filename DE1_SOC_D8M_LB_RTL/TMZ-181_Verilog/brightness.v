@@ -5,15 +5,15 @@ module brightness (
   input rst,
   input inc, // increase brightness signal
   input dec, // decrease brightness signal
-  input [7:0] R,
-  input [7:0] G,
-  input [7:0] B,
+  input [7:0] r,
+  input [7:0] g,
+  input [7:0] b,
   output [7:0] outR,
   output [7:0] outG,
   output [7:0] outB,
-  output [3:0] level_out,
   input [23:0] pass_in,
-  output [23:0] pass_thru
+  output [23:0] pass_thru,
+  output [3:0] level_out
 );
 
 assign pass_thru = pass_in;
@@ -23,17 +23,17 @@ reg [3:0] level, level_c; // brightness level
 reg [12:0] Rp, Gp, Bp; // resulting products
 
 //saturation handling
-saturate r (Rp[12:3], outR);
-saturate g (Gp[12:3], outG);
-saturate b (Bp[12:3], outB);
+saturate R (Rp[12:3], outR);
+saturate G (Gp[12:3], outG);
+saturate B (Bp[12:3], outB);
 
 
 always @(*) begin
   
   // multiplication handling
-  Rp = R * level;
-  Gp = G * level;
-  Bp = B * level;
+  Rp = r * level;
+  Gp = g * level;
+  Bp = b * level;
   level_c = 4'h8;
 
   // level handling

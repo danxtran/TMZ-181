@@ -1,10 +1,10 @@
 module cartoon (
-	input [23:0] cartoon_blur,
-	input [7:0] cartoon_edge,
-	input en,
 	input [7:0] r,
 	input [7:0] g,
 	input [7:0] b,
+	input [7:0] cartoon_edge,
+	input [23:0] cartoon_blur,
+	input en,
 	output reg [7:0] outR,
    output reg [7:0] outG,
    output reg [7:0] outB,

@@ -3,10 +3,10 @@ module cursor (
   input [7:0] r,
   input [7:0] g,
   input [7:0] b,
-  input [23:0] pass_in,
   output reg [7:0] outR,
   output reg [7:0] outG,
-  output reg [7:0] outB
+  output reg [7:0] outB,
+  input [23:0] pass_in
 );
 
 always @(*) begin

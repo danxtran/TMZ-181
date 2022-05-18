@@ -160,31 +160,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[9]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[8]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[7]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[9]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[6]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[5]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[4]",
+					"name" : "MIPI_PIXEL_D[2]",
 					"strict" : false
 				},
 				{
@@ -192,7 +168,27 @@
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_PIXEL_D[2]",
+					"name" : "MIPI_PIXEL_D[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[5]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[6]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[7]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[8]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[9]",
 					"strict" : false
 				},
 				{

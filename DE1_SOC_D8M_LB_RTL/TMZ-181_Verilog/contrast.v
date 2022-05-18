@@ -2,20 +2,18 @@
 
 module contrast (
   input clk,
-  input enable, // master enable
-  input frame_en, // frame update signal
   input rst,
   input inc, // increase contrast signal
   input dec, // decrease contrast signal
-  input [7:0] R,
-  input [7:0] G,
-  input [7:0] B,
+  input [7:0] r,
+  input [7:0] g,
+  input [7:0] b,
   output [7:0] outR,
   output [7:0] outG,
   output [7:0] outB,
-  output [3:0] level_out,
   input [23:0] pass_in,
-  output [23:0] pass_thru
+  output [23:0] pass_thru,
+  output [3:0] level_out
 );
 
 assign pass_thru = pass_in;
@@ -25,14 +23,14 @@ reg [3:0] level, level_c; // contrast level
 wire [12:0] Rp, Gp, Bp; // resulting products
 
 // contrast calculations
-contrast_logic cr (R, level, Rp);
-contrast_logic cg (G, level, Gp);
-contrast_logic cb (B, level, Bp);
+contrast_logic cr (r, level, Rp);
+contrast_logic cg (g, level, Gp);
+contrast_logic cb (b, level, Bp);
 
 //saturation handling
-saturate r (Rp[9:0], outR);
-saturate g (Gp[9:0], outG);
-saturate b (Bp[9:0], outB);
+saturate R (Rp[9:0], outR);
+saturate G (Gp[9:0], outG);
+saturate B (Bp[9:0], outB);
 
 
 always @(*) begin
