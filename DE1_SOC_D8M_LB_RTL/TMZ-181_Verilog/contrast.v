@@ -1,84 +1,73 @@
+`timescale 1 ns/10 ps  // time-unit = 1 ns, precision = 10 ps
+
 module contrast (
   input clk,
-  input enable, // master enable
-  input frame_en, // frame update signal
   input rst,
   input inc, // increase contrast signal
   input dec, // decrease contrast signal
-  input [7:0] R,
-  input [7:0] G,
-  input [7:0] B,
-  output reg [7:0] outR,
-  output reg [7:0] outG,
-  output reg [7:0] outB
+  input [7:0] r,
+  input [7:0] g,
+  input [7:0] b,
+  output [7:0] outR,
+  output [7:0] outG,
+  output [7:0] outB,
+  input [23:0] pass_in,
+  output [23:0] pass_thru,
+  output [3:0] level_out
 );
 
+assign pass_thru = pass_in;
+assign level_out = level;
 
 reg [3:0] level, level_c; // contrast level
-reg [12:0] Rp, Gp, Bp; // resulting products
-reg [7:0] Rs, Gs, Bs; // saturated values
-reg en, en_c; // enable stuff
+wire [12:0] Rp, Gp, Bp; // resulting products
 
 // contrast calculations
-contrast_logic cr (R, level, Rp);
-contrast_logic cg (G, level, Gp);
-contrast_logic cb (B, level, Bp);
+contrast_logic cr (r, level, Rp);
+contrast_logic cg (g, level, Gp);
+contrast_logic cb (b, level, Bp);
 
 //saturation handling
-saturate r (Rp[12:3], Rs);
-saturate g (Gp[12:3], Gs);
-saturate b (Bp[12:3], Bs);
+saturate R (Rp[9:0], outR);
+saturate G (Gp[9:0], outG);
+saturate B (Bp[9:0], outB);
 
+initial begin
+  level = 4'h8;
+end
 
 always @(*) begin
-  en_c = enable; //enable handling
-
-  outR = R; // default output to input
-  outG = G;
-  outB = B;
   
-  if (en == 1'b1) begin // logic if module enabled
-    // level handling
-    if (level_c == level) begin
-      if (inc == 1'b1 && level < 4'hF) begin
-	     level_c = level + 1'b1;
-	   end
-	   else if (dec == 1'b1 && level > 4'h0) begin
-	     level_c = level - 1'b1;
-	   end
-    end
-    //output saturated values
-    outR = Rs;
-	 outG = Gs;
-	 outB = Bs;
+  level_c = 4'b1000;
+  
+  // level handling
+  if (inc == 1'b1 && level < 4'hF) begin
+    level_c = level + 1'b1;
   end
-  
+  else if (dec == 1'b1 && level > 4'h0) begin
+    level_c = level - 1'b1;
+  end
+  else begin
+    level_c = level;
+  end
+
   if (rst == 1'b1) begin // reset logic
     level_c = 4'h8;
-	 en_c = 1'b0;
   end
+  
 end
 
 
 always @(posedge clk) begin
-  if (frame_en == 1'b1 || rst == 1'b1) begin // module enable logic
-    en <= #1 en_c;
-  end
-
-  if (en == 1'b1 || rst == 1'b1) begin // only update if enabled or rst is asserted
-    if (frame_en == 1'b1 || rst == 1'b1) begin
-	   level <= #1 level_c; // update contrast level when new frame arrives
-	 end
-  end
+  level <= #1 level_c; // update brightness level
 end
-
 
 endmodule
 
 
 module contrast_logic ( // used to calculate values for contrast module
   input [7:0] in,
-  input level,
+  input [3:0] level,
   output reg [12:0] out
 );
 
@@ -91,10 +80,13 @@ always @(*) begin
   out = in; // middle values don't change
   
   if (in > MID) begin // logic for higher values
-    out = MID + (high * level);
+    out = MID + ((high * level)>>3);
   end
-  else if (in > MID) begin // logic for smaller values
-    out = MID + (low * level);
+  else if (in < MID) begin // logic for smaller values
+    out = 13'h0000;
+	 if (((low * level)>>3) <= MID) begin
+	   out = MID - ((low * level)>>3);
+	 end
   end
   
 end

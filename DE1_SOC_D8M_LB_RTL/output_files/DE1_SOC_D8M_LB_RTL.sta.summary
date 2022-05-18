@@ -1,29 +1,29 @@
 ------------------------------------------------------------
-TimeQuest Timing Analyzer Summary
+Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'MIPI_PIXEL_CLK'
-Slack : 11.025
-TNS   : 0.000
+Slack : -2.520
+TNS   : -134.519
 
 Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
-Slack : 14.205
+Slack : 14.929
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'MIPI_PIXEL_CLK'
-Slack : 0.164
+Slack : 0.228
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.391
+Slack : 0.386
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'MIPI_PIXEL_CLK'
-Slack : 13.133
+Slack : 11.098
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'MIPI_PIXEL_CLK'
-Slack : 0.984
+Slack : 1.176
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ref|pll_test_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -31,35 +31,35 @@ Slack : 1.666
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.645
+Slack : 8.841
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'MIPI_PIXEL_CLK'
-Slack : 18.695
+Slack : 18.685
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'MIPI_PIXEL_CLK'
-Slack : 10.812
-TNS   : 0.000
+Slack : -2.980
+TNS   : -176.228
 
 Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
-Slack : 14.134
+Slack : 14.859
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'MIPI_PIXEL_CLK'
-Slack : 0.225
+Slack : 0.097
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.405
+Slack : 0.384
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'MIPI_PIXEL_CLK'
-Slack : 12.896
+Slack : 11.507
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'MIPI_PIXEL_CLK'
-Slack : 1.175
+Slack : 0.932
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ref|pll_test_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -67,35 +67,35 @@ Slack : 1.666
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.581
+Slack : 8.798
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'MIPI_PIXEL_CLK'
-Slack : 18.644
+Slack : 18.657
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'MIPI_PIXEL_CLK'
-Slack : 13.433
+Slack : 14.285
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
-Slack : 16.194
+Slack : 16.850
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'MIPI_PIXEL_CLK'
+Slack : 0.166
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
 Slack : 0.190
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Hold 'MIPI_PIXEL_CLK'
-Slack : 0.299
-TNS   : 0.000
-
 Type  : Fast 1100mV 85C Model Recovery 'MIPI_PIXEL_CLK'
-Slack : 14.820
+Slack : 13.344
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'MIPI_PIXEL_CLK'
-Slack : 1.050
+Slack : 1.091
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ref|pll_test_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -103,35 +103,35 @@ Slack : 1.666
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.601
+Slack : 8.734
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'MIPI_PIXEL_CLK'
-Slack : 18.245
+Slack : 18.243
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'MIPI_PIXEL_CLK'
-Slack : 13.886
+Slack : 15.044
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
-Slack : 16.418
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.180
+Slack : 17.040
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'MIPI_PIXEL_CLK'
-Slack : 0.278
+Slack : 0.108
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.183
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'MIPI_PIXEL_CLK'
-Slack : 15.183
+Slack : 14.266
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'MIPI_PIXEL_CLK'
-Slack : 0.986
+Slack : 0.727
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ref|pll_test_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -139,11 +139,11 @@ Slack : 1.666
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.560
+Slack : 8.694
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'MIPI_PIXEL_CLK'
-Slack : 18.181
+Slack : 18.185
 TNS   : 0.000
 
 ------------------------------------------------------------

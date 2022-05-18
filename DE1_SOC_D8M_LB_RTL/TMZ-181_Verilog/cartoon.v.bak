@@ -1,0 +1,20 @@
+module cartoon (
+	input [23:0] pass_cartoon,
+	input [23:0] edge_det,
+	input en,
+	output reg [7:0] outR,
+   output reg [7:0] outG,
+   output reg [7:0] outB,
+	input [23:0] pass_in,
+   output [23:0] pass_thru
+);
+
+assign pass_thru = pass_in
+
+always @(*) begin
+  outR = r;
+  outG = g;
+  outB = b;
+end
+
+endmodule
