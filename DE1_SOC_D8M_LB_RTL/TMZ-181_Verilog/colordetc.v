@@ -10,8 +10,12 @@ module colordetc (
   output [7:0] out_r,
   output [7:0] out_g,
   output [7:0] out_b,
-  output [1:0] ctrl_out
+  output [1:0] ctrl_out,
+  input [23:0] pass_in,
+  output [23:0] pass_thru
 );
+
+assign pass_thru = pass_in;
 
   wire signed [24:0] greeness;
   wire signed [24:0] redness;
@@ -61,9 +65,6 @@ module colordetc (
 	  out_reg_b = in_b;
     case (ctrl)
       2'b00: begin //highlight g
-//        out_reg_r = ((greeness > thresh_g)) ? (in_r) : gs;
-//        out_reg_g = ((greeness > thresh_g)) ? (in_g) : gs;
-//        out_reg_b = ((greeness > thresh_g)) ? (in_b) : gs;
 			if(greeness > thresh_g) begin
 				out_reg_r = in_r;
 				out_reg_g = in_g;
@@ -76,10 +77,6 @@ module colordetc (
 			end
       end
       2'b01: begin //highlight r
-        
-//		  out_reg_r = ((redness > thresh_r)) ? (in_r) : gs;
-//        out_reg_g = ((redness > thresh_r)) ? (in_g) : gs;
-//        out_reg_b = ((redness > thresh_r)) ? (in_b) : gs;
 			if(redness > thresh_r) begin
 				out_reg_r = in_r;
 				out_reg_g = in_g;
@@ -92,9 +89,6 @@ module colordetc (
 			end
       end
       2'b10: begin //highlight b
-//        out_reg_r = ((blueness > thresh_b)) ? (in_r) : gs;
-//        out_reg_g = ((blueness > thresh_b)) ? (in_g) : gs;
-//        out_reg_b = ((blueness > thresh_b)) ? (in_b) : gs;
 			if(blueness > thresh_b) begin
 				out_reg_r = in_r;
 				out_reg_g = in_g;

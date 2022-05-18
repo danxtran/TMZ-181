@@ -10,16 +10,19 @@ module contrast (
   input [7:0] R,
   input [7:0] G,
   input [7:0] B,
-  output reg [7:0] outR,
-  output reg [7:0] outG,
-  output reg [7:0] outB
+  output [7:0] outR,
+  output [7:0] outG,
+  output [7:0] outB,
+  output [3:0] level_out,
+  input [23:0] pass_in,
+  output [23:0] pass_thru
 );
 
+assign pass_thru = pass_in;
+assign level_out = level;
 
 reg [3:0] level, level_c; // contrast level
 wire [12:0] Rp, Gp, Bp; // resulting products
-wire [7:0] Rs, Gs, Bs; // saturated values
-reg en, en_c; // enable stuff
 
 // contrast calculations
 contrast_logic cr (R, level, Rp);
@@ -27,58 +30,36 @@ contrast_logic cg (G, level, Gp);
 contrast_logic cb (B, level, Bp);
 
 //saturation handling
-saturate r (Rp[9:0], Rs);
-saturate g (Gp[9:0], Gs);
-saturate b (Bp[9:0], Bs);
+saturate r (Rp[9:0], outR);
+saturate g (Gp[9:0], outG);
+saturate b (Bp[9:0], outB);
 
 
 always @(*) begin
-  en_c = enable; //enable handling
-
-  outR = R; // default output to input
-  outG = G;
-  outB = B;
   
   level_c = 4'b1000;
   
-  if (en == 1'b1) begin // logic if module enabled
-    // level handling
-		if (inc == 1'b1 && level < 4'hF) begin
-			  level_c = level + 1'b1;
-			end
-		else if (dec == 1'b1 && level > 4'h0) begin
-		  level_c = level - 1'b1;
-		end
-		else begin
-			level_c = level;
-		 end
-
-		 //output saturated values
-		 outR = Rs;
-		 outG = Gs;
-		 outB = Bs;
+  // level handling
+  if (inc == 1'b1 && level < 4'hF) begin
+    level_c = level + 1'b1;
   end
-  else level_c = level;
+  else if (dec == 1'b1 && level > 4'h0) begin
+    level_c = level - 1'b1;
+  end
+  else begin
+    level_c = level;
+  end
+
   if (rst == 1'b1) begin // reset logic
     level_c = 4'h8;
-	 en_c = 1'b0;
   end
   
 end
 
 
 always @(posedge clk) begin
-//  if (frame_en == 1'b1 || rst == 1'b1) begin // module enable logic
-    en <= #1 en_c;
-//  end
-
-  if (en == 1'b1 || rst == 1'b1) begin // only update if enabled or rst is asserted
-//    if (frame_en == 1'b1 || rst == 1'b1) begin
-	   level <= #1 level_c; // update contrast level when new frame arrives
-//	 end
-  end
+  level <= #1 level_c; // update brightness level
 end
-
 
 endmodule
 

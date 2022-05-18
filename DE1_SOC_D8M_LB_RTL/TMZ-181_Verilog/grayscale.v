@@ -10,8 +10,12 @@ module grayscale (
   input [7:0] in_B,
   output reg [7:0] out_R,
   output reg [7:0] out_G,
-  output reg [7:0] out_B   
+  output reg [7:0] out_B,
+  input [23:0] pass_in,
+  output [23:0] pass_thru
 );
+
+assign pass_thru = pass_in;
 
 reg  [17:0]  LUM;
 wire  [7:0]  sat_LUM;

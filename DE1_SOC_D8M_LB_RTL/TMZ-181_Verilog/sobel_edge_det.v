@@ -1,12 +1,36 @@
 module sobel_edge_det(
-//p0 - p8 :8 pixel sourding by the target pixel in 3*3 mask
-//input need to be graysacled
-input  [7:0] r,g,b,
-input clk,
-input [12:0] col,
-input [12:0] x_count,
-output [7:0] out			
- );
+  //p0 - p8 :8 pixel sourding by the target pixel in 3*3 mask
+  //input need to be graysacled
+  input  [7:0] r,g,b,
+  input clk,
+  input [12:0] col,
+  input [12:0] x_count,
+  input en,
+  output reg [7:0] outR,
+  output reg [7:0] outG,
+  output reg [7:0] outB,
+  output [7:0] cartoon_edge,
+  output [23:0] cartoon_blur,
+  input [23:0] pass_in,
+  output [23:0] pass_thru
+);
+
+assign cartoon_blur = r1c1;
+assign cartoon_edge = sat_out;
+edge_det_pass_thru pass0 (clk, col, x_count, pass_in, pass_thru);
+
+always @(*) begin
+  outR = r;
+  outG = g;
+  outB = b;
+  
+  if (en == 1'b1) begin
+    outR = sat_out;
+	 outG = sat_out;
+	 outB = sat_out;
+  end
+end
+ 
 wire signed [10:0] gx,gy;    
 reg signed [10:0] abs_gx,abs_gy;	
 wire [10:0] sum, sat_sum;	
@@ -88,7 +112,5 @@ always @(*) begin
         sat_out = sat_sum;
     end
 end
-
-assign out = sat_out;
             
 endmodule

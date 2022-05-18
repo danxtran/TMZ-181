@@ -2,15 +2,18 @@
 
 (* multstyle = "logic" *)
 module gauss(
-input clk,
-input [7:0] r, b , g,
-input [12:0] col,
-input [12:0] x_count,
-input en,
-input [1:0] filt_sel,
-output [7:0] out_r, out_g, out_b
-
+  input clk,
+  input [7:0] r, b , g,
+  input [12:0] col,
+  input [12:0] x_count,
+  input en,
+  input [1:0] filt_sel,
+  output [7:0] out_r, out_g, out_b,
+  input [23:0] pass_in,
+  output [23:0] pass_thru
 );
+
+gauss_pass_thru pass0 (clk, col, x_count, pass_in, pass_thru);
 
 reg [7:0] mem [10:0][10:0];
 

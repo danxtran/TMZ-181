@@ -153,9 +153,9 @@ wire [7:0] VGA_R_OUT, VGA_G_OUT, VGA_B_OUT;
 wire [7:0] br_out_r, br_out_g, br_out_b, clr_dtc_r, clr_dtc_g, clr_dtc_b,
 				grn_r, grn_g, grn_b, gry_r, gry_g, gry_b;
 wire binc, bdec, cinc, cdec;
-assign VGA_R = temp;
-assign VGA_G = temp;
-assign VGA_B = temp;
+//assign VGA_R = temp;
+//assign VGA_G = temp;
+//assign VGA_B = temp;
 //assign VGA_R = VGA_R_OUT;
 //assign VGA_G = VGA_G_OUT;
 //assign VGA_B = VGA_B_OUT;
@@ -184,11 +184,11 @@ wire [3:0] clr_sel;
 //					, .binc(binc), .bdec(bdec), .cinc(cinc), .cdec(cdec), 
 //					.clr_sel(clr_sel),.SW(SW), .KEY(KEY), .frame_en(frame_en)); // frame_en is never true
 
-gauss gauss_filter(.clk(MIPI_PIXEL_CLK_), .r(raw_VGA_R), .g(raw_VGA_G), .b(raw_VGA_B), .col(col), .x_count(x_count), .en(enable[1]),
-							.filt_sel(SW[9]), .out_r(VGA_R_OUT), .out_g(VGA_G_OUT), .out_b(VGA_B_OUT));
-							
-wire [7:0] temp;
-sobel_edge_det sobel_filter( .r(VGA_R_OUT), .g(VGA_G_OUT), .b(VGA_B_OUT), .clk(MIPI_PIXEL_CLK_), .col(col), .x_count(x_count), .out(temp));
+//gauss gauss_filter(.clk(MIPI_PIXEL_CLK_), .r(raw_VGA_R), .g(raw_VGA_G), .b(raw_VGA_B), .col(col), .x_count(x_count), .en(enable[1]),
+//							.filt_sel(SW[9]), .out_r(VGA_R_OUT), .out_g(VGA_G_OUT), .out_b(VGA_B_OUT));
+//							
+//wire [7:0] temp;
+//sobel_edge_det sobel_filter( .r(VGA_R_OUT), .g(VGA_G_OUT), .b(VGA_B_OUT), .clk(MIPI_PIXEL_CLK_), .col(col), .x_count(x_count), .out(temp));
 
 
 //rowRam test (.clk(MIPI_PIXEL_CLK_), .addr(col[9:0]),.rd_adr(col[9:0]), .data_in({raw_VGA_R,raw_VGA_G,raw_VGA_B}), .wr_en(1'b1), .data_out({VGA_R,VGA_G,VGA_B}));

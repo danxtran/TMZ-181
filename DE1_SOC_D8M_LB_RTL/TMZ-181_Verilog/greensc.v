@@ -5,8 +5,12 @@ module greensc (
   input gsc_en,
   output reg [7:0] gsc_out_r,
   output reg [7:0] gsc_out_g,
-  output reg [7:0] gsc_out_b
+  output reg [7:0] gsc_out_b,
+  input [23:0] pass_in,
+  output [23:0] pass_thru
 );
+
+assign pass_thru = pass_in;
 
   wire signed [24:0] greeness;
   wire signed [24:0] thresh;
@@ -14,9 +18,6 @@ module greensc (
   assign greeness = in_g*(in_g-in_r)*(in_g-in_b);
   assign thresh = 25'b0_0000_0001_0100_0011_1101_1010;
  
-//  assign out_r = (greeness > thresh) ? 8'b0000_0000 : in_r;
-//  assign out_g = (greeness > thresh) ? 8'b0000_0000 : in_g;
-//  assign out_b = (greeness > thresh) ? 8'b0000_0000 : in_b;
   always @(*)begin
 		gsc_out_r = in_r;
 		gsc_out_g = in_g;
