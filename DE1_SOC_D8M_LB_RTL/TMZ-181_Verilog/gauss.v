@@ -104,6 +104,11 @@ shift_reg c9 (.pixel(shift_reg_in9), .clk(clk), .shift_en(shift_en),.reg_0(r9c0)
 shift_reg c10 (.pixel(shift_reg_in10), .clk(clk), .shift_en(shift_en),.reg_0(r10c0), .reg_1(r10c1), .reg_2(r10c2), .reg_3(r10c3), .reg_4(r10c4),
 					.reg_5(r10c5), .reg_6(r10c6), .reg_7(r10c7), .reg_8(r10c8), .reg_9(r10c9), .reg_10(r10c10));
 
+initial begin
+  ctrl = 2'b00;
+  ctrl_c = 2'b00;
+end					
+					
 always @(posedge clk) begin
 	ctrl <= #1 ctrl_c;
 end
@@ -114,19 +119,19 @@ always @(*) begin
 		ctrl_c = 2'b01;
 	end
 	else if (filt_sel[2] == 1'b1) begin // 7x7
-		ctrl_c = 2'b00;
-	end
-	else if (filt_sel[1] == 1'b1) begin //11x11
 		ctrl_c = 2'b10;
 	end
-	else if (filt_sel[0] == 1'b1) begin // Normal
+	else if (filt_sel[1] == 1'b1) begin //11x11
 		ctrl_c = 2'b11;
+	end
+	else if (filt_sel[0] == 1'b1) begin // Normal
+		ctrl_c = 2'b00;
 	end
 	else begin
 		ctrl_c = ctrl;
 	end
 	if (rst == 1'b1) begin 
-		ctrl_c = 2'b11;
+		ctrl_c = 2'b00;
 	end
 end
 
@@ -174,7 +179,7 @@ r10c0[7:0] * coeff_r10c0 + r10c1[7:0] * coeff_r10c1 + r10c2[7:0] * coeff_r10c2 +
 end
 
 always @(*) begin
-case(filt_sel)
+case(ctrl)
 2'b00: begin // default
 coeff_r0c0 = 8'h00;coeff_r0c1 = 8'h00;coeff_r0c2 = 8'h00;coeff_r0c3 = 8'h00;coeff_r0c4 = 8'h00;coeff_r0c5 = 8'h00;coeff_r0c6 = 8'h00;coeff_r0c7 = 8'h00;coeff_r0c8 = 8'h00;coeff_r0c9 = 8'h00;coeff_r0c10 = 8'h00;
 coeff_r1c0 = 8'h00;coeff_r1c1 = 8'h00;coeff_r1c2 = 8'h00;coeff_r1c3 = 8'h00;coeff_r1c4 = 8'h00;coeff_r1c5 = 8'h00;coeff_r1c6 = 8'h00;coeff_r1c7 = 8'h00;coeff_r1c8 = 8'h00;coeff_r1c9 = 8'h00;coeff_r1c10 = 8'h00;

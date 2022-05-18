@@ -28,7 +28,7 @@ module control ( // control module
 /* enable signal bits
 0 - brightness
 1 - N/A
-2 - N/A
+2 - cartoon effect
 3 - gray scale
 4 - green screen
 5 - edge detect
@@ -105,8 +105,6 @@ always @(*) begin
         gauss2 = decb;
         gauss3 = incc;
         gauss4 = decc;
-    end else begin
-        en_c[3] = 1'b0;
     end
 	 
 	 gauss_sel = {gauss4, gauss3, gauss2, gauss1};
@@ -131,7 +129,13 @@ always @(*) begin
 	edge_gauss_sel = 4'h1;
 	if(SW[8] == 1'b1)begin
 	  edge_gauss_sel = 4'h2;
-	  en_c[5] = 1'b0;
+	  en_c[5] = 1'b1;
+	end
+	//cartoon on
+	if(SW[7] == 1'b1)begin
+	  edge_gauss_sel = 4'h2;
+	  en_c[5] = 1'b1;
+	  en_c[2] = 1'b1;
 	end
 	
 end

@@ -157,7 +157,7 @@ wire [7:0] out_g0, out_g1, out_g2, out_g3, out_g4, out_g5, out_g6, out_g7, out_g
 wire [7:0] out_b0, out_b1, out_b2, out_b3, out_b4, out_b5, out_b6, out_b7, out_b8;
 wire [7:0] cartoon_edge;
 wire [23:0] cartoon_blur;
-wire rst = SW[0];
+wire rst = SW[9];
 wire clk = MIPI_PIXEL_CLK_;
 wire [31:0] en;
 wire binc, bdec, cinc, cdec;
@@ -177,7 +177,7 @@ control ctrl(
 .bdec(bdec),
 .cinc(cinc),
 .cdec(cdec),
-.clr_sel(clr_Sel),
+.clr_sel(clr_sel),
 .gauss_sel(gauss_sel),
 .edge_gauss_sel(edge_gauss_sel)
 );
@@ -221,7 +221,7 @@ cartoon cartoon1(
 .b(out_b1),
 .cartoon_edge(cartoon_edge),
 .cartoon_blur(cartoon_blur),
-.en(en[5]),
+.en(en[2]),
 .outR(out_r2),
 .outG(out_g2),
 .outB(out_b2),

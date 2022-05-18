@@ -27,6 +27,9 @@ saturate R (Rp[12:3], outR);
 saturate G (Gp[12:3], outG);
 saturate B (Bp[12:3], outB);
 
+initial begin
+  level = 4'h8;
+end
 
 always @(*) begin
   

@@ -1,5 +1,5 @@
 module cursor (
-  input col,
+  input [12:0] col,
   input [7:0] r,
   input [7:0] g,
   input [7:0] b,
