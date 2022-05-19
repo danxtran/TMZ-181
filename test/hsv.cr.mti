@@ -1,0 +1,15 @@
+{C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/hsv_rgb.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/hsv_rgb.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module hsv_rgb
+
+Top level modules:
+	hsv_rgb
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/test/test.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/test/test.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module owo
+
+Top level modules:
+	owo
+
+} {} {}}

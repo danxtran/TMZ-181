@@ -160,75 +160,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[9]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[1]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[3]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[0]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[1]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[2]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[3]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[2]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[5]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[7]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[8]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[6]",
-					"strict" : false
-				},
-				{
 					"name" : "MIPI_PIXEL_D[9]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[8]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[2]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[3]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[4]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[5]",
 					"strict" : false
 				},
 				{
@@ -237,6 +169,26 @@
 				},
 				{
 					"name" : "MIPI_PIXEL_D[7]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[8]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[5]",
 					"strict" : false
 				},
 				{
