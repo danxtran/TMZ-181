@@ -1,13 +1,17 @@
-{C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v}
+{C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/mod360.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/mod360.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module rgb_hsv
--- Compiling module rgb_hue
--- Compiling module divide
--- Compiling module div_step
 -- Compiling module mod360
 
 Top level modules:
-	rgb_hsv
+	mod360
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module divide
+-- Compiling module div_step
+
+Top level modules:
+	divide
 
 } {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/hsv_rgb.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/hsv_rgb.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

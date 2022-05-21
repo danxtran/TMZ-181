@@ -99,10 +99,10 @@ module rgb_hue (
 reg neg;
 reg [7:0] diff;
 wire [8:0] div_ans;
-reg [21:0] h;
+reg [16:0] h;
 
 divide d0 (diff, delta, div_ans);
-mod360 m360 (neg, h[21:8], hue);
+mod360 m360 (h[16:8], hue);
 
 always @(*) begin
   if (in1 >= in2) begin
@@ -115,7 +115,7 @@ always @(*) begin
   end
   
   if (neg == 1'b1) begin
-    h = 6'd60 * div_ans - (offset<<8);
+    h = (offset<<8) - 6'd60 * div_ans;
   end
   else begin
     h = 6'd60 * div_ans + (offset<<8);
@@ -125,200 +125,6 @@ end
 
 endmodule
 
-module divide (
-  input [7:0] num,
-  input [7:0] dem,
-  output [8:0] ans
-);
-
-wire [15:0] next7, next6, next5, next4, next3, next2, next1, next0;
-
-div_step d8 ({8'h00, num}, dem, ans[8], next7);
-div_step d7 (next7, dem, ans[7], next6);
-div_step d6 (next6, dem, ans[6], next5);
-div_step d5 (next5, dem, ans[5], next4);
-div_step d4 (next4, dem, ans[4], next3);
-div_step d3 (next3, dem, ans[3], next2);
-div_step d2 (next2, dem, ans[2], next1);
-div_step d1 (next1, dem, ans[1], next0);
-div_step d0 (next0, dem, ans[0], );
-
-endmodule
-
-module div_step (
-  input [15:0] top,
-  input [7:0] bot,
-  output reg Q,
-  output reg [15:0] next
-);
-
-wire [15:0] diff = top - bot;
-
-always @(*) begin
-  Q = 1'b0;
-  next = top << 1;
-  if (top >= bot) begin
-    Q = 1'b1;
-    next = {diff[13:0], 1'b0};
-  end
-end
-
-endmodule
-
-module mod360 (
-  input neg,
-  input [13:0] in,
-  output reg [8:0] out
-);
 
 
-reg [13:0] diff;
 
-always @(*) begin
-
-  if (in >= 14'd15480) begin
-    diff = in - 14'd15480;
-  end
-  else if (in >= 14'd15120) begin
-    diff = in - 14'd15120;
-  end
-  else if (in >= 14'd14760) begin
-    diff = in - 14'd14760;
-  end
-  else if (in >= 14'd14400) begin
-    diff = in - 14'd14400;
-  end
-  else if (in >= 14'd14040) begin
-    diff = in - 14'd14040;
-  end
-  else if (in >= 14'd13680) begin
-    diff = in - 14'd13680;
-  end
-  else if (in >= 14'd13320) begin
-    diff = in - 14'd13320;
-  end
-  else if (in >= 14'd12960) begin
-    diff = in - 14'd12960;
-  end
-  else if (in >= 14'd12600) begin
-    diff = in - 14'd12600;
-  end
-  else if (in >= 14'd12240) begin
-    diff = in - 14'd12240;
-  end
-  else if (in >= 14'd11880) begin
-    diff = in - 14'd11880;
-  end
-  else if (in >= 14'd11520) begin
-    diff = in - 14'd11520;
-  end
-  else if (in >= 14'd11160) begin
-    diff = in - 14'd11160;
-  end
-  else if (in >= 14'd10800) begin
-    diff = in - 14'd10800;
-  end
-  else if (in >= 14'd10440) begin
-    diff = in - 14'd10440;
-  end
-  else if (in >= 14'd10080) begin
-    diff = in - 14'd10080;
-  end
-  else if (in >= 14'd9720) begin
-    diff = in - 14'd9720;
-  end
-  else if (in >= 14'd9360) begin
-    diff = in - 14'd9360;
-  end
-  else if (in >= 14'd9000) begin
-    diff = in - 14'd9000;
-  end
-  else if (in >= 14'd8640) begin
-    diff = in - 14'd8640;
-  end
-  else if (in >= 14'd8280) begin
-    diff = in - 14'd8280;
-  end
-  else if (in >= 14'd7920) begin
-    diff = in - 14'd7920;
-  end
-  else if (in >= 14'd7560) begin
-    diff = in - 14'd7560;
-  end
-  else if (in >= 14'd7200) begin
-    diff = in - 14'd7200;
-  end
-  else if (in >= 14'd6840) begin
-    diff = in - 14'd6840;
-  end
-  else if (in >= 14'd6480) begin
-    diff = in - 14'd6480;
-  end
-  else if (in >= 14'd6120) begin
-    diff = in - 14'd6120;
-  end
-  else if (in >= 14'd5760) begin
-    diff = in - 14'd5760;
-  end
-  else if (in >= 14'd5400) begin
-    diff = in - 14'd5400;
-  end
-  else if (in >= 14'd5040) begin
-    diff = in - 14'd5040;
-  end
-  else if (in >= 14'd4680) begin
-    diff = in - 14'd4680;
-  end
-  else if (in >= 14'd4320) begin
-    diff = in - 14'd4320;
-  end
-  else if (in >= 14'd3960) begin
-    diff = in - 14'd3960;
-  end
-  else if (in >= 14'd3600) begin
-    diff = in - 14'd3600;
-  end
-  else if (in >= 14'd3240) begin
-    diff = in - 14'd3240;
-  end
-  else if (in >= 14'd2880) begin
-    diff = in - 14'd2880;
-  end
-  else if (in >= 14'd2520) begin
-    diff = in - 14'd2520;
-  end
-  else if (in >= 14'd2160) begin
-    diff = in - 14'd2160;
-  end
-  else if (in >= 14'd1800) begin
-    diff = in - 14'd1800;
-  end
-  else if (in >= 14'd1440) begin
-    diff = in - 14'd1440;
-  end
-  else if (in >= 14'd1080) begin
-    diff = in - 14'd1080;
-  end
-  else if (in >= 14'd720) begin
-    diff = in - 14'd720;
-  end
-  else if (in >= 14'd360) begin
-    diff = in - 14'd360;
-  end
-  else if (in >= 14'd0) begin
-    diff = in - 14'd0;
-  end
-  else begin
-    diff = 14'd00000;
-  end
-  
-  if (neg == 1'b0) begin
-    out = diff [8:0];
-  end
-  else begin
-    out = 9'd360 - diff [8:0];
-  end
-
-end
-
-endmodule

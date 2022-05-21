@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SOC_D8M_LB_RTL
-Wed May 18 19:30:28 2022
+Fri May 20 17:23:10 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
 
 
@@ -38,35 +38,36 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
  30. Port Connectivity Checks: "hsv_rgb:r0|divide:ds"
  31. Port Connectivity Checks: "rgb_hsv:h0|rgb_hue:hb"
  32. Port Connectivity Checks: "rgb_hsv:h0|rgb_hue:hg"
- 33. Port Connectivity Checks: "rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d0"
- 34. Port Connectivity Checks: "rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d8"
- 35. Port Connectivity Checks: "rgb_hsv:h0|rgb_hue:hr"
- 36. Port Connectivity Checks: "D8M_SET:ccd|RAW2RGB_L:u4|RAW_RGB_BIN:bin"
- 37. Port Connectivity Checks: "D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|int_line:d3"
- 38. Port Connectivity Checks: "D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|int_line:d2"
- 39. Port Connectivity Checks: "D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|int_line:d1"
- 40. Port Connectivity Checks: "D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0"
- 41. Port Connectivity Checks: "D8M_SET:ccd|RAW2RGB_L:u4"
- 42. Port Connectivity Checks: "D8M_SET:ccd|VGA_READ_COUNTER:cnt"
- 43. Port Connectivity Checks: "D8M_SET:ccd|D8M_WRITE_COUNTER:u3"
- 44. Port Connectivity Checks: "D8M_SET:ccd"
- 45. Port Connectivity Checks: "pll_test:ref"
- 46. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_READ_DATA:rd"
- 47. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_PTR:wpt"
- 48. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd"
- 49. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|CLOCKMEM:c1"
- 50. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv"
- 51. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd"
- 52. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_PTR:wpt"
- 53. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd"
- 54. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CLOCKMEM:c1"
- 55. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv"
- 56. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin"
- 57. Port Connectivity Checks: "RESET_DELAY:u2"
- 58. Post-Synthesis Netlist Statistics for Top Partition
- 59. Elapsed Time Per Partition
- 60. Analysis & Synthesis Messages
- 61. Analysis & Synthesis Suppressed Messages
+ 33. Port Connectivity Checks: "rgb_hsv:h0|rgb_hue:hr|mod360:m360"
+ 34. Port Connectivity Checks: "rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d0"
+ 35. Port Connectivity Checks: "rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d8"
+ 36. Port Connectivity Checks: "rgb_hsv:h0|rgb_hue:hr"
+ 37. Port Connectivity Checks: "D8M_SET:ccd|RAW2RGB_L:u4|RAW_RGB_BIN:bin"
+ 38. Port Connectivity Checks: "D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|int_line:d3"
+ 39. Port Connectivity Checks: "D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|int_line:d2"
+ 40. Port Connectivity Checks: "D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|int_line:d1"
+ 41. Port Connectivity Checks: "D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0"
+ 42. Port Connectivity Checks: "D8M_SET:ccd|RAW2RGB_L:u4"
+ 43. Port Connectivity Checks: "D8M_SET:ccd|VGA_READ_COUNTER:cnt"
+ 44. Port Connectivity Checks: "D8M_SET:ccd|D8M_WRITE_COUNTER:u3"
+ 45. Port Connectivity Checks: "D8M_SET:ccd"
+ 46. Port Connectivity Checks: "pll_test:ref"
+ 47. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_READ_DATA:rd"
+ 48. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_PTR:wpt"
+ 49. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd"
+ 50. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|CLOCKMEM:c1"
+ 51. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv"
+ 52. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd"
+ 53. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_PTR:wpt"
+ 54. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd"
+ 55. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CLOCKMEM:c1"
+ 56. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv"
+ 57. Port Connectivity Checks: "MIPI_BRIDGE_CAMERA_Config:cfin"
+ 58. Port Connectivity Checks: "RESET_DELAY:u2"
+ 59. Post-Synthesis Netlist Statistics for Top Partition
+ 60. Elapsed Time Per Partition
+ 61. Analysis & Synthesis Messages
+ 62. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -93,7 +94,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May 18 19:30:28 2022           ;
+; Analysis & Synthesis Status     ; Successful - Fri May 20 17:23:10 2022           ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Standard Edition ;
 ; Revision Name                   ; DE1_SOC_D8M_LB_RTL                              ;
 ; Top-level Entity Name           ; DE1_SOC_D8M_LB_RTL                              ;
@@ -245,6 +246,8 @@ https://fpgasoftware.intel.com/eula.
 ; V_D8M/VGA_READ_COUNTER.v          ; yes             ; User Verilog HDL File        ; C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/V_D8M/VGA_READ_COUNTER.v          ;         ;
 ; TMZ-181_Verilog/rgb_hsv.v         ; yes             ; User Verilog HDL File        ; C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v         ;         ;
 ; TMZ-181_Verilog/hsv_rgb.v         ; yes             ; User Verilog HDL File        ; C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/hsv_rgb.v         ;         ;
+; TMZ-181_Verilog/mod360.v          ; yes             ; User Verilog HDL File        ; C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/mod360.v          ;         ;
+; TMZ-181_Verilog/divide.v          ; yes             ; User Verilog HDL File        ; C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v          ;         ;
 ; altera_pll.v                      ; yes             ; Megafunction                 ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altera_pll.v                                  ;         ;
 ; altsyncram.tdf                    ; yes             ; Megafunction                 ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                ;         ;
 ; stratix_ram_block.inc             ; yes             ; Megafunction                 ; c:/intelfpga/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                         ;         ;
@@ -264,14 +267,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                      ;
 +---------------------------------------------+----------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 2457                                                                       ;
+; Estimate of Logic utilization (ALMs needed) ; 2185                                                                       ;
 ;                                             ;                                                                            ;
-; Combinational ALUT usage for logic          ; 3876                                                                       ;
-;     -- 7 input functions                    ; 24                                                                         ;
-;     -- 6 input functions                    ; 1009                                                                       ;
-;     -- 5 input functions                    ; 879                                                                        ;
-;     -- 4 input functions                    ; 784                                                                        ;
-;     -- <=3 input functions                  ; 1180                                                                       ;
+; Combinational ALUT usage for logic          ; 3596                                                                       ;
+;     -- 7 input functions                    ; 29                                                                         ;
+;     -- 6 input functions                    ; 739                                                                        ;
+;     -- 5 input functions                    ; 747                                                                        ;
+;     -- 4 input functions                    ; 771                                                                        ;
+;     -- <=3 input functions                  ; 1310                                                                       ;
 ;                                             ;                                                                            ;
 ; Dedicated logic registers                   ; 605                                                                        ;
 ;                                             ;                                                                            ;
@@ -286,8 +289,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                            ;
 ; Maximum fan-out node                        ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CLOCKMEM:c1|CK_1HZ ;
 ; Maximum fan-out                             ; 236                                                                        ;
-; Total fan-out                               ; 20221                                                                      ;
-; Average fan-out                             ; 4.33                                                                       ;
+; Total fan-out                               ; 18232                                                                      ;
+; Average fan-out                             ; 4.15                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------+
 
 
@@ -296,7 +299,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                      ; Entity Name               ; Library Name ;
 +----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |DE1_SOC_D8M_LB_RTL                                ; 3876 (19)           ; 605 (0)                   ; 122880            ; 3          ; 76   ; 0            ; |DE1_SOC_D8M_LB_RTL                                                                                                                      ; DE1_SOC_D8M_LB_RTL        ; work         ;
+; |DE1_SOC_D8M_LB_RTL                                ; 3596 (19)           ; 605 (0)                   ; 122880            ; 3          ; 76   ; 0            ; |DE1_SOC_D8M_LB_RTL                                                                                                                      ; DE1_SOC_D8M_LB_RTL        ; work         ;
 ;    |D8M_SET:ccd|                                   ; 139 (0)             ; 105 (0)                   ; 122880            ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd                                                                                                          ; D8M_SET                   ; work         ;
 ;       |D8M_WRITE_COUNTER:u3|                       ; 60 (60)             ; 46 (46)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|D8M_WRITE_COUNTER:u3                                                                                     ; D8M_WRITE_COUNTER         ; work         ;
 ;       |RAW2RGB_L:u4|                               ; 65 (3)              ; 46 (0)                    ; 122880            ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|RAW2RGB_L:u4                                                                                             ; RAW2RGB_L                 ; work         ;
@@ -324,18 +327,18 @@ https://fpgasoftware.intel.com/eula.
 ;          |I2C_WRITE_PTR:wpt|                       ; 69 (69)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_PTR:wpt                                            ; I2C_WRITE_PTR             ; work         ;
 ;          |I2C_WRITE_WDATA:wrd|                     ; 52 (52)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd                                          ; I2C_WRITE_WDATA           ; work         ;
 ;    |RESET_DELAY:u2|                                ; 42 (42)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|RESET_DELAY:u2                                                                                                       ; RESET_DELAY               ; work         ;
-;    |hsv_rgb:r0|                                    ; 475 (156)           ; 0 (0)                     ; 0                 ; 3          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0                                                                                                           ; hsv_rgb                   ; work         ;
-;       |divide:ds|                                  ; 161 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds                                                                                                 ; divide                    ; work         ;
-;          |div_step:d0|                             ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds|div_step:d0                                                                                     ; div_step                  ; work         ;
+;    |hsv_rgb:r0|                                    ; 470 (150)           ; 0 (0)                     ; 0                 ; 3          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0                                                                                                           ; hsv_rgb                   ; work         ;
+;       |divide:ds|                                  ; 163 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds                                                                                                 ; divide                    ; work         ;
+;          |div_step:d0|                             ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds|div_step:d0                                                                                     ; div_step                  ; work         ;
 ;          |div_step:d1|                             ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds|div_step:d1                                                                                     ; div_step                  ; work         ;
-;          |div_step:d2|                             ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds|div_step:d2                                                                                     ; div_step                  ; work         ;
+;          |div_step:d2|                             ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds|div_step:d2                                                                                     ; div_step                  ; work         ;
 ;          |div_step:d3|                             ; 21 (21)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds|div_step:d3                                                                                     ; div_step                  ; work         ;
-;          |div_step:d4|                             ; 21 (21)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds|div_step:d4                                                                                     ; div_step                  ; work         ;
+;          |div_step:d4|                             ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds|div_step:d4                                                                                     ; div_step                  ; work         ;
 ;          |div_step:d5|                             ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds|div_step:d5                                                                                     ; div_step                  ; work         ;
-;          |div_step:d6|                             ; 20 (20)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds|div_step:d6                                                                                     ; div_step                  ; work         ;
-;          |div_step:d7|                             ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds|div_step:d7                                                                                     ; div_step                  ; work         ;
+;          |div_step:d6|                             ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds|div_step:d6                                                                                     ; div_step                  ; work         ;
+;          |div_step:d7|                             ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds|div_step:d7                                                                                     ; div_step                  ; work         ;
 ;          |div_step:d8|                             ; 28 (28)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:ds|div_step:d8                                                                                     ; div_step                  ; work         ;
-;       |divide:dv|                                  ; 158 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:dv                                                                                                 ; divide                    ; work         ;
+;       |divide:dv|                                  ; 157 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:dv                                                                                                 ; divide                    ; work         ;
 ;          |div_step:d0|                             ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:dv|div_step:d0                                                                                     ; div_step                  ; work         ;
 ;          |div_step:d1|                             ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:dv|div_step:d1                                                                                     ; div_step                  ; work         ;
 ;          |div_step:d2|                             ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:dv|div_step:d2                                                                                     ; div_step                  ; work         ;
@@ -344,57 +347,57 @@ https://fpgasoftware.intel.com/eula.
 ;          |div_step:d5|                             ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:dv|div_step:d5                                                                                     ; div_step                  ; work         ;
 ;          |div_step:d6|                             ; 23 (23)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:dv|div_step:d6                                                                                     ; div_step                  ; work         ;
 ;          |div_step:d7|                             ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:dv|div_step:d7                                                                                     ; div_step                  ; work         ;
-;          |div_step:d8|                             ; 21 (21)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:dv|div_step:d8                                                                                     ; div_step                  ; work         ;
+;          |div_step:d8|                             ; 20 (20)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|divide:dv|div_step:d8                                                                                     ; div_step                  ; work         ;
 ;    |pll_test:ref|                                  ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|pll_test:ref                                                                                                         ; pll_test                  ; work         ;
 ;       |pll_test_0002:pll_test_inst|                ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|pll_test:ref|pll_test_0002:pll_test_inst                                                                             ; pll_test_0002             ; work         ;
 ;          |altera_pll:altera_pll_i|                 ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|pll_test:ref|pll_test_0002:pll_test_inst|altera_pll:altera_pll_i                                                     ; altera_pll                ; work         ;
-;    |rgb_hsv:h0|                                    ; 1850 (129)          ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0                                                                                                           ; rgb_hsv                   ; work         ;
-;       |divide:div_sat|                             ; 353 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat                                                                                            ; divide                    ; work         ;
+;    |rgb_hsv:h0|                                    ; 1575 (134)          ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0                                                                                                           ; rgb_hsv                   ; work         ;
+;       |divide:div_sat|                             ; 338 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat                                                                                            ; divide                    ; work         ;
 ;          |div_step:d0|                             ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat|div_step:d0                                                                                ; div_step                  ; work         ;
-;          |div_step:d1|                             ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat|div_step:d1                                                                                ; div_step                  ; work         ;
+;          |div_step:d1|                             ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat|div_step:d1                                                                                ; div_step                  ; work         ;
 ;          |div_step:d2|                             ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat|div_step:d2                                                                                ; div_step                  ; work         ;
 ;          |div_step:d3|                             ; 37 (37)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat|div_step:d3                                                                                ; div_step                  ; work         ;
-;          |div_step:d4|                             ; 42 (42)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat|div_step:d4                                                                                ; div_step                  ; work         ;
-;          |div_step:d5|                             ; 55 (55)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat|div_step:d5                                                                                ; div_step                  ; work         ;
-;          |div_step:d6|                             ; 58 (58)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat|div_step:d6                                                                                ; div_step                  ; work         ;
-;          |div_step:d7|                             ; 52 (52)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat|div_step:d7                                                                                ; div_step                  ; work         ;
+;          |div_step:d4|                             ; 41 (41)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat|div_step:d4                                                                                ; div_step                  ; work         ;
+;          |div_step:d5|                             ; 50 (50)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat|div_step:d5                                                                                ; div_step                  ; work         ;
+;          |div_step:d6|                             ; 53 (53)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat|div_step:d6                                                                                ; div_step                  ; work         ;
+;          |div_step:d7|                             ; 49 (49)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat|div_step:d7                                                                                ; div_step                  ; work         ;
 ;          |div_step:d8|                             ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|divide:div_sat|div_step:d8                                                                                ; div_step                  ; work         ;
-;       |rgb_hue:hb|                                 ; 452 (73)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb                                                                                                ; rgb_hue                   ; work         ;
-;          |divide:d0|                               ; 358 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0                                                                                      ; divide                    ; work         ;
-;             |div_step:d0|                          ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d0                                                                          ; div_step                  ; work         ;
-;             |div_step:d1|                          ; 28 (28)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d1                                                                          ; div_step                  ; work         ;
+;       |rgb_hue:hb|                                 ; 367 (78)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb                                                                                                ; rgb_hue                   ; work         ;
+;          |divide:d0|                               ; 285 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0                                                                                      ; divide                    ; work         ;
+;             |div_step:d0|                          ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d0                                                                          ; div_step                  ; work         ;
+;             |div_step:d1|                          ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d1                                                                          ; div_step                  ; work         ;
 ;             |div_step:d2|                          ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d2                                                                          ; div_step                  ; work         ;
-;             |div_step:d3|                          ; 37 (37)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d3                                                                          ; div_step                  ; work         ;
-;             |div_step:d4|                          ; 42 (42)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d4                                                                          ; div_step                  ; work         ;
-;             |div_step:d5|                          ; 56 (56)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d5                                                                          ; div_step                  ; work         ;
-;             |div_step:d6|                          ; 57 (57)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d6                                                                          ; div_step                  ; work         ;
-;             |div_step:d7|                          ; 54 (54)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d7                                                                          ; div_step                  ; work         ;
-;             |div_step:d8|                          ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d8                                                                          ; div_step                  ; work         ;
-;          |mod360:m360|                             ; 21 (21)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|mod360:m360                                                                                    ; mod360                    ; work         ;
-;       |rgb_hue:hg|                                 ; 444 (75)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg                                                                                                ; rgb_hue                   ; work         ;
-;          |divide:d0|                               ; 340 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0                                                                                      ; divide                    ; work         ;
+;             |div_step:d3|                          ; 35 (35)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d3                                                                          ; div_step                  ; work         ;
+;             |div_step:d4|                          ; 35 (35)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d4                                                                          ; div_step                  ; work         ;
+;             |div_step:d5|                          ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d5                                                                          ; div_step                  ; work         ;
+;             |div_step:d6|                          ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d6                                                                          ; div_step                  ; work         ;
+;             |div_step:d7|                          ; 35 (35)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d7                                                                          ; div_step                  ; work         ;
+;             |div_step:d8|                          ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|divide:d0|div_step:d8                                                                          ; div_step                  ; work         ;
+;          |mod360:m360|                             ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|mod360:m360                                                                                    ; mod360                    ; work         ;
+;       |rgb_hue:hg|                                 ; 368 (79)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg                                                                                                ; rgb_hue                   ; work         ;
+;          |divide:d0|                               ; 284 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0                                                                                      ; divide                    ; work         ;
 ;             |div_step:d0|                          ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0|div_step:d0                                                                          ; div_step                  ; work         ;
 ;             |div_step:d1|                          ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0|div_step:d1                                                                          ; div_step                  ; work         ;
 ;             |div_step:d2|                          ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0|div_step:d2                                                                          ; div_step                  ; work         ;
-;             |div_step:d3|                          ; 37 (37)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0|div_step:d3                                                                          ; div_step                  ; work         ;
-;             |div_step:d4|                          ; 41 (41)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0|div_step:d4                                                                          ; div_step                  ; work         ;
-;             |div_step:d5|                          ; 50 (50)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0|div_step:d5                                                                          ; div_step                  ; work         ;
-;             |div_step:d6|                          ; 52 (52)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0|div_step:d6                                                                          ; div_step                  ; work         ;
-;             |div_step:d7|                          ; 50 (50)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0|div_step:d7                                                                          ; div_step                  ; work         ;
-;             |div_step:d8|                          ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0|div_step:d8                                                                          ; div_step                  ; work         ;
-;          |mod360:m360|                             ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|mod360:m360                                                                                    ; mod360                    ; work         ;
-;       |rgb_hue:hr|                                 ; 472 (76)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr                                                                                                ; rgb_hue                   ; work         ;
-;          |divide:d0|                               ; 339 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0                                                                                      ; divide                    ; work         ;
+;             |div_step:d3|                          ; 35 (35)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0|div_step:d3                                                                          ; div_step                  ; work         ;
+;             |div_step:d4|                          ; 35 (35)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0|div_step:d4                                                                          ; div_step                  ; work         ;
+;             |div_step:d5|                          ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0|div_step:d5                                                                          ; div_step                  ; work         ;
+;             |div_step:d6|                          ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0|div_step:d6                                                                          ; div_step                  ; work         ;
+;             |div_step:d7|                          ; 34 (34)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0|div_step:d7                                                                          ; div_step                  ; work         ;
+;             |div_step:d8|                          ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|divide:d0|div_step:d8                                                                          ; div_step                  ; work         ;
+;          |mod360:m360|                             ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|mod360:m360                                                                                    ; mod360                    ; work         ;
+;       |rgb_hue:hr|                                 ; 368 (79)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr                                                                                                ; rgb_hue                   ; work         ;
+;          |divide:d0|                               ; 284 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0                                                                                      ; divide                    ; work         ;
 ;             |div_step:d0|                          ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d0                                                                          ; div_step                  ; work         ;
 ;             |div_step:d1|                          ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d1                                                                          ; div_step                  ; work         ;
 ;             |div_step:d2|                          ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d2                                                                          ; div_step                  ; work         ;
-;             |div_step:d3|                          ; 37 (37)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d3                                                                          ; div_step                  ; work         ;
-;             |div_step:d4|                          ; 41 (41)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d4                                                                          ; div_step                  ; work         ;
-;             |div_step:d5|                          ; 50 (50)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d5                                                                          ; div_step                  ; work         ;
-;             |div_step:d6|                          ; 52 (52)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d6                                                                          ; div_step                  ; work         ;
-;             |div_step:d7|                          ; 49 (49)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d7                                                                          ; div_step                  ; work         ;
-;             |div_step:d8|                          ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d8                                                                          ; div_step                  ; work         ;
-;          |mod360:m360|                             ; 57 (57)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|mod360:m360                                                                                    ; mod360                    ; work         ;
+;             |div_step:d3|                          ; 35 (35)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d3                                                                          ; div_step                  ; work         ;
+;             |div_step:d4|                          ; 35 (35)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d4                                                                          ; div_step                  ; work         ;
+;             |div_step:d5|                          ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d5                                                                          ; div_step                  ; work         ;
+;             |div_step:d6|                          ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d6                                                                          ; div_step                  ; work         ;
+;             |div_step:d7|                          ; 34 (34)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d7                                                                          ; div_step                  ; work         ;
+;             |div_step:d8|                          ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d8                                                                          ; div_step                  ; work         ;
+;          |mod360:m360|                             ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|mod360:m360                                                                                    ; mod360                    ; work         ;
 +----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -537,8 +540,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                                  ;                           ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_PTR:wpt|ST[5],      ;
 ;                                                                                  ;                           ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_READ_DATA:rd|ST[5],       ;
 ;                                                                                  ;                           ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_READ_DATA:rd|ST[6],       ;
-;                                                                                  ;                           ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|DELY[1],  ;
 ;                                                                                  ;                           ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|DELY[0],  ;
+;                                                                                  ;                           ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|DELY[1],  ;
 ;                                                                                  ;                           ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|DELY[2],  ;
 ;                                                                                  ;                           ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|DELY[3],  ;
 ;                                                                                  ;                           ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|DELY[4],  ;
@@ -630,68 +633,66 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|D8M_WRITE_COUNTER:u3|X_Cont[12]                                         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|D8M_WRITE_COUNTER:u3|X_WR_CNT[0]                                        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|D8M_WRITE_COUNTER:u3|Y_Cont[12]                                         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|VGA_READ_COUNTER:cnt|CNT_[15]                                           ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|RAW2RGB_L:u4|RAW_RGB_BIN:bin|B[3]                                       ;
-; 128:1              ; 8 bits    ; 680 LEs       ; 0 LEs                ; 680 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CNT[0]                      ;
-; 65:1               ; 8 bits    ; 344 LEs       ; 0 LEs                ; 344 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_PTR:wpt|DELY[0]   ;
-; 128:1              ; 8 bits    ; 680 LEs       ; 0 LEs                ; 680 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd|CNT[2]     ;
-; 65:1               ; 8 bits    ; 344 LEs       ; 0 LEs                ; 344 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_PTR:wpt|DELY[3]    ;
-; 128:1              ; 8 bits    ; 680 LEs       ; 0 LEs                ; 680 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_READ_DATA:rd|CNT[7]      ;
-; 65:1               ; 8 bits    ; 344 LEs       ; 0 LEs                ; 344 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_PTR:wpt|CNT[5]    ;
-; 65:1               ; 8 bits    ; 344 LEs       ; 0 LEs                ; 344 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_PTR:wpt|CNT[4]     ;
-; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd|DELY[1] ;
-; 64:1               ; 7 bits    ; 294 LEs       ; 7 LEs                ; 287 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd|A[7]       ;
-; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd|DELY[6]    ;
-; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|DELY[4]  ;
-; 64:1               ; 7 bits    ; 294 LEs       ; 7 LEs                ; 287 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_READ_DATA:rd|A[8]        ;
-; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_READ_DATA:rd|DELY[5]     ;
-; 256:1              ; 18 bits   ; 3060 LEs      ; 144 LEs              ; 2916 LEs               ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|REG16_DATA16[4]              ;
-; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd|CNT[7]  ;
-; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|CNT[5]   ;
-; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd|BYTE[6]    ;
-; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_READ_DATA:rd|BYTE[7]     ;
-; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd|DATA16[7]  ;
-; 130:1              ; 16 bits   ; 1376 LEs      ; 0 LEs                ; 1376 LEs               ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|WCNT[2]                     ;
-; 257:1              ; 8 bits    ; 1368 LEs      ; 0 LEs                ; 1368 LEs               ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|CNT[7]                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|D8M_WRITE_COUNTER:u3|X_Cont[11]                                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|D8M_WRITE_COUNTER:u3|X_WR_CNT[6]                                        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|D8M_WRITE_COUNTER:u3|Y_Cont[6]                                          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|VGA_READ_COUNTER:cnt|CNT_[8]                                            ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|RAW2RGB_L:u4|RAW_RGB_BIN:bin|R[3]                                       ;
+; 128:1              ; 8 bits    ; 680 LEs       ; 0 LEs                ; 680 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CNT[6]                      ;
+; 65:1               ; 8 bits    ; 344 LEs       ; 0 LEs                ; 344 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_PTR:wpt|DELY[1]   ;
+; 128:1              ; 8 bits    ; 680 LEs       ; 0 LEs                ; 680 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd|CNT[6]     ;
+; 65:1               ; 8 bits    ; 344 LEs       ; 0 LEs                ; 344 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_PTR:wpt|DELY[5]    ;
+; 128:1              ; 8 bits    ; 680 LEs       ; 0 LEs                ; 680 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_READ_DATA:rd|CNT[0]      ;
+; 65:1               ; 8 bits    ; 344 LEs       ; 0 LEs                ; 344 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_PTR:wpt|CNT[0]    ;
+; 65:1               ; 8 bits    ; 344 LEs       ; 0 LEs                ; 344 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_PTR:wpt|CNT[1]     ;
+; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd|DELY[2] ;
+; 64:1               ; 7 bits    ; 294 LEs       ; 7 LEs                ; 287 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd|A[6]       ;
+; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd|DELY[7]    ;
+; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|DELY[3]  ;
+; 64:1               ; 7 bits    ; 294 LEs       ; 7 LEs                ; 287 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_READ_DATA:rd|A[4]        ;
+; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_READ_DATA:rd|DELY[2]     ;
+; 256:1              ; 18 bits   ; 3060 LEs      ; 144 LEs              ; 2916 LEs               ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|REG16_DATA16[5]              ;
+; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd|CNT[2]  ;
+; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|CNT[0]   ;
+; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd|BYTE[5]    ;
+; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_READ_DATA:rd|BYTE[5]     ;
+; 129:1              ; 8 bits    ; 688 LEs       ; 0 LEs                ; 688 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd|DATA16[2]  ;
+; 130:1              ; 16 bits   ; 1376 LEs      ; 0 LEs                ; 1376 LEs               ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|WCNT[1]                     ;
+; 257:1              ; 8 bits    ; 1368 LEs      ; 0 LEs                ; 1368 LEs               ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|CNT[0]                       ;
 ; 130:1              ; 3 bits    ; 258 LEs       ; 3 LEs                ; 255 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|POINTER[15]                 ;
-; 130:1              ; 17 bits   ; 1462 LEs      ; 17 LEs               ; 1445 LEs               ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|POINTER[9]                  ;
-; 67:1               ; 3 bits    ; 132 LEs       ; 6 LEs                ; 126 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_PTR:wpt|BYTE[2]   ;
+; 130:1              ; 17 bits   ; 1462 LEs      ; 17 LEs               ; 1445 LEs               ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|SLAVE_ADDR[1]               ;
+; 67:1               ; 3 bits    ; 132 LEs       ; 6 LEs                ; 126 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_PTR:wpt|BYTE[0]   ;
 ; 67:1               ; 3 bits    ; 132 LEs       ; 6 LEs                ; 126 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_PTR:wpt|BYTE[0]    ;
 ; 258:1              ; 8 bits    ; 1376 LEs      ; 0 LEs                ; 1376 LEs               ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|WCNT[4]                      ;
-; 131:1              ; 6 bits    ; 522 LEs       ; 294 LEs              ; 228 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd|ST[3]   ;
+; 131:1              ; 6 bits    ; 522 LEs       ; 294 LEs              ; 228 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd|ST[0]   ;
 ; 68:1               ; 3 bits    ; 135 LEs       ; 45 LEs               ; 90 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_PTR:wpt|ST[5]     ;
-; 131:1              ; 6 bits    ; 522 LEs       ; 294 LEs              ; 228 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|ST[4]    ;
+; 131:1              ; 6 bits    ; 522 LEs       ; 294 LEs              ; 228 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|ST[1]    ;
 ; 68:1               ; 3 bits    ; 135 LEs       ; 45 LEs               ; 90 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_PTR:wpt|ST[0]      ;
-; 258:1              ; 2 bits    ; 344 LEs       ; 2 LEs                ; 342 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|SLAVE_ADDR[2]                ;
+; 258:1              ; 2 bits    ; 344 LEs       ; 2 LEs                ; 342 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|SLAVE_ADDR[0]                ;
 ; 258:1              ; 7 bits    ; 1204 LEs      ; 7 LEs                ; 1197 LEs               ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|POINTER[5]                   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 4 LEs                ; 24 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_PTR:wpt|A[8]       ;
-; 132:1              ; 3 bits    ; 264 LEs       ; 57 LEs               ; 207 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd|ST[6]      ;
-; 132:1              ; 3 bits    ; 264 LEs       ; 57 LEs               ; 207 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_READ_DATA:rd|ST[6]       ;
-; 133:1              ; 4 bits    ; 352 LEs       ; 16 LEs               ; 336 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd|BYTE[2] ;
-; 133:1              ; 4 bits    ; 352 LEs       ; 16 LEs               ; 336 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|BYTE[3]  ;
-; 23:1               ; 8 bits    ; 120 LEs       ; 16 LEs               ; 104 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_PTR:wpt|A[4]      ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 4 LEs                ; 24 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_PTR:wpt|A[1]       ;
+; 132:1              ; 3 bits    ; 264 LEs       ; 57 LEs               ; 207 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd|ST[5]      ;
+; 132:1              ; 3 bits    ; 264 LEs       ; 57 LEs               ; 207 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_READ_DATA:rd|ST[0]       ;
+; 133:1              ; 4 bits    ; 352 LEs       ; 16 LEs               ; 336 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd|BYTE[0] ;
+; 133:1              ; 4 bits    ; 352 LEs       ; 16 LEs               ; 336 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|BYTE[2]  ;
+; 23:1               ; 8 bits    ; 120 LEs       ; 16 LEs               ; 104 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_PTR:wpt|A[6]      ;
 ; 134:1              ; 32 bits   ; 2848 LEs      ; 0 LEs                ; 2848 LEs               ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|DELY[25]                    ;
-; 23:1               ; 6 bits    ; 90 LEs        ; 12 LEs               ; 78 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_PTR:wpt|A[2]       ;
-; 70:1               ; 8 bits    ; 368 LEs       ; 24 LEs               ; 344 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd|A[2]    ;
-; 70:1               ; 3 bits    ; 138 LEs       ; 12 LEs               ; 126 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|A[7]     ;
-; 70:1               ; 3 bits    ; 138 LEs       ; 12 LEs               ; 126 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|A[2]     ;
-; 263:1              ; 32 bits   ; 5600 LEs      ; 0 LEs                ; 5600 LEs               ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|DELY[17]                     ;
-; 261:1              ; 2 bits    ; 348 LEs       ; 28 LEs               ; 320 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|ST[6]                        ;
+; 23:1               ; 6 bits    ; 90 LEs        ; 12 LEs               ; 78 LEs                 ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_PTR:wpt|A[3]       ;
+; 70:1               ; 8 bits    ; 368 LEs       ; 24 LEs               ; 344 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd|A[8]    ;
+; 70:1               ; 3 bits    ; 138 LEs       ; 12 LEs               ; 126 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|A[4]     ;
+; 70:1               ; 3 bits    ; 138 LEs       ; 12 LEs               ; 126 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_WRITE_WDATA:wrd|A[5]     ;
+; 263:1              ; 32 bits   ; 5600 LEs      ; 0 LEs                ; 5600 LEs               ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|DELY[14]                     ;
+; 261:1              ; 2 bits    ; 348 LEs       ; 28 LEs               ; 320 LEs                ; Yes        ; |DE1_SOC_D8M_LB_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|ST[7]                        ;
 ; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|RAW2RGB_L:u4|RAW_RGB_BIN:bin|Add0                                       ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|RAW2RGB_L:u4|RAW_RGB_BIN:bin|Add0                                       ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hg|mod360:m360|diff[3]                                           ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hb|mod360:m360|diff[6]                                           ;
-; 4:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|taps0x[4]                                 ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|max[4]                                                                   ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|min[3]                                                                   ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|gtemp[1]                                                                 ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|rgb_hue:hr|mod360:m360|diff[5]                                           ;
-; 6:1                ; 9 bits    ; 36 LEs        ; 27 LEs               ; 9 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|btemp[5]                                                                 ;
-; 7:1                ; 9 bits    ; 36 LEs        ; 27 LEs               ; 9 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|rtemp[2]                                                                 ;
-; 7:1                ; 9 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|Selector0                                                                ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|D8M_SET:ccd|RAW2RGB_L:u4|Line_Buffer_J:u0|taps1x[0]                                 ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|max[2]                                                                   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|min[0]                                                                   ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|gtemp[5]                                                                 ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 27 LEs               ; 9 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|btemp[3]                                                                 ;
+; 7:1                ; 9 bits    ; 36 LEs        ; 27 LEs               ; 9 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|hsv_rgb:r0|rtemp[1]                                                                 ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|Selector8                                                                ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |DE1_SOC_D8M_LB_RTL|rgb_hsv:h0|Selector0                                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
 
 
@@ -1316,6 +1317,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+-------+----------+-----------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rgb_hsv:h0|rgb_hue:hr|mod360:m360"                                                                                                                                               ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; in   ; Input ; Warning  ; Input port expression (14 bits) is wider than the input port (9 bits) it drives.  The 5 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d0"                                                             ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
@@ -1673,37 +1683,37 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 56                          ;
 ;     plain             ; 103                         ;
 ; arriav_io_obuf        ; 4                           ;
-; arriav_lcell_comb     ; 3878                        ;
-;     arith             ; 1110                        ;
+; arriav_lcell_comb     ; 3598                        ;
+;     arith             ; 1100                        ;
 ;         0 data inputs ; 38                          ;
-;         1 data inputs ; 431                         ;
-;         2 data inputs ; 37                          ;
-;         3 data inputs ; 58                          ;
-;         4 data inputs ; 285                         ;
+;         1 data inputs ; 443                         ;
+;         2 data inputs ; 40                          ;
+;         3 data inputs ; 53                          ;
+;         4 data inputs ; 265                         ;
 ;         5 data inputs ; 261                         ;
-;     extend            ; 24                          ;
-;         7 data inputs ; 24                          ;
-;     normal            ; 2551                        ;
+;     extend            ; 29                          ;
+;         7 data inputs ; 29                          ;
+;     normal            ; 2275                        ;
 ;         0 data inputs ; 3                           ;
 ;         1 data inputs ; 5                           ;
-;         2 data inputs ; 218                         ;
-;         3 data inputs ; 248                         ;
-;         4 data inputs ; 450                         ;
-;         5 data inputs ; 618                         ;
-;         6 data inputs ; 1009                        ;
-;     shared            ; 193                         ;
-;         0 data inputs ; 14                          ;
+;         2 data inputs ; 264                         ;
+;         3 data inputs ; 321                         ;
+;         4 data inputs ; 457                         ;
+;         5 data inputs ; 486                         ;
+;         6 data inputs ; 739                         ;
+;     shared            ; 194                         ;
+;         0 data inputs ; 12                          ;
 ;         1 data inputs ; 36                          ;
-;         2 data inputs ; 65                          ;
-;         3 data inputs ; 29                          ;
+;         2 data inputs ; 74                          ;
+;         3 data inputs ; 23                          ;
 ;         4 data inputs ; 49                          ;
 ; arriav_mac            ; 3                           ;
 ; boundary_port         ; 76                          ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 30                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 46.50                       ;
-; Average LUT depth     ; 25.67                       ;
+; Max LUT depth         ; 46.40                       ;
+; Average LUT depth     ; 24.43                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1722,7 +1732,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
-    Info: Processing started: Wed May 18 19:29:49 2022
+    Info: Processing started: Fri May 20 17:22:30 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SOC_D8M_LB_RTL -c DE1_SOC_D8M_LB_RTL
 Warning (125092): Tcl Script File V/vga_pll/vga_pll_0002.qip not found
     Info (125063): set_global_assignment -name QIP_FILE V/vga_pll/vga_pll_0002.qip
@@ -1839,7 +1849,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file tmz-181
     Info (12023): Found entity 1: grayscale File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/grayscale.v Line: 3
 Info (12021): Found 2 design units, including 2 entities, in source file tmz-181_verilog/contrast.v
     Info (12023): Found entity 1: contrast File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/contrast.v Line: 3
-    Info (12023): Found entity 2: contrast_logic File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/contrast.v Line: 68
+    Info (12023): Found entity 2: contrast_logic File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/contrast.v Line: 61
 Info (12021): Found 1 design units, including 1 entities, in source file tmz-181_verilog/rowram.v
     Info (12023): Found entity 1: rowRam File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rowRam.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file tmz-181_verilog/row_shift_en_gen.v
@@ -1861,16 +1871,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file tmz-181
     Info (12023): Found entity 1: cartoon File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/cartoon.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file tmz-181_verilog/cursor.v
     Info (12023): Found entity 1: cursor File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/cursor.v Line: 1
-Warning (10275): Verilog HDL Module Instantiation warning at rgb_hsv.v(144): ignored dangling comma in List of Port Connections File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v Line: 144
-Warning (12090): Entity "divide" obtained from "TMZ-181_Verilog/rgb_hsv.v" instead of from Quartus Prime megafunction library File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v Line: 128
-Info (12021): Found 5 design units, including 5 entities, in source file tmz-181_verilog/rgb_hsv.v
+Info (12021): Found 2 design units, including 2 entities, in source file tmz-181_verilog/rgb_hsv.v
     Info (12023): Found entity 1: rgb_hsv File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v Line: 1
     Info (12023): Found entity 2: rgb_hue File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v Line: 91
-    Info (12023): Found entity 3: divide File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v Line: 128
-    Info (12023): Found entity 4: div_step File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v Line: 148
-    Info (12023): Found entity 5: mod360 File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v Line: 168
 Info (12021): Found 1 design units, including 1 entities, in source file tmz-181_verilog/hsv_rgb.v
     Info (12023): Found entity 1: hsv_rgb File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/hsv_rgb.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tmz-181_verilog/mod360.v
+    Info (12023): Found entity 1: mod360 File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/mod360.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at divide.v(17): ignored dangling comma in List of Port Connections File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v Line: 17
+Warning (12090): Entity "divide" obtained from "TMZ-181_Verilog/divide.v" instead of from Quartus Prime megafunction library File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v Line: 1
+Info (12021): Found 2 design units, including 2 entities, in source file tmz-181_verilog/divide.v
+    Info (12023): Found entity 1: divide File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v Line: 1
+    Info (12023): Found entity 2: div_step File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v Line: 21
 Warning (10236): Verilog HDL Implicit Net warning at colordetc.v(29): created implicit net for "blueness" File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/colordetc.v Line: 29
 Warning (10236): Verilog HDL Implicit Net warning at FOCUS_ADJ.v(58): created implicit net for "V_CNT" File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/V_Auto/FOCUS_ADJ.v Line: 58
 Warning (10236): Verilog HDL Implicit Net warning at FOCUS_ADJ.v(59): created implicit net for "H_CNT" File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/V_Auto/FOCUS_ADJ.v Line: 59
@@ -2048,14 +2060,17 @@ Info (12128): Elaborating entity "rgb_hsv" for hierarchy "rgb_hsv:h0" File: C:/U
 Info (10264): Verilog HDL Case Statement information at rgb_hsv.v(55): all case item expressions in this case statement are onehot File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v Line: 55
 Info (12128): Elaborating entity "rgb_hue" for hierarchy "rgb_hsv:h0|rgb_hue:hr" File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v Line: 14
 Info (12128): Elaborating entity "divide" for hierarchy "rgb_hsv:h0|rgb_hue:hr|divide:d0" File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v Line: 104
-Info (12128): Elaborating entity "div_step" for hierarchy "rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d8" File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v Line: 136
+Info (12128): Elaborating entity "div_step" for hierarchy "rgb_hsv:h0|rgb_hue:hr|divide:d0|div_step:d8" File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v Line: 9
 Info (12128): Elaborating entity "mod360" for hierarchy "rgb_hsv:h0|rgb_hue:hr|mod360:m360" File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v Line: 105
+Warning (10230): Verilog HDL assignment warning at mod360.v(10): truncated value with size 14 to match size of target (9) File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/mod360.v Line: 10
 Info (12128): Elaborating entity "hsv_rgb" for hierarchy "hsv_rgb:r0" File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/DE1_SOC_D8M_LB_RTL.v Line: 154
+Warning (12020): Port "ordered port 0" on the entity instantiation of "m360" is connected to a signal of width 14. The formal width of the signal in the module is 9.  The extra bits will be ignored. File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v Line: 105
+Warning (12020): Port "ordered port 0" on the entity instantiation of "m360" is connected to a signal of width 14. The formal width of the signal in the module is 9.  The extra bits will be ignored. File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v Line: 105
 Warning (12161): Node "D8M_SET:ccd|SDATA" is stuck at GND because node is in wire loop and does not have a source File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/V_D8M/D8M_SET.v Line: 5
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following PLL node(s):
         Warning (14320): Synthesized away node "pll_test:ref|pll_test_0002:pll_test_inst|altera_pll:altera_pll_i|outclk_wire[1]" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altera_pll.v Line: 749
-Warning (12241): 21 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 22 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "CAMERA_I2C_SCL" and its non-tri-state driver. File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/DE1_SOC_D8M_LB_RTL.v Line: 32
     Warning (13035): Inserted always-enabled tri-state buffer between "MIPI_I2C_SCL" and its non-tri-state driver. File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/DE1_SOC_D8M_LB_RTL.v Line: 36
@@ -2103,19 +2118,19 @@ Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/DE1_SOC_D8M_LB_RTL.v Line: 19
     Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/DE1_SOC_D8M_LB_RTL.v Line: 19
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/DE1_SOC_D8M_LB_RTL.v Line: 19
-Info (21057): Implemented 4048 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3768 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 28 input pins
     Info (21059): Implemented 44 output pins
     Info (21060): Implemented 4 bidirectional pins
-    Info (21061): Implemented 3938 logic cells
+    Info (21061): Implemented 3658 logic cells
     Info (21064): Implemented 30 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 3 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 134 warnings
-    Info: Peak virtual memory: 4920 megabytes
-    Info: Processing ended: Wed May 18 19:30:28 2022
-    Info: Elapsed time: 00:00:39
-    Info: Total CPU time (on all processors): 00:00:53
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 137 warnings
+    Info: Peak virtual memory: 4913 megabytes
+    Info: Processing ended: Fri May 20 17:23:10 2022
+    Info: Elapsed time: 00:00:40
+    Info: Total CPU time (on all processors): 00:00:52
 
 
 +------------------------------------------+

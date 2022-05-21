@@ -12,7 +12,7 @@ divide dv (hsv[7:0], 8'hFF, V);
 
 wire [17:0] Ctemp = S * V;
 wire [8:0] C = Ctemp[16:8];
-wire [24:0] Xtemp = hsv[23:15] * 16'h9999;
+wire [24:0] Xtemp = hsv[23:15] * 16'h0444;
 reg [16:0] Xtemp1;
 wire [16:0] Xtemp2 = 17'd65536 - Xtemp1;
 wire [25:0] Xtemp3 = C * Xtemp2;

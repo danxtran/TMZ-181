@@ -1,0 +1,157 @@
+module mod360 (
+  input neg,
+  input [13:0] in,
+  output reg [8:0] out
+);
+
+
+reg [13:0] diff;
+
+always @(*) begin
+
+  if (in >= 14'd15480) begin
+    diff = in - 14'd15480;
+  end
+  else if (in >= 14'd15120) begin
+    diff = in - 14'd15120;
+  end
+  else if (in >= 14'd14760) begin
+    diff = in - 14'd14760;
+  end
+  else if (in >= 14'd14400) begin
+    diff = in - 14'd14400;
+  end
+  else if (in >= 14'd14040) begin
+    diff = in - 14'd14040;
+  end
+  else if (in >= 14'd13680) begin
+    diff = in - 14'd13680;
+  end
+  else if (in >= 14'd13320) begin
+    diff = in - 14'd13320;
+  end
+  else if (in >= 14'd12960) begin
+    diff = in - 14'd12960;
+  end
+  else if (in >= 14'd12600) begin
+    diff = in - 14'd12600;
+  end
+  else if (in >= 14'd12240) begin
+    diff = in - 14'd12240;
+  end
+  else if (in >= 14'd11880) begin
+    diff = in - 14'd11880;
+  end
+  else if (in >= 14'd11520) begin
+    diff = in - 14'd11520;
+  end
+  else if (in >= 14'd11160) begin
+    diff = in - 14'd11160;
+  end
+  else if (in >= 14'd10800) begin
+    diff = in - 14'd10800;
+  end
+  else if (in >= 14'd10440) begin
+    diff = in - 14'd10440;
+  end
+  else if (in >= 14'd10080) begin
+    diff = in - 14'd10080;
+  end
+  else if (in >= 14'd9720) begin
+    diff = in - 14'd9720;
+  end
+  else if (in >= 14'd9360) begin
+    diff = in - 14'd9360;
+  end
+  else if (in >= 14'd9000) begin
+    diff = in - 14'd9000;
+  end
+  else if (in >= 14'd8640) begin
+    diff = in - 14'd8640;
+  end
+  else if (in >= 14'd8280) begin
+    diff = in - 14'd8280;
+  end
+  else if (in >= 14'd7920) begin
+    diff = in - 14'd7920;
+  end
+  else if (in >= 14'd7560) begin
+    diff = in - 14'd7560;
+  end
+  else if (in >= 14'd7200) begin
+    diff = in - 14'd7200;
+  end
+  else if (in >= 14'd6840) begin
+    diff = in - 14'd6840;
+  end
+  else if (in >= 14'd6480) begin
+    diff = in - 14'd6480;
+  end
+  else if (in >= 14'd6120) begin
+    diff = in - 14'd6120;
+  end
+  else if (in >= 14'd5760) begin
+    diff = in - 14'd5760;
+  end
+  else if (in >= 14'd5400) begin
+    diff = in - 14'd5400;
+  end
+  else if (in >= 14'd5040) begin
+    diff = in - 14'd5040;
+  end
+  else if (in >= 14'd4680) begin
+    diff = in - 14'd4680;
+  end
+  else if (in >= 14'd4320) begin
+    diff = in - 14'd4320;
+  end
+  else if (in >= 14'd3960) begin
+    diff = in - 14'd3960;
+  end
+  else if (in >= 14'd3600) begin
+    diff = in - 14'd3600;
+  end
+  else if (in >= 14'd3240) begin
+    diff = in - 14'd3240;
+  end
+  else if (in >= 14'd2880) begin
+    diff = in - 14'd2880;
+  end
+  else if (in >= 14'd2520) begin
+    diff = in - 14'd2520;
+  end
+  else if (in >= 14'd2160) begin
+    diff = in - 14'd2160;
+  end
+  else if (in >= 14'd1800) begin
+    diff = in - 14'd1800;
+  end
+  else if (in >= 14'd1440) begin
+    diff = in - 14'd1440;
+  end
+  else if (in >= 14'd1080) begin
+    diff = in - 14'd1080;
+  end
+  else if (in >= 14'd720) begin
+    diff = in - 14'd720;
+  end
+  else if (in >= 14'd360) begin
+    diff = in - 14'd360;
+  end
+  else if (in >= 14'd0) begin
+    diff = in - 14'd0;
+  end
+  else begin
+    diff = 14'd00000;
+  end
+  
+  if (neg == 1'b0) begin
+    out = diff [8:0];
+  end
+  else begin
+    out = 9'd360 - diff [8:0];
+  end
+
+end
+
+endmodule
