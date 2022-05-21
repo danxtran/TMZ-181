@@ -1,0 +1,47 @@
+module edge_detect ( //module to use for top level
+  input clk,
+  input rst,
+  input [12:0] col,
+  input [12:0] x_count,
+  input [3:0] filt_sel,
+  input [23:0] pixel_in,
+  output [23:0] pixel_out,
+  input [23:0] pass_in,
+  output [23:0] pass_thru
+);
+
+
+wire [7:0] out_r0, outr1, out_g0, outg1, out_b0, outb1;
+
+gauss gs1(
+.clk(clk),
+.rst(rst),
+.r(r),
+.g(g),
+.b(b),
+.col(col),
+.x_count(x_count),
+.filt_sel(edge_gauss_sel),
+.outR(out_r0),
+.outG(out_g0),
+.outB(out_b0),
+.pass_in({raw_VGA_R, raw_VGA_G, raw_VGA_B}),
+.pass_thru(pass0)
+);
+
+sobel_edge_det sed(
+.clk(clk),
+.r(out_r0),
+.g(out_g0),
+.b(out_b0),
+.col(col),
+.x_count(x_count),
+.en(en[5]),
+.cartoon_edge(cartoon_edge),
+.cartoon_blur(cartoon_blur),
+.outR(out_r1),
+.outG(out_g1),
+.outB(out_b1),
+.pass_in(pass0),
+.pass_thru(pass1)
+);

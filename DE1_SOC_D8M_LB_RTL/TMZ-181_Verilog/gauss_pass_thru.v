@@ -6,13 +6,11 @@ module gauss_pass_thru (
   output [23:0] pass_thru
 );
 
-assign pass_thru = r5c5;
-
 wire row_shift_en0, row_shift_en1, row_shift_en2, row_shift_en3, row_shift_en4, row_shift_en5;
 row_shift_en_gen en_gen0 (col, x_count, row_shift_en0, row_shift_en1, row_shift_en2, row_shift_en3, row_shift_en4, row_shift_en5, , , , , ); 
 
 wire [9:0] adr0, adr1, adr2, adr3, adr4, adr5;
-shift_adr shiftadrs0 (col[9:0], 10'd0639, adr0, adr1, adr2, adr3, adr4, adr5, , , , , );
+shift_adr shiftadrs0 (col[9:0], 10'd0639, adr0, adr1, adr2, adr3, adr4, adr5, adr6, , , , );
 
 
 wire [23:0] r0c0, r0c1, r0c2, r0c3, r0c4, r0c5, r0c6, r0c7, r0c8, r0c9, r0c10, 
@@ -22,6 +20,7 @@ wire [23:0] r0c0, r0c1, r0c2, r0c3, r0c4, r0c5, r0c6, r0c7, r0c8, r0c9, r0c10,
 				r4c0, r4c1, r4c2, r4c3, r4c4, r4c5, r4c6, r4c7, r4c8, r4c9, r4c10, 
 				r5c0, r5c1, r5c2, r5c3, r5c4, r5c5;
 
+assign pass_thru = r5c5;
 
 wire [23:0] row0_out, row1_out, row2_out, row3_out, row4_out, row5_out;
 wire [23:0] shift_reg_in0, shift_reg_in1, shift_reg_in2, shift_reg_in3, shift_reg_in4, shift_reg_in5;

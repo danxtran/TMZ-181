@@ -15,9 +15,9 @@ module sobel_edge_det(
   output [23:0] pass_thru
 );
 
-assign cartoon_blur = r1c1;
-assign cartoon_edge = sat_out;
 edge_det_pass_thru pass0 (clk, col, x_count, pass_in, pass_thru);
+
+reg [7:0] sat_out;
 
 always @(*) begin
   outR = r;
@@ -34,7 +34,6 @@ end
 wire signed [10:0] gx,gy;    
 reg signed [10:0] abs_gx,abs_gy;	
 wire [10:0] sum, sat_sum;	
-reg [7:0] sat_out;
 
 wire [7:0] p0,p1,p2,p3,p5,p6,p7,p8;
 
@@ -59,6 +58,9 @@ rowRam r2 (.clk(clk), .wr_en(row_shift_en2), .addr(adr2), .rd_adr(adr3), .rd_adr
 wire [23:0] r0c0, r0c1, r0c2, 
 				r1c0, r1c1, r1c2,  
 				r2c0, r2c1, r2c2;
+				
+assign cartoon_blur = r1c1;
+assign cartoon_edge = sat_out;
 
 shift_reg c0 (.pixel(shift_reg_in0), .clk(clk), .shift_en(shift_en), .reg_0(r0c0), .reg_1(r0c1), .reg_2(r0c2));
 shift_reg c1 (.pixel(shift_reg_in1), .clk(clk), .shift_en(shift_en), .reg_0(r1c0), .reg_1(r1c1), .reg_2(r1c2));

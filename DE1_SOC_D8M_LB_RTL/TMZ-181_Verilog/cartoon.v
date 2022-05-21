@@ -1,34 +1,30 @@
 module cartoon (
-	input [7:0] r,
-	input [7:0] g,
-	input [7:0] b,
 	input [7:0] cartoon_edge,
 	input [23:0] cartoon_blur,
 	input en,
-	output reg [7:0] outR,
-   output reg [7:0] outG,
-   output reg [7:0] outB,
+   input [23:0] pixel_in,
+   output reg [23:0] pixel_out,
 	input [23:0] pass_in,
    output [23:0] pass_thru
 );
 
 assign pass_thru = pass_in;
 
+wire [9:0] sat = {cartoon_blur[14:8], 1'b0} + 10'd50; //increase saturation value
+wire [7:0] S;
+
+saturate s0 (sat, S);
+
 always @(*) begin
-  outR = r;
-  outG = g;
-  outB = b;
+  pixel_out = pixel_in;
   
   if (en == 1'b1) begin
-    if (cartoon_edge == 8'h00) begin 
-      outR = cartoon_blur[23:16];
-	   outG = cartoon_blur[15:8];
-	   outB = cartoon_blur[7:0];
+    pixel_out[23:0] = cartoon_blur[23:0];
+    if (cartoon_edge == 8'h00) begin //increase saturation of color pixels
+	   pixel_out[14:8] = S[7:1];
 	 end
-	 else begin
-	   outR = 8'h00;
-	   outG = 8'h00;
-	   outB = 8'h00;
+	 else begin //set pixel value to black if edge
+	   pixel_out[7:0] = 8'h00;
 	 end
   end
   

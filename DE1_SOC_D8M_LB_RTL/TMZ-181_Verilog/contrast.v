@@ -14,10 +14,11 @@ module contrast (
 
 assign pixel_out[23:8] = pixel_in[23:8]; 
 assign pass_thru = pass_in;
-assign level_out = level;
 
 reg [3:0] level, level_c; // contrast level
 wire [12:0] product; // resulting products
+
+assign level_out = level;
 
 // contrast calculations
 contrast_logic cl (pixel_in[7:0], level, product);

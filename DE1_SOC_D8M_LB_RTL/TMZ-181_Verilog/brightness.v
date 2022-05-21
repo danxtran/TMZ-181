@@ -14,10 +14,11 @@ module brightness (
 
 assign pixel_out[23:8] = pixel_in[23:8]; 
 assign pass_thru = pass_in;
-assign level_out = level;
-wire [12:0] product = pixel_in[7:0] * level;
 
 reg [3:0] level, level_c; // brightness level
+
+assign level_out = level;
+wire [12:0] product = pixel_in[7:0] * level;
 
 //saturation handling
 saturate V (product[12:3], pixel_out[7:0]);

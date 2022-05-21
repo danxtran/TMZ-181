@@ -9,20 +9,204 @@ z2
 !i10f 100
 cModel Technology
 dC:/Users/Dan/Desktop/UC Davis Stuff/EEC181/lab2/lab2_3/Simulation
+vblur
+Z0 !s110 1653099720
+!i10b 1
+!s100 cXOSomzFM4L8WPhiC2TKL3
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I4c>;NUz0HO<JzmT:_jW[22
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/Dan/Desktop/Senior Design Project/test
+w1653095064
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/blur.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/blur.v
+!i122 204
+L0 1 35
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1653099720.000000
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/blur.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/blur.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vbrightness
+R0
+!i10b 1
+!s100 0cQFz=CBUgL;CIP2YPI3N2
+R1
+I@a<[QZCm]DT7FbQ?i_cN72
+R2
+R3
+w1653099037
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/brightness.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/brightness.v
+!i122 205
+L0 3 55
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/brightness.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/brightness.v|
+!i113 1
+R6
+R7
+vcartoon
+R0
+!i10b 1
+!s100 8iU=X<h[bA5:7>V:>2zaf3
+R1
+I;jab4JUnUVE4TPOBe?<JQ2
+R2
+R3
+w1653095398
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/cartoon.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/cartoon.v
+!i122 206
+Z8 L0 1 33
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/cartoon.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/cartoon.v|
+!i113 1
+R6
+R7
+vcolordetc
+R0
+!i10b 1
+!s100 ehfoO8_1JFNSP<_4eINig1
+R1
+IF:7n<>kaS91P@SLz`Gd`B3
+R2
+R3
+w1653097420
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/colordetc.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/colordetc.v
+!i122 207
+L0 3 79
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/colordetc.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/colordetc.v|
+!i113 1
+R6
+R7
+vcontrast
+Z9 !s110 1653099721
+!i10b 1
+!s100 `cifmSSe2JdBde4Km=13e0
+R1
+IXP=O;?;i1F>Pz9M[OHc=?0
+R2
+R3
+Z10 w1653098922
+Z11 8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/contrast.v
+Z12 FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/contrast.v
+!i122 208
+L0 3 57
+R4
+r1
+!s85 0
+31
+R5
+Z13 !s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/contrast.v|
+Z14 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/contrast.v|
+!i113 1
+R6
+R7
+vcontrast_logic
+R9
+!i10b 1
+!s100 0TR7D4aSzPNRRNAoeD63g0
+R1
+I:H:O8IM5R]ZJ8i6OST_:M3
+R2
+R3
+R10
+R11
+R12
+!i122 208
+L0 62 27
+R4
+r1
+!s85 0
+31
+R5
+R13
+R14
+!i113 1
+R6
+R7
+vcontrol
+R9
+!i10b 1
+!s100 JIKajRKjVi9SOVJWA`z2K3
+R1
+ImRUhXV2b?3fKmao;Pz7Gl1
+R2
+R3
+w1652868741
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/control.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/control.v
+!i122 209
+L0 3 146
+R4
+r1
+!s85 0
+31
+Z15 !s108 1653099721.000000
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/control.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/control.v|
+!i113 1
+R6
+R7
+vcursor
+R9
+!i10b 1
+!s100 m`Xcz5LXO`PhF3Xm11LEB3
+R1
+I:DNCkD_>3bV`8dlL4IOnZ0
+R2
+R3
+w1653097202
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/cursor.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/cursor.v
+!i122 210
+L0 1 15
+R4
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/cursor.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/cursor.v|
+!i113 1
+R6
+R7
 vDE1_SOC_D8M_LB_RTL
 !s110 1652926002
 !i10b 1
 !s100 D`>E^FA8JQ<6OW<:kCUC<0
-Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
+R1
 I2?^a4bDL=l]ik<4U58j4T0
-Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dC:/Users/Dan/Desktop/Senior Design Project/test
+R2
+R3
 w1652919068
 8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/DE1_SOC_D8M_LB_RTL.v
 FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/DE1_SOC_D8M_LB_RTL.v
 !i122 22
 L0 7 327
-Z3 OV;L;2020.1;71
+R4
 r1
 !s85 0
 31
@@ -30,167 +214,490 @@ r1
 !s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/DE1_SOC_D8M_LB_RTL.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/DE1_SOC_D8M_LB_RTL.v|
 !i113 1
-Z4 o-work work
-Z5 tCvgOpt 0
+R6
+R7
 n@d@e1_@s@o@c_@d8@m_@l@b_@r@t@l
 vdiv_step
-Z6 !s110 1653092229
+R9
 !i10b 1
 !s100 >^FA1UeG[Q9z@DO^KoLDM2
-R0
-I<7<4gFXOa4^?XH5CIKh0C2
 R1
+I<7<4gFXOa4^?XH5CIKh0C2
 R2
-Z7 w1653090251
-Z8 8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v
-Z9 FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v
-!i122 62
-L0 21 19
 R3
+Z16 w1653090251
+Z17 8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v
+Z18 FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v
+!i122 211
+L0 21 19
+R4
 r1
 !s85 0
 31
-Z10 !s108 1653092229.000000
-Z11 !s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v|
-Z12 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v|
+R15
+Z19 !s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v|
+Z20 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v|
 !i113 1
-R4
-R5
-vdivide
 R6
+R7
+vdivide
+R9
 !i10b 1
 !s100 j[IY6OWI4dbjo0<0Q9f1I2
-R0
-I@=RkN@IhLGAJ]5JSJO2d:2
 R1
+I@=RkN@IhLGAJ]5JSJO2d:2
 R2
-R7
-R8
-R9
-!i122 62
-L0 1 19
 R3
+R16
+R17
+R18
+!i122 211
+Z21 L0 1 19
+R4
 r1
 !s85 0
 31
-R10
-R11
-R12
+R15
+R19
+R20
 !i113 1
-R4
-R5
-vhsv_rgb
 R6
+R7
+vedge_det_pass_thru
+R9
+!i10b 1
+!s100 Hgfg1`54SL<XBQhUhaDDh0
+R1
+I<dIVi:Pg^D<fjNFU0N@;n2
+R2
+R3
+w1653098974
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/edge_det_pass_thru.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/edge_det_pass_thru.v
+!i122 212
+R8
+R4
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/edge_det_pass_thru.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/edge_det_pass_thru.v|
+!i113 1
+R6
+R7
+vedge_detect
+Z22 !s110 1653099722
+!i10b 1
+!s100 6S7^aaC6j4]JJE[je^<i_0
+R1
+IZ??QTlm5nM<6:GZRDKKYi2
+R2
+R3
+w1653095078
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/edge_detect.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/edge_detect.v
+!i122 213
+L0 1 56
+R4
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/edge_detect.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/edge_detect.v|
+!i113 1
+R6
+R7
+vgauss
+R22
+!i10b 1
+!s100 zJ@jmJ=L0Jm02OGfXmHYP0
+R1
+I3a9T84J1`]emejjZDEFh31
+R2
+R3
+w1652870459
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/gauss.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/gauss.v
+!i122 214
+L0 4 471
+R4
+r1
+!s85 0
+31
+Z23 !s108 1653099722.000000
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/gauss.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/gauss.v|
+!i113 1
+R6
+R7
+vgauss_pass_thru
+R22
+!i10b 1
+!s100 4G0m<EEaSc=DR?AGGU1HQ2
+R1
+I9eH5ImKPkXH^ec=e1m?O<1
+R2
+R3
+w1653099000
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/gauss_pass_thru.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/gauss_pass_thru.v
+!i122 215
+L0 1 52
+R4
+r1
+!s85 0
+31
+R23
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/gauss_pass_thru.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/gauss_pass_thru.v|
+!i113 1
+R6
+R7
+vgrayscale
+R22
+!i10b 1
+!s100 G7Bbd^h:kAjEBi;aOh7VR1
+R1
+Ikm5HPcon[5`DTH8R_RYY]2
+R2
+R3
+w1653099069
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/grayscale.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/grayscale.v
+!i122 216
+L0 3 37
+R4
+r1
+!s85 0
+31
+R23
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/grayscale.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/grayscale.v|
+!i113 1
+R6
+R7
+vgreensc
+R22
+!i10b 1
+!s100 3am?fKQ8cgf<J`L:8?4aP0
+R1
+I`^`JJBNF[;LedMeC=[JKP1
+R2
+R3
+w1653096129
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/greensc.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/greensc.v
+!i122 217
+R21
+R4
+r1
+!s85 0
+31
+R23
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/greensc.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/greensc.v|
+!i113 1
+R6
+R7
+vhsv_rgb
+R22
 !i10b 1
 !s100 CNc1ZU6[QKIE9RZ>O<BXL0
-R0
-IFCA==`AJ@zeEMNSS8]mHC1
 R1
+IFCA==`AJ@zeEMNSS8]mHC1
 R2
+R3
 w1653090273
 8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/hsv_rgb.v
 FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/hsv_rgb.v
-!i122 59
+!i122 218
 L0 1 75
-R3
+R4
 r1
 !s85 0
 31
-R10
+R23
 !s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/hsv_rgb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/hsv_rgb.v|
 !i113 1
-R4
-R5
-vmod360
 R6
+R7
+vlvl2pulse
+R22
 !i10b 1
-!s100 6XeOB?n^zKhH9f;:K`>Y;1
-R0
-I2HiNM;gVCM5ZP:J1ic>dG3
+!s100 [1[JKEaG4<L2:AX369mEM1
 R1
+IH>_SlN;M>ULAiYD^8eGHf3
 R2
-w1653092215
-8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/mod360.v
-FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/mod360.v
-!i122 63
-L0 1 18
 R3
+w1651701409
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/lvl2pulse.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/lvl2pulse.v
+!i122 219
+L0 3 21
+R4
 r1
 !s85 0
 31
-R10
+R23
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/lvl2pulse.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/lvl2pulse.v|
+!i113 1
+R6
+R7
+vmod360
+Z24 !s110 1653099723
+!i10b 1
+!s100 a=8knaAfzOFbmJPO=bzKj0
+R1
+I^X90OMe7T:;mIQe>WEjc22
+R2
+R3
+w1653097576
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/mod360.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/mod360.v
+!i122 220
+L0 1 18
+R4
+r1
+!s85 0
+31
+R23
 !s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/mod360.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/mod360.v|
 !i113 1
-R4
-R5
-vowo
 R6
-!i10b 1
-!s100 ;Cc5kkB5NUhHjO5P65GNJ0
+R7
+vowo
 R0
-IF`8gzZNAz4X_7U_VbHAY]0
+!i10b 1
+!s100 dSX:f<;CQiFN^nA:JI0h=1
 R1
+Iz<_3e[8mnfkk``aFb3KBg1
 R2
-w1653091110
+R3
+w1653099716
 8C:/Users/Dan/Desktop/Senior Design Project/test/test.v
 FC:/Users/Dan/Desktop/Senior Design Project/test/test.v
-!i122 61
-L0 1 23
-R3
+!i122 203
+L0 3 150
+R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 C:/Users/Dan/Desktop/Senior Design Project/test/test.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/test/test.v|
 !i113 1
-R4
-R5
-vrgb_hsv
 R6
+R7
+vrgb_hsv
+R24
 !i10b 1
 !s100 :DMfe:^TOREH7OV:IF^3b1
-R0
+R1
 IWPKT@J^>8mbPf2Il5m1Y[1
-R1
 R2
-Z13 w1653091989
-Z14 8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v
-Z15 FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v
-!i122 60
+R3
+Z25 w1653092669
+Z26 8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v
+Z27 FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v
+!i122 221
 L0 1 89
-R3
+R4
 r1
 !s85 0
 31
-R10
-Z16 !s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v|
-Z17 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v|
+Z28 !s108 1653099723.000000
+Z29 !s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v|
+Z30 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v|
 !i113 1
-R4
-R5
-vrgb_hue
 R6
+R7
+vrgb_hue
+R24
 !i10b 1
-!s100 IKD[6^TQ3@<BiNZVC<H<E0
-R0
-IGHkFPkI12KC20@9a`ORMz3
+!s100 g<;HdeoRg^a8H9h5mZ[6A3
 R1
+IF7WKi]1>eIcP0=RD5hjG40
 R2
-R13
-R14
-R15
-!i122 60
-L0 91 36
 R3
+R25
+R26
+R27
+!i122 221
+L0 91 36
+R4
 r1
 !s85 0
 31
-R10
-R16
-R17
+R28
+R29
+R30
 !i113 1
+R6
+R7
+vrow_shift_en_gen
+R24
+!i10b 1
+!s100 16UCKE6[d6N>z;a>1;<LU0
+R1
+IEAIg]2_Yn@KE:j1b51^EH0
+R2
+R3
+w1652774310
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/row_shift_en_gen.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/row_shift_en_gen.v
+!i122 222
+L0 1 72
 R4
-R5
+r1
+!s85 0
+31
+R28
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/row_shift_en_gen.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/row_shift_en_gen.v|
+!i113 1
+R6
+R7
+vrowRam
+R24
+!i10b 1
+!s100 fi>TkQ_@OO?2Q]=io>VRc3
+R1
+I_AYV6JkU7G@5<ZY2S54?:3
+R2
+R3
+w1652774693
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rowRam.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rowRam.v
+!i122 223
+L0 2 22
+R4
+r1
+!s85 0
+31
+R28
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rowRam.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rowRam.v|
+!i113 1
+R6
+R7
+nrow@ram
+vsat_adr
+R24
+!i10b 1
+!s100 Hb05U2cEQ?hf5SMUBI^jQ2
+R1
+Im[h>3D1DG`LS0nWSOd@X^0
+R2
+R3
+Z31 w1652774278
+Z32 8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/shift_adr.v
+Z33 FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/shift_adr.v
+!i122 225
+L0 45 14
+R4
+r1
+!s85 0
+31
+R28
+Z34 !s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/shift_adr.v|
+Z35 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/shift_adr.v|
+!i113 1
+R6
+R7
+vsaturate
+R24
+!i10b 1
+!s100 8XVX6E<<WVaG1mcXSOBYf1
+R1
+IK:Udgkn`R@m_mTEGWU?;S2
+R2
+R3
+w1651381701
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/saturate.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/saturate.v
+!i122 224
+L0 1 13
+R4
+r1
+!s85 0
+31
+R28
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/saturate.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/saturate.v|
+!i113 1
+R6
+R7
+vshift_adr
+R24
+!i10b 1
+!s100 bFKU6CYdSRzf8PVJE2A;91
+R1
+IhQCVT7FW;iWOE6EXmR^n43
+R2
+R3
+R31
+R32
+R33
+!i122 225
+L0 1 43
+R4
+r1
+!s85 0
+31
+R28
+R34
+R35
+!i113 1
+R6
+R7
+vshift_reg
+R24
+!i10b 1
+!s100 Z7[de446;QjGIJT9Odgc81
+R1
+IoYdg<9YXeccBP=bf8iRY82
+R2
+R3
+w1653099550
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/shift_reg.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/shift_reg.v
+!i122 226
+L0 3 25
+R4
+r1
+!s85 0
+31
+R28
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/shift_reg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/shift_reg.v|
+!i113 1
+R6
+R7
+vsobel_edge_det
+!s110 1653099724
+!i10b 1
+!s100 SU1;>5U?]OzCh`8<TbTGR2
+R1
+IdTna<^<fP?B_zX^ILVkJa0
+R2
+R3
+w1653099165
+8C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/sobel_edge_det.v
+FC:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/sobel_edge_det.v
+!i122 227
+L0 1 118
+R4
+r1
+!s85 0
+31
+R28
+!s107 C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/sobel_edge_det.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/sobel_edge_det.v|
+!i113 1
+R6
+R7

@@ -6,8 +6,8 @@ module mod360 (
 
 always @(*) begin
 
-  if (in >= 14'd360) begin
-    out = in - 14'd360;
+  if (in >= 9'd360) begin
+    out = in - 9'd360;
   end
   else begin
     out = in;

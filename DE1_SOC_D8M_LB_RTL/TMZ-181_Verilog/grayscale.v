@@ -10,15 +10,13 @@ module grayscale (
   output [23:0] pass_thru
 );
 
+reg  [6:0]  sat;
+
 assign pixel_out[23:15] = pixel_in[23:15]; 
 assign pixel_out[7:0] = pixel_in[7:0];
 assign pixel_out[14:8] = sat;
 assign pass_thru = pass_in;
 reg enable, en_c;
-
-reg  [6:0]  sat;
-
-
 
 always @(*) begin
   sat = pixel_in[14:8];
