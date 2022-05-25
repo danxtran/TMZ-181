@@ -13,6 +13,7 @@ assign pass_thru = pass_in;
 		if(gsc_en == 1'b1)begin
 			if(pixel_in[23:15] >= 9'd90 && pixel_in[23:15] <= 9'd150) begin
 				pixel_out[23:15] = 8'h00;
+				pixel_out[14:0] = 15'b1111_1111_1111_111;
 			end 
 		end
   end
