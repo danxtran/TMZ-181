@@ -12,7 +12,7 @@ assign pass_thru = pass_in;
 		pixel_out = pixel_in;
 		if(gsc_en == 1'b1)begin
 			if(pixel_in[23:15] >= 9'd90 && pixel_in[23:15] <= 9'd150) begin
-				pixel_out[7:0] = 8'h00;
+				pixel_out[23:15] = 8'h00;
 			end 
 		end
   end
