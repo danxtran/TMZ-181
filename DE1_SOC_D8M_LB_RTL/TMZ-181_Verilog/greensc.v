@@ -1,6 +1,6 @@
 module greensc (
-  input [13:0] row,
-  input [13:0] col,
+  input [12:0] row,
+  input [12:0] col,
   input gsc_en,
   input [23:0] pixel_in,
   output reg [23:0] pixel_out,
@@ -9,7 +9,7 @@ module greensc (
 );
 	
 wire [8:0] background;
-wire [14:0] sumrc = row + col; 
+wire [13:0] sumrc = row + col; 
 mod mod360(.in(sumrc[10:0]),.out(background));
 	
 
