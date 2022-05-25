@@ -10,7 +10,7 @@ module greensc (
 	
 wire [8:0] background;
 wire [13:0] sumrc = row + col; 
-mod mod360(.in(sumrc[10:0]),.out(background));
+mod360 mod (.in(sumrc[10:0]),.out(background));
 	
 
 assign pass_thru = pass_in;
