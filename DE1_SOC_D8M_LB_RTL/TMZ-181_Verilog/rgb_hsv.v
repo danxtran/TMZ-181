@@ -102,7 +102,7 @@ wire [8:0] div_ans;
 reg [16:0] h;
 
 divide d0 (diff, delta, div_ans);
-mod360 m360 (h[16:8], hue);
+mod360 m360 ({2'b00, h[16:8]}, hue);
 
 always @(*) begin
   if (in1 >= in2) begin

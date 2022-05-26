@@ -222,7 +222,11 @@ colordetc colodetc1(
 );
 
 greensc greensc1(
+.clk(clk),
+.row(row),
+.col(col),
 .gsc_en(en[4]),
+.bg_sel(SW[2:1]),
 .pixel_in(pixel3),
 .pixel_out(pixel4),
 .pass_in(pass3),

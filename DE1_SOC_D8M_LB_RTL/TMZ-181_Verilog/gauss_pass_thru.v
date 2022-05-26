@@ -9,7 +9,7 @@ module gauss_pass_thru (
 wire row_shift_en0, row_shift_en1, row_shift_en2, row_shift_en3, row_shift_en4, row_shift_en5;
 row_shift_en_gen en_gen0 (col, x_count, row_shift_en0, row_shift_en1, row_shift_en2, row_shift_en3, row_shift_en4, row_shift_en5, , , , , ); 
 
-wire [9:0] adr0, adr1, adr2, adr3, adr4, adr5;
+wire [9:0] adr0, adr1, adr2, adr3, adr4, adr5, adr6;
 shift_adr shiftadrs0 (col[9:0], 10'd0639, adr0, adr1, adr2, adr3, adr4, adr5, adr6, , , , );
 
 

@@ -128,7 +128,6 @@ always @(*) begin
 	//edge detect on
 	edge_gauss_sel = 4'h1;
 	if(SW[8] == 1'b1)begin
-	  edge_gauss_sel = 4'h2;
 	  en_c[5] = 1'b1;
 	end
 	//cartoon on

@@ -20,7 +20,7 @@ always @(*) begin
   
   if (en == 1'b1) begin
     pixel_out[23:0] = cartoon_blur[23:0];
-    if (cartoon_edge == 8'h00) begin //increase saturation of color pixels
+    if (cartoon_edge <= 8'h40) begin //increase saturation of color pixels
 	   pixel_out[14:8] = S[7:1];
 	 end
 	 else begin //set pixel value to black if edge

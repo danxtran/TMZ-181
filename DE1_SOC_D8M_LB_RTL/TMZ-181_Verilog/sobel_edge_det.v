@@ -6,6 +6,7 @@ module sobel_edge_det(
   input [12:0] col,
   input [12:0] x_count,
   input en,
+  input [23:0] blur_pass,
   output [7:0] cartoon_edge,
   output [23:0] cartoon_blur,
   output reg [7:0] outR,
@@ -16,6 +17,7 @@ module sobel_edge_det(
 );
 
 edge_det_pass_thru pass0 (clk, col, x_count, pass_in, pass_thru);
+edge_det_pass_thru passBlur (clk, col, x_count, blur_pass, cartoon_blur);
 
 reg [7:0] sat_out;
 
@@ -59,7 +61,6 @@ wire [23:0] r0c0, r0c1, r0c2,
 				r1c0, r1c1, r1c2,  
 				r2c0, r2c1, r2c2;
 				
-assign cartoon_blur = r1c1;
 assign cartoon_edge = sat_out;
 
 shift_reg c0 (.pixel(shift_reg_in0), .clk(clk), .shift_en(shift_en), .reg_0(r0c0), .reg_1(r0c1), .reg_2(r0c2));

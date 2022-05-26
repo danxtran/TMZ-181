@@ -19,3 +19,10 @@ ctrl.00 0 0 0 0
 ctrl.01 0 0 1 1 
 ctrl.10 0 1 0 1 
 ctrl.11 1 0 0 1 
+
+State Machine - |DE1_SOC_D8M_LB_RTL|edge_detect:edge_det0|gauss:gs2|ctrl
+Name ctrl.11 ctrl.10 ctrl.01 ctrl.00 
+ctrl.00 0 0 0 0 
+ctrl.01 0 0 1 1 
+ctrl.10 0 1 0 1 
+ctrl.11 1 0 0 1 
