@@ -5,17 +5,18 @@ module grayscale (
   input rst,
   input en,
   input [23:0] pixel_in,
-  output [23:0] pixel_out,
+  output reg [23:0] pixel_out,
   input [23:0] pass_in,
-  output [23:0] pass_thru
+  output reg [23:0] pass_thru
 );
 
 reg  [6:0]  sat;
+wire [23:0] pixel_out_c;
 
-assign pixel_out[23:15] = pixel_in[23:15]; 
-assign pixel_out[7:0] = pixel_in[7:0];
-assign pixel_out[14:8] = sat;
-assign pass_thru = pass_in;
+
+assign pixel_out_c[23:15] = pixel_in[23:15]; 
+assign pixel_out_c[7:0] = pixel_in[7:0];
+assign pixel_out_c[14:8] = sat;
 reg enable, en_c;
 
 always @(*) begin
@@ -34,6 +35,8 @@ end
 
 always @(posedge clk) begin
     enable <= #1 en_c;
+	 pixel_out <= #1 pixel_out_c;
+	 pass_thru <= #1 pass_in; 
 end
 
 endmodule

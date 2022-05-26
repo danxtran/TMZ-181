@@ -6,14 +6,14 @@ module contrast (
   input inc, // increase contrast signal
   input dec, // decrease contrast signal
   input [23:0] pixel_in,
-  output [23:0] pixel_out,
+  output reg [23:0] pixel_out,
   input [23:0] pass_in,
-  output [23:0] pass_thru,
+  output reg [23:0] pass_thru,
   output [3:0] level_out
 );
 
-assign pixel_out[23:8] = pixel_in[23:8]; 
-assign pass_thru = pass_in;
+wire [23:0] pixel_out_c;
+assign pixel_out_c[23:8] = pixel_in[23:8]; 
 
 reg [3:0] level, level_c; // contrast level
 wire [12:0] product; // resulting products
@@ -24,7 +24,7 @@ assign level_out = level;
 contrast_logic cl (pixel_in[7:0], level, product);
 
 //saturation handling
-saturate V (product[9:0], pixel_out[7:0]);
+saturate V (product[9:0], pixel_out_c[7:0]);
 
 initial begin
   level = 4'h8;
@@ -54,6 +54,8 @@ end
 
 always @(posedge clk) begin
   level <= #1 level_c; // update brightness level
+  pixel_out <= #1 pixel_out_c;
+  pass_thru <= #1 pass_in;  
 end
 
 endmodule
