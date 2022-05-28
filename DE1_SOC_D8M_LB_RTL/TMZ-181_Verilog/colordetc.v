@@ -54,7 +54,7 @@ end
 			end
       end
       2'b01: begin //highlight r
-			if(pixel_in[23:15] >= 9'd330 || pixel_in[23:15] <= 9'd30) begin
+			if(pixel_in[23:15] >= 9'd345 || pixel_in[23:15] <= 9'd15 && pixel_in[14:8] >= 7'd75) begin
 				pixel_out_c[14:8] = S[7:1];
 			end 
 			else begin

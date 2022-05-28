@@ -1,0 +1,58 @@
+module border (
+  input clk,
+  input rst,
+  input [12:0] row,
+  input [12:0] col,
+  input [3:0] bg_sel,
+  input [23:0] pixel_in,
+  output reg [23:0] pixel_out
+);
+
+reg [23:0] pixel_out_c;
+reg [8:0] count, count_c;
+
+wire [13:0] sum0 = row + col + count;
+wire [13:0] sum1 = row - col + 10'd720 + count;
+wire [13:0] sum2 = row + count;
+wire [13:0] sum3 = col + count;
+wire [8:0] bg0, bg1, bg2, bg3;
+reg [1:0] bg_sel, bg_sel_c;
+
+initial begin
+  count = 9'd0;
+end
+
+always @(*) begin
+  count_c = count + 1'd1;
+  pixel_out_c = pixel_in;
+
+  if ((row <= 13'd11 || row >= 13'd469) && (col <= 13'd11 || row >= 13'd629)) begin
+    case (bg_sel)
+      2'b01: begin
+        pixel_out_c = {bg1, 15'b111_1111_1111_1111};
+      end
+	   2'b10: begin
+		  pixel_out_c = {bg2, 15'b111_1111_1111_1111};
+	   end
+      2'b11: begin
+        pixel_out_c = {bg3, 15'b111_1111_1111_1111};
+      end
+      default: begin
+        pixel_out_c = {bg0, 15'b111_1111_1111_1111};
+      end
+    endcase
+  end
+  
+  if (rst == 1'b1 || count_c > 9'd360) begin
+    count_c = 9'd0;
+  end
+  
+  
+end
+
+always @(posedge clk) begin
+  count <= #1 count_c;
+  pixel_out <= #1 pixel_out_c; 
+end
+
+endmodule

@@ -151,10 +151,10 @@ assign row = y_count - 47;
 // OUR CODE
 
 rgb_hsv h0 (raw_VGA_R, raw_VGA_G, raw_VGA_B, pixel0);
-hsv_rgb r0 (pixel10, VGA_R, VGA_G, VGA_B);
+hsv_rgb r0 (pixel11, VGA_R, VGA_G, VGA_B);
 
 wire [23:0] pass0, pass1, pass2, pass3, pass4, pass5, pass6, pass7, pass8, pass9;
-wire [23:0] pixel0, pixel1, pixel2, pixel3, pixel4, pixel5, pixel6, pixel7, pixel8, pixel9, pixel10;
+wire [23:0] pixel0, pixel1, pixel2, pixel3, pixel4, pixel5, pixel6, pixel7, pixel8, pixel9, pixel10, pixel11;
 assign pass0 = pixel0;
 
 wire [7:0] cartoon_edge;
@@ -297,8 +297,8 @@ saturation saturation1(
 cursor cursor1(
 .clk(clk),
 .rst(rst),
-.row(row),
-.col(col),
+.row(y_count),
+.col(x_count),
 .move(move),
 .size(size),
 .mode(mode),
@@ -307,6 +307,14 @@ cursor cursor1(
 .pass_in(pass9)
 );
 
-
+border border1(
+.clk(clk),
+.rst(rst),
+.row(y_count),
+.col(x_count),
+.bg_sel(SW[2:1]),
+.pixel_in(pixel10),
+.pixel_out(pixel11)
+);
 
 endmodule

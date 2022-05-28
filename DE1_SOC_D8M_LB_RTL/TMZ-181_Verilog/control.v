@@ -103,19 +103,19 @@ always @(*) begin
   
   //cartoon effect logic
   edge_gauss_sel = 4'h1;
-  if(SW[7] == 1'b1)begin
+  if(SW[3] == 1'b1)begin
     edge_gauss_sel = 4'h2;
     en_c[1] = 1'b1;
     en_c[2] = 1'b1;
   end
   
   //edge detect on
-  if(SW[8] == 1'b1)begin
+  if(SW[4] == 1'b1)begin
     en_c[2] = 1'b1;
   end
   
   // grayscale on
-  if(SW[3] == 1'b1)begin
+  if(SW[5] == 1'b1)begin
     en_c[3] = 1'b1;
   end else begin
     en_c[3] = 1'b0;
@@ -181,7 +181,7 @@ always @(*) begin
   gs_bg_sel = {bg1, bg2, bg3, bg4};
 
   // cursor logic
-  move = 4'h0;
+  move = 4'hF;
   mode = 2'b0;
   size1 = 1'b0;
   size2 = 1'b0;
