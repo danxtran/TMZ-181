@@ -3,7 +3,7 @@ module greensc (
   input [12:0] row,
   input [12:0] col,
   input gsc_en,
-  input [1:0] bg_sel,
+  input [3:0] gs_bg_sel,
   input [23:0] pixel_in,
   output reg [23:0] pixel_out,
   input [23:0] pass_in,
@@ -17,6 +17,7 @@ wire [13:0] sum1 = row - col + 10'd720;
 wire [13:0] sum2 = row;
 wire [13:0] sum3 = col;
 wire [8:0] bg0, bg1, bg2, bg3;
+reg [1:0] bg_sel, bg_sel_c;
 
 mod360 mbg0 (sum0[10:0], bg0);
 mod360 mbg1 (sum1[10:0], bg1);
@@ -43,9 +44,28 @@ mod360 mbg3 (sum3[10:0], bg3);
 				endcase
 			end
 		end
+		
+	   case (gs_bg_sel)
+			4'b0001: begin
+				bg_sel_c = 2'b00; 
+			end
+			4'b0010: begin
+				bg_sel_c = 2'b01; 
+			end
+			4'b0100: begin
+				bg_sel_c = 2'b10; 
+			end
+			4'b1000: begin
+				bg_sel_c = 2'b11; 
+			end
+			default: begin
+				bg_sel_c = bg_sel; 
+			end
+		endcase
   end
   
 always @(posedge clk) begin
+  bg_sel <= #1 bg_sel_c;
   pixel_out <= #1 pixel_out_c;
   pass_thru <= #1 pass_in; 
 end

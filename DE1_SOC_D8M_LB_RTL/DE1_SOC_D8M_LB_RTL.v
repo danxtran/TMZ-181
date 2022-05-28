@@ -161,9 +161,9 @@ wire [7:0] cartoon_edge;
 wire [23:0] cartoon_blur;
 wire rst = SW[9];
 wire clk = MIPI_PIXEL_CLK_;
-wire [31:0] en;
-wire binc, bdec, cinc, cdec;
-wire [3:0] clr_sel, gauss_sel, edge_gauss_sel;
+wire binc, bdec, cinc, cdec, sinc, sdec;
+wire [3:0] en, clr_sel, gs_bg_sel, gauss_sel, edge_gauss_sel, move, size;
+wire [1:0] mode;
 wire [3:0] level_out;
 
 control ctrl(
@@ -171,18 +171,20 @@ control ctrl(
 .rst(rst),
 .SW(SW[9:0]),
 .KEY(KEY[3:0]),
-.row(row),
-.col(col),
-.x_count(x_count),
-.y_count(y_count),
 .en(en),
 .binc(binc),
 .bdec(bdec),
 .cinc(cinc),
 .cdec(cdec),
+.sinc(sinc),
+.sdec(sdec),
 .clr_sel(clr_sel),
+.gs_bg_sel(gs_bg_sel),
 .gauss_sel(gauss_sel),
-.edge_gauss_sel(edge_gauss_sel)
+.edge_gauss_sel(edge_gauss_sel),
+.move(move),
+.size(size),
+.mode(mode)
 );
 
 edge_detect edge_det0 (
@@ -191,7 +193,7 @@ edge_detect edge_det0 (
 .col(col),
 .x_count(x_count),
 .filt_sel(edge_gauss_sel),
-.en(en[5]),
+.en(en[2]),
 .cartoon_edge(cartoon_edge),
 .cartoon_blur(cartoon_blur),
 .pixel_in(pixel0),
@@ -205,7 +207,7 @@ cartoon cartoon1(
 .clk(clk),
 .cartoon_edge(cartoon_edge),
 .cartoon_blur(cartoon_blur),
-.en(en[2]),
+.en(en[1]),
 .pixel_in(pixel1),
 .pixel_out(pixel2),
 .pass_in(pass1),
@@ -226,8 +228,8 @@ greensc greensc1(
 .clk(clk),
 .row(row),
 .col(col),
-.gsc_en(en[4]),
-.bg_sel(SW[2:1]),
+.gsc_en(en[0]),
+.gs_bg_sel(gs_bg_sel),
 .pixel_in(pixel3),
 .pixel_out(pixel4),
 .pass_in(pass3),
@@ -283,8 +285,8 @@ contrast contrast1(
 saturation saturation1(
 .clk(clk),
 .rst(rst),
-.inc(binc),
-.dec(bdec),
+.inc(sinc),
+.dec(sdec),
 .pixel_in(pixel8),
 .pixel_out(pixel9),
 .pass_in(pass8),
@@ -294,7 +296,12 @@ saturation saturation1(
 
 cursor cursor1(
 .clk(clk),
+.rst(rst),
+.row(row),
 .col(col),
+.move(move),
+.size(size),
+.mode(mode),
 .pixel_in(pixel9),
 .pixel_out(pixel10),
 .pass_in(pass9)
