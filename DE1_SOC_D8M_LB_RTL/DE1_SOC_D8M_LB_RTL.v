@@ -150,81 +150,66 @@ assign row = y_count - 47;
 
 // OUR CODE
 
+rgb_hsv h0 (raw_VGA_R, raw_VGA_G, raw_VGA_B, pixel0);
+hsv_rgb r0 (pixel11, VGA_R, VGA_G, VGA_B);
 
-wire [23:0] pass0, pass1, pass2, pass3, pass4, pass5, pass6, pass7, pass8;
-wire [7:0] out_r0, out_r1, out_r2, out_r3, out_r4, out_r5, out_r6, out_r7, out_r8;
-wire [7:0] out_g0, out_g1, out_g2, out_g3, out_g4, out_g5, out_g6, out_g7, out_g8;
-wire [7:0] out_b0, out_b1, out_b2, out_b3, out_b4, out_b5, out_b6, out_b7, out_b8;
+wire [23:0] pass0, pass1, pass2, pass3, pass4, pass5, pass6, pass7, pass8, pass9;
+wire [23:0] pixel0, pixel1, pixel2, pixel3, pixel4, pixel5, pixel6, pixel7, pixel8, pixel9, pixel10, pixel11;
+assign pass0 = pixel0;
+
 wire [7:0] cartoon_edge;
 wire [23:0] cartoon_blur;
 wire rst = SW[9];
 wire clk = MIPI_PIXEL_CLK_;
-wire [31:0] en;
-wire binc, bdec, cinc, cdec;
-wire [3:0] clr_sel, gauss_sel, edge_gauss_sel;
+wire binc, bdec, cinc, cdec, sinc, sdec;
+wire [3:0] en, clr_sel, gs_bg_sel, gauss_sel, edge_gauss_sel, move, size;
+wire [1:0] mode;
 wire [3:0] level_out;
+
 control ctrl(
 .clk(clk),
 .rst(rst),
 .SW(SW[9:0]),
 .KEY(KEY[3:0]),
-.row(row),
-.col(col),
-.x_count(x_count),
-.y_count(y_count),
 .en(en),
 .binc(binc),
 .bdec(bdec),
 .cinc(cinc),
 .cdec(cdec),
+.sinc(sinc),
+.sdec(sdec),
 .clr_sel(clr_sel),
+.gs_bg_sel(gs_bg_sel),
 .gauss_sel(gauss_sel),
-.edge_gauss_sel(edge_gauss_sel)
+.edge_gauss_sel(edge_gauss_sel),
+.move(move),
+.size(size),
+.mode(mode)
 );
 
-gauss gs1(
+edge_detect edge_det0 (
 .clk(clk),
 .rst(rst),
-.r(raw_VGA_R),
-.g(raw_VGA_G),
-.b(raw_VGA_B),
 .col(col),
 .x_count(x_count),
 .filt_sel(edge_gauss_sel),
-.outR(out_r0),
-.outG(out_g0),
-.outB(out_b0),
-.pass_in({raw_VGA_R, raw_VGA_G, raw_VGA_B}),
-.pass_thru(pass0)
-);
-
-sobel_edge_det sed(
-.clk(clk),
-.r(out_r0),
-.g(out_g0),
-.b(out_b0),
-.col(col),
-.x_count(x_count),
-.en(en[5]),
+.en(en[2]),
 .cartoon_edge(cartoon_edge),
 .cartoon_blur(cartoon_blur),
-.outR(out_r1),
-.outG(out_g1),
-.outB(out_b1),
+.pixel_in(pixel0),
+.pixel_out(pixel1),
 .pass_in(pass0),
 .pass_thru(pass1)
 );
 
+
 cartoon cartoon1(
-.r(out_r1),
-.g(out_g1),
-.b(out_b1),
+.clk(clk),
 .cartoon_edge(cartoon_edge),
 .cartoon_blur(cartoon_blur),
-.en(en[2]),
-.outR(out_r2),
-.outG(out_g2),
-.outB(out_b2),
+.en(en[1]),
+.pixel_in(pixel1),
+.pixel_out(pixel2),
 .pass_in(pass1),
 .pass_thru(pass2)
 );
@@ -232,41 +217,33 @@ cartoon cartoon1(
 colordetc colodetc1(
 .clk(clk),
 .rst(rst),
-.r(out_r2),
-.g(out_g2),
-.b(out_b2),
 .clr_sel(clr_sel),
-.outR(out_r3),
-.outG(out_g3),
-.outB(out_b3),
+.pixel_in(pixel2),
+.pixel_out(pixel3),
 .pass_in(pass2),
 .pass_thru(pass3)
 );
 
 greensc greensc1(
-.r(out_r3),
-.g(out_g3),
-.b(out_b3),
-.gsc_en(en[4]),
-.outR(out_r4),
-.outG(out_g4),
-.outB(out_b4),
+.clk(clk),
+.row(row),
+.col(col),
+.gsc_en(en[0]),
+.gs_bg_sel(gs_bg_sel),
+.pixel_in(pixel3),
+.pixel_out(pixel4),
 .pass_in(pass3),
 .pass_thru(pass4)
 );
 
-gauss gs2(
+blur gs2(
 .clk(clk),
 .rst(rst),
-.r(out_r4),
-.g(out_g4),
-.b(out_b4),
 .col(col),
 .x_count(x_count),
 .filt_sel(gauss_sel),
-.outR(out_r5),
-.outG(out_g5),
-.outB(out_b5),
+.pixel_in(pixel4),
+.pixel_out(pixel5),
 .pass_in(pass4),
 .pass_thru(pass5)
 );
@@ -275,12 +252,8 @@ grayscale grayscale1(
 .clk(clk),
 .rst(rst),
 .en(en[3]),
-.r(out_r5),
-.g(out_g5),
-.b(out_b5),
-.outR(out_r6),
-.outG(out_g6),
-.outB(out_b6),
+.pixel_in(pixel5),
+.pixel_out(pixel6),
 .pass_in(pass5),
 .pass_thru(pass6)
 );
@@ -290,12 +263,8 @@ brightness brightness1(
 .rst(rst),
 .inc(binc),
 .dec(bdec),
-.r(out_r6),
-.g(out_g6),
-.b(out_b6),
-.outR(out_r7),
-.outG(out_g7),
-.outB(out_b7),
+.pixel_in(pixel6),
+.pixel_out(pixel7),
 .pass_in(pass6),
 .pass_thru(pass7),
 .level_out(level_out)
@@ -306,26 +275,46 @@ contrast contrast1(
 .rst(rst),
 .inc(cinc),
 .dec(cdec),
-.r(out_r7),
-.g(out_g7),
-.b(out_b7),
-.outR(out_r8),
-.outG(out_g8),
-.outB(out_b8),
+.pixel_in(pixel7),
+.pixel_out(pixel8),
 .pass_in(pass7),
 .pass_thru(pass8),
 .level_out(level_out)
 );
 
-cursor cursor1(
-.col(col),
-.r(out_r8),
-.g(out_g8),
-.b(out_b8),
-.outR(VGA_R),
-.outG(VGA_G),
-.outB(VGA_B),
+saturation saturation1(
+.clk(clk),
+.rst(rst),
+.inc(sinc),
+.dec(sdec),
+.pixel_in(pixel8),
+.pixel_out(pixel9),
 .pass_in(pass8),
+.pass_thru(pass9),
+.level_out(level_out)
+);
+
+cursor cursor1(
+.clk(clk),
+.rst(rst),
+.row(y_count),
+.col(x_count),
+.move(move),
+.size(size),
+.mode(mode),
+.pixel_in(pixel9),
+.pixel_out(pixel10),
+.pass_in(pass9)
+);
+
+border border1(
+.clk(clk),
+.rst(rst),
+.row(y_count),
+.col(x_count),
+.bg_sel(SW[2:1]),
+.pixel_in(pixel10),
+.pixel_out(pixel11)
 );
 
 endmodule

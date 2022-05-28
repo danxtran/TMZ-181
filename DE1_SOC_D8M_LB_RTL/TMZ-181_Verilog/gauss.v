@@ -78,7 +78,7 @@ rowRam r6 (.clk(clk), .wr_en(row_shift_en6), .addr(adr6), .rd_adr(adr7), .rd_adr
 rowRam r7 (.clk(clk), .wr_en(row_shift_en7), .addr(adr7), .rd_adr(adr8), .rd_adr2(adr0), .data_in(row6_out), .data_out(row7_out), .data_out2(shift_reg_in7));
 rowRam r8 (.clk(clk), .wr_en(row_shift_en8), .addr(adr8), .rd_adr(adr9), .rd_adr2(adr0), .data_in(row7_out), .data_out(row8_out), .data_out2(shift_reg_in8));
 rowRam r9 (.clk(clk), .wr_en(row_shift_en9), .addr(adr9), .rd_adr(adr10), .rd_adr2(adr0), .data_in(row8_out), .data_out(row9_out), .data_out2(shift_reg_in9));
-rowRam r10 (.clk(clk), .wr_en(row_shift_en10), .addr(adr10), .rd_adr(col), .rd_adr2(adr0), .data_in(row9_out), .data_out(row10_out), .data_out2(shift_reg_in10));
+rowRam r10 (.clk(clk), .wr_en(row_shift_en10), .addr(adr10), .rd_adr(col[9:0]), .rd_adr2(adr0), .data_in(row9_out), .data_out(row10_out), .data_out2(shift_reg_in10));
 
 
 shift_reg c0 (.pixel(shift_reg_in0), .clk(clk), .shift_en(shift_en),.reg_0(r0c0), .reg_1(r0c1), .reg_2(r0c2), .reg_3(r0c3), .reg_4(r0c4),

@@ -1,3 +1,5 @@
+`timescale 1 ns/10 ps  // time-unit = 1 ns, precision = 10 ps
+
 module shift_reg(
 input [23:0] pixel,
 input clk,

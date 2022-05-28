@@ -1,0 +1,27 @@
+module rgb_hsv (
+  input [7:0] r,
+  input [7:0] g,
+  input [7:0] b,
+  output [:0] hsv
+);
+
+
+reg [7:0] max, min;
+wire [7:0] diff = max - min;
+
+always @(*) begin
+
+if (r >= g && r >= b) begin
+  max = r;
+end
+else if (g >= r && g >= b) begin
+  max = g;
+end
+else if (b >= g && b >= r) begin
+  max = b;
+end
+
+end
+
+
+endmodule

@@ -4,7 +4,7 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "VGA_BLANK_N",
+					"name" : "VGA_CLK",
 					"strict" : false
 				},
 				{
@@ -40,10 +40,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "VGA_CLK",
-					"strict" : false
-				},
-				{
 					"name" : "VGA_G[0]",
 					"strict" : false
 				},
@@ -73,10 +69,6 @@
 				},
 				{
 					"name" : "VGA_G[7]",
-					"strict" : false
-				},
-				{
-					"name" : "VGA_HS",
 					"strict" : false
 				},
 				{
@@ -112,6 +104,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "VGA_BLANK_N",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_HS",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_VS",
 					"strict" : false
 				},
@@ -121,10 +121,6 @@
 				},
 				{
 					"name" : "MIPI_RESET_n",
-					"strict" : false
-				},
-				{
-					"name" : "CAMERA_I2C_SCL",
 					"strict" : false
 				},
 				{
@@ -140,6 +136,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "CAMERA_I2C_SCL",
+					"strict" : false
+				},
+				{
 					"name" : "MIPI_PIXEL_CLK",
 					"strict" : false
 				},
@@ -148,11 +148,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_PIXEL_HS",
+					"name" : "MIPI_PIXEL_VS",
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_PIXEL_VS",
+					"name" : "MIPI_PIXEL_HS",
 					"strict" : false
 				},
 				{
@@ -160,7 +160,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[9]",
+					"name" : "SW[2]",
 					"strict" : false
 				},
 				{
@@ -168,35 +168,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[3]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[0]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[1]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[2]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[3]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[2]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[5]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[7]",
+					"name" : "SW[9]",
 					"strict" : false
 				},
 				{
@@ -208,6 +180,38 @@
 					"strict" : false
 				},
 				{
+					"name" : "SW[7]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[2]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[1]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[4]",
+					"strict" : false
+				},
+				{
 					"name" : "MIPI_PIXEL_D[9]",
 					"strict" : false
 				},
@@ -216,19 +220,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_PIXEL_D[2]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[3]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[4]",
-					"strict" : false
-				},
-				{
-					"name" : "MIPI_PIXEL_D[5]",
+					"name" : "MIPI_PIXEL_D[7]",
 					"strict" : false
 				},
 				{
@@ -236,7 +228,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "MIPI_PIXEL_D[7]",
+					"name" : "MIPI_PIXEL_D[5]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MIPI_PIXEL_D[2]",
 					"strict" : false
 				},
 				{

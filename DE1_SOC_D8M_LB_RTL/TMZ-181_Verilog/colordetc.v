@@ -3,110 +3,82 @@
 module colordetc (
   input clk,
   input rst,
-  input [7:0] r,
-  input [7:0] g,
-  input [7:0] b,
   input [3:0] clr_sel,
-  output [7:0] outR,
-  output [7:0] outG,
-  output [7:0] outB,
+  input [23:0] pixel_in,
+  output reg [23:0] pixel_out,
   input [23:0] pass_in,
-  output [23:0] pass_thru
+  output reg [23:0] pass_thru
 );
 
-assign pass_thru = pass_in;
+reg [23:0] pixel_out_c;
 
-  wire signed [24:0] greeness;
-  wire signed [24:0] redness;
-  wire signed [24:0] bluewness;
-  wire signed [24:0] thresh_g,thresh_r,thresh_b;
-  wire [7:0] gs;
-  reg [7:0] out_reg_r, out_reg_g, out_reg_b, shift_r, shift_g, shift_b;
-	reg [1:0] ctrl_c, ctrl;
-	
-  assign redness = r*(r-g)*(r-b);
-  assign greeness = g*(g-r)*(g-b);
-  assign blueness = b*(b-r)*(b-g);
-  assign thresh_g = 25'b0_0000_0001_0100_0011_1101_1010;
-  assign thresh_r = 25'b0_0001_1110_0100_0011_1101_1010;
-  assign thresh_b =0;
- 
-  assign outR = out_reg_r;
-  assign outG = out_reg_g;
-  assign outB = out_reg_b;
-  grayscale_unclk grey (r,g,b,gs,,);
-  always @(*) begin
-			 // level handling
-	if (clr_sel[3] == 1'b1) begin
-		  ctrl_c = 2'b01;
-		end
-	else if (clr_sel[2] == 1'b1) begin
-		  ctrl_c = 2'b00;
-	end
-	else if (clr_sel[1] == 1'b1) begin
-		  ctrl_c = 2'b10;
-	end
-	else if (clr_sel[0] == 1'b1) begin
-		  ctrl_c = 2'b11;
-	end
-	else begin
-		  ctrl_c = ctrl;
-	 end
-	  if (rst == 1'b1) begin // reset logic
-			ctrl_c = 2'b11;
-	  end
+reg [1:0] ctrl_c, ctrl;
+
+wire [9:0] sat = {pixel_in[14:8], 3'b000}; //increase saturation value 4x
+wire [7:0] S;
+
+saturate s0 (sat, S);
+
+always @(*) begin
+  // level handling
+  if (clr_sel[3] == 1'b1) begin
+    ctrl_c = 2'b01;
+  end
+  else if (clr_sel[2] == 1'b1) begin
+    ctrl_c = 2'b00;
+  end
+  else if (clr_sel[1] == 1'b1) begin
+    ctrl_c = 2'b10;
+  end
+  else if (clr_sel[0] == 1'b1) begin
+    ctrl_c = 2'b11;
+  end
+  else begin
+    ctrl_c = ctrl;
+  end
+  if (rst == 1'b1) begin // reset logic
+    ctrl_c = 2'b11;
+  end
 		  
-	end
+end
+
   always @(*) begin
-		out_reg_r = r;
-	  out_reg_g = g;
-	  out_reg_b = b;
+	 pixel_out_c = pixel_in;
     case (ctrl)
       2'b00: begin //highlight g
-			if(greeness > thresh_g) begin
-				out_reg_r = r;
-				out_reg_g = g;
-				out_reg_b = b;
-
-			end else begin
-				out_reg_r = gs;
-				out_reg_g = gs;
-				out_reg_b = gs;
+			if(pixel_in[23:15] >= 9'd80 && pixel_in[23:15] <= 9'd160) begin
+				pixel_out_c[14:8] = S[7:1];
+			end
+			else begin
+				pixel_out_c[14:8] = 7'b0000_000;
 			end
       end
       2'b01: begin //highlight r
-			if(redness > thresh_r) begin
-				out_reg_r = r;
-				out_reg_g = g;
-				out_reg_b = b;
-
-			end else begin
-				out_reg_r = gs;
-				out_reg_g = gs;
-				out_reg_b = gs;
+			if(pixel_in[23:15] >= 9'd345 || pixel_in[23:15] <= 9'd15 && pixel_in[14:8] >= 7'd75) begin
+				pixel_out_c[14:8] = S[7:1];
+			end 
+			else begin
+				pixel_out_c[14:8] = 7'b0000_000;
 			end
       end
       2'b10: begin //highlight b
-			if(blueness > thresh_b) begin
-				out_reg_r = r;
-				out_reg_g = g;
-				out_reg_b = b;
-
-			end else begin
-				out_reg_r = gs;
-				out_reg_g = gs;
-				out_reg_b = gs;
+			if(pixel_in[23:15] >= 9'd160 && pixel_in[23:15] <= 9'd280) begin
+				pixel_out_c[14:8] = S[7:1];
+			end 
+			else begin
+				pixel_out_c[14:8] = 7'b0000_000;
 			end
       end
-		default :begin
-			out_reg_r = r;
-        out_reg_g = g;
-        out_reg_b = b;
+		default: begin
+			pixel_out_c = pixel_in;
 		  end
     endcase
   end
+  
   always @(posedge clk) begin
 	ctrl <= #1 ctrl_c;
+	pixel_out <= #1 pixel_out_c;
+   pass_thru <= #1 pass_in;	
   end
   
 endmodule

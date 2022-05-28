@@ -1,5 +1,5 @@
 module shift_adr (
-	input [9:0] ref,
+	input [9:0] reference,
 	input [9:0] max,
 	output [9:0] adr0,
 	output [9:0] adr1,
@@ -28,17 +28,17 @@ assign adr8 = adr8_c;
 assign adr9 = adr9_c;
 assign adr10 = adr10_c;
 
-sat_adr as0 (ref , max, adr0_c);
-sat_adr as1 (ref + 10'd1, max, adr1_c);
-sat_adr as2 (ref + 10'd2, max, adr2_c);
-sat_adr as3 (ref + 10'd3, max, adr3_c);
-sat_adr as4 (ref + 10'd4, max, adr4_c);
-sat_adr as5 (ref + 10'd5, max, adr5_c);
-sat_adr as6 (ref + 10'd6, max, adr6_c);
-sat_adr as7 (ref + 10'd7, max, adr7_c);
-sat_adr as8 (ref + 10'd8, max, adr8_c);
-sat_adr as9 (ref + 10'd9, max, adr9_c);
-sat_adr as10 (ref + 10'd10, max, adr10_c);
+sat_adr as0 (reference , max, adr0_c);
+sat_adr as1 (reference + 10'd1, max, adr1_c);
+sat_adr as2 (reference + 10'd2, max, adr2_c);
+sat_adr as3 (reference + 10'd3, max, adr3_c);
+sat_adr as4 (reference + 10'd4, max, adr4_c);
+sat_adr as5 (reference + 10'd5, max, adr5_c);
+sat_adr as6 (reference + 10'd6, max, adr6_c);
+sat_adr as7 (reference + 10'd7, max, adr7_c);
+sat_adr as8 (reference + 10'd8, max, adr8_c);
+sat_adr as9 (reference + 10'd9, max, adr9_c);
+sat_adr as10 (reference + 10'd10, max, adr10_c);
 
 endmodule
 

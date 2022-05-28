@@ -1,0 +1,16 @@
+module hsv_rgb (
+  input [23:0] hsv,
+  output [7:0] r,
+  output [7:0] g,
+  output [7:0] b
+);
+
+wire [8:0] s, v;
+
+divide ds (hsv[14:8], 8'hFF , s);
+divide dv ({hsv[7:0], 1'b0}, 7'hFE, v);
+
+reg [8:0] C = (hsv[13:7] * hsv[6:0])>>16;
+wire Xtemp = 
+
+endmodule

@@ -1,33 +1,73 @@
 module greensc (
-  input [7:0] r,
-  input [7:0] g,
-  input [7:0] b,
+  input clk,
+  input [12:0] row,
+  input [12:0] col,
   input gsc_en,
-  output reg [7:0] outR,
-  output reg [7:0] outG,
-  output reg [7:0] outB,
+  input [3:0] gs_bg_sel,
+  input [23:0] pixel_in,
+  output reg [23:0] pixel_out,
   input [23:0] pass_in,
-  output [23:0] pass_thru
+  output reg [23:0] pass_thru
 );
 
-assign pass_thru = pass_in;
+reg [23:0] pixel_out_c;
 
-  wire signed [24:0] greeness;
-  wire signed [24:0] thresh;
+wire [13:0] sum0 = row + col;
+wire [13:0] sum1 = row - col + 10'd720;
+wire [13:0] sum2 = row;
+wire [13:0] sum3 = col;
+wire [8:0] bg0, bg1, bg2, bg3;
+reg [1:0] bg_sel, bg_sel_c;
 
-  assign greeness = g*(g-r)*(g-b);
-  assign thresh = 25'b0_0000_0001_0100_0011_1101_1010;
+mod360 mbg0 (sum0[10:0], bg0);
+mod360 mbg1 (sum1[10:0], bg1);
+mod360 mbg2 (sum2[10:0], bg2);
+mod360 mbg3 (sum3[10:0], bg3);
  
   always @(*)begin
-		outR = r;
-		outG = g;
-		outB = b;
+		pixel_out_c = pixel_in;
 		if(gsc_en == 1'b1)begin
-			if(greeness > thresh) begin
-				outR = 8'b0000_0000;
-				outG = 8'b0000_0000;
-				outB = 8'b0000_0000;
-			end 
+			if (pixel_in[23:15] >= 9'd90 && pixel_in[23:15] <= 9'd150 && pixel_in[14:8] >= 7'd50) begin
+				case (bg_sel)
+					2'b01: begin
+								pixel_out_c = {bg1, 15'b111_1111_1111_1111};
+							 end
+					2'b10: begin
+								pixel_out_c = {bg2, 15'b111_1111_1111_1111};
+							 end
+					2'b11: begin
+								pixel_out_c = {bg3, 15'b111_1111_1111_1111};
+							 end
+					default: begin
+								pixel_out_c = {bg0, 15'b111_1111_1111_1111};
+							 end
+				endcase
+			end
 		end
+		
+	   case (gs_bg_sel)
+			4'b0001: begin
+				bg_sel_c = 2'b00; 
+			end
+			4'b0010: begin
+				bg_sel_c = 2'b01; 
+			end
+			4'b0100: begin
+				bg_sel_c = 2'b10; 
+			end
+			4'b1000: begin
+				bg_sel_c = 2'b11; 
+			end
+			default: begin
+				bg_sel_c = bg_sel; 
+			end
+		endcase
   end
+  
+always @(posedge clk) begin
+  bg_sel <= #1 bg_sel_c;
+  pixel_out <= #1 pixel_out_c;
+  pass_thru <= #1 pass_in; 
+end
+
 endmodule

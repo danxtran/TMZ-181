@@ -1,0 +1,159 @@
+{C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/brightness.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/brightness.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module brightness
+
+Top level modules:
+	brightness
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/control.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/control.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module control
+
+Top level modules:
+	control
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rgb_hsv.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module rgb_hsv
+-- Compiling module rgb_hue
+
+Top level modules:
+	rgb_hsv
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/hsv_rgb.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/hsv_rgb.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module hsv_rgb
+
+Top level modules:
+	hsv_rgb
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/sobel_edge_det.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/sobel_edge_det.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module sobel_edge_det
+
+Top level modules:
+	sobel_edge_det
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/blur.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/blur.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module blur
+
+Top level modules:
+	blur
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/contrast.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/contrast.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module contrast
+-- Compiling module contrast_logic
+
+Top level modules:
+	contrast
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/cursor.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/cursor.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module cursor
+
+Top level modules:
+	cursor
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/greensc.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/greensc.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module greensc
+
+Top level modules:
+	greensc
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/row_shift_en_gen.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/row_shift_en_gen.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module row_shift_en_gen
+
+Top level modules:
+	row_shift_en_gen
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/saturate.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/saturate.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module saturate
+
+Top level modules:
+	saturate
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/mod360.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/mod360.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mod360
+
+Top level modules:
+	mod360
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/lvl2pulse.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/lvl2pulse.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module lvl2pulse
+
+Top level modules:
+	lvl2pulse
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/edge_det_pass_thru.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/edge_det_pass_thru.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module edge_det_pass_thru
+
+Top level modules:
+	edge_det_pass_thru
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/shift_reg.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/shift_reg.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module shift_reg
+
+Top level modules:
+	shift_reg
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/grayscale.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/grayscale.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module grayscale
+
+Top level modules:
+	grayscale
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/shift_adr.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/shift_adr.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module shift_adr
+-- Compiling module sat_adr
+
+Top level modules:
+	shift_adr
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/test/test.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/test/test.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module owo
+
+Top level modules:
+	owo
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/divide.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module divide
+-- Compiling module div_step
+
+Top level modules:
+	divide
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/edge_detect.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/edge_detect.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module edge_detect
+
+Top level modules:
+	edge_detect
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/colordetc.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/colordetc.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module colordetc
+
+Top level modules:
+	colordetc
+
+} {} {}} {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rowRam.v} {1 {vlog -work work -stats=none {C:/Users/Dan/Desktop/Senior Design Project/DE1_SOC_D8M_LB_RTL/TMZ-181_Verilog/rowRam.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module rowRam
+
+Top level modules:
+	rowRam
+
+} {} {}}
